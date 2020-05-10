@@ -80,17 +80,6 @@ class User extends CI_Controller {
         }
     }
 
-	public function changepassword()
-	{
-		$data = array (
-			'title' => 'Profile',
-			'user' => $this->db->get_where('dd_user', ['username' => $this->session->userdata('username')])->row_array(),
-			'userQuery' =>  $this->user->userAdmin(),
-			'contact' =>  $this->contact->contact(),
-		);
-		$this->konten['main_view'] = $this->load->view('user/profile',$data, TRUE);
-		$this->load->view('templates/dashboard', $this->konten);
-	}
 
 	}
 
@@ -180,7 +169,7 @@ class User extends CI_Controller {
 // 		}
 // 	}
 
-	}
+	
 
 
 

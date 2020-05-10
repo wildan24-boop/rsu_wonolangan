@@ -1,20 +1,21 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.11
--- http://www.phpmyadmin.net
+-- version 5.0.2
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 15, 2020 at 10:43 AM
--- Server version: 5.6.21
--- PHP Version: 5.6.3
+-- Waktu pembuatan: 10 Bulan Mei 2020 pada 09.26
+-- Versi server: 10.4.11-MariaDB
+-- Versi PHP: 7.4.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `e_office2`
@@ -23,9 +24,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `admin_hak_user_v`
+-- Stand-in struktur untuk tampilan `admin_hak_user_v`
+-- (Lihat di bawah untuk tampilan aktual)
 --
-CREATE TABLE IF NOT EXISTS `admin_hak_user_v` (
+CREATE TABLE `admin_hak_user_v` (
 `id_dd_user_group_detail` int(11)
 ,`hak_akses_menu` int(11)
 ,`nama_group` varchar(50)
@@ -56,12 +58,14 @@ CREATE TABLE IF NOT EXISTS `admin_hak_user_v` (
 ,`nama_modul_alt` varchar(50)
 ,`ket_sub_menu` varchar(50)
 );
+
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `admin_laporan_user_privilleges_v`
+-- Stand-in struktur untuk tampilan `admin_laporan_user_privilleges_v`
+-- (Lihat di bawah untuk tampilan aktual)
 --
-CREATE TABLE IF NOT EXISTS `admin_laporan_user_privilleges_v` (
+CREATE TABLE `admin_laporan_user_privilleges_v` (
 `nama_group` varchar(100)
 ,`id_dd_user_group` int(11)
 ,`hak_akses_menu` int(11)
@@ -74,12 +78,14 @@ CREATE TABLE IF NOT EXISTS `admin_laporan_user_privilleges_v` (
 ,`nama_sub_menu` varchar(50)
 ,`keterangan` varchar(100)
 );
+
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `admin_laporan_user_v`
+-- Stand-in struktur untuk tampilan `admin_laporan_user_v`
+-- (Lihat di bawah untuk tampilan aktual)
 --
-CREATE TABLE IF NOT EXISTS `admin_laporan_user_v` (
+CREATE TABLE `admin_laporan_user_v` (
 `id_dd_user` int(11)
 ,`username` varchar(50)
 ,`npp` varchar(5)
@@ -88,12 +94,14 @@ CREATE TABLE IF NOT EXISTS `admin_laporan_user_v` (
 ,`nawil_kerja` varchar(30)
 ,`nama_group` varchar(100)
 );
+
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `admin_privilleges_menu_v`
+-- Stand-in struktur untuk tampilan `admin_privilleges_menu_v`
+-- (Lihat di bawah untuk tampilan aktual)
 --
-CREATE TABLE IF NOT EXISTS `admin_privilleges_menu_v` (
+CREATE TABLE `admin_privilleges_menu_v` (
 `username` varchar(50)
 ,`nama_group` varchar(50)
 ,`nama_modul` varchar(50)
@@ -105,12 +113,14 @@ CREATE TABLE IF NOT EXISTS `admin_privilleges_menu_v` (
 ,`id_dd_group_modul` int(11)
 ,`id_dd_group` int(11)
 );
+
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `admin_privilleges_modul_v`
+-- Stand-in struktur untuk tampilan `admin_privilleges_modul_v`
+-- (Lihat di bawah untuk tampilan aktual)
 --
-CREATE TABLE IF NOT EXISTS `admin_privilleges_modul_v` (
+CREATE TABLE `admin_privilleges_modul_v` (
 `username` varchar(50)
 ,`nama_group` varchar(50)
 ,`nama_modul` varchar(50)
@@ -119,12 +129,14 @@ CREATE TABLE IF NOT EXISTS `admin_privilleges_modul_v` (
 ,`id_dd_group_modul` int(11)
 ,`id_dd_group` int(11)
 );
+
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `admin_privilleges_user_v`
+-- Stand-in struktur untuk tampilan `admin_privilleges_user_v`
+-- (Lihat di bawah untuk tampilan aktual)
 --
-CREATE TABLE IF NOT EXISTS `admin_privilleges_user_v` (
+CREATE TABLE `admin_privilleges_user_v` (
 `username` varchar(50)
 ,`nama_group` varchar(50)
 ,`nama_modul` varchar(50)
@@ -137,12 +149,14 @@ CREATE TABLE IF NOT EXISTS `admin_privilleges_user_v` (
 ,`id_dd_group_modul` int(11)
 ,`id_dd_group` int(11)
 );
+
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `admin_user_login_detail_v`
+-- Stand-in struktur untuk tampilan `admin_user_login_detail_v`
+-- (Lihat di bawah untuk tampilan aktual)
 --
-CREATE TABLE IF NOT EXISTS `admin_user_login_detail_v` (
+CREATE TABLE `admin_user_login_detail_v` (
 `username` varchar(50)
 ,`id_log_user_login_detail` int(11)
 ,`id_log_user` int(11)
@@ -156,12 +170,14 @@ CREATE TABLE IF NOT EXISTS `admin_user_login_detail_v` (
 ,`nama_sub_menu` varchar(50)
 ,`nama_modul` varchar(50)
 );
+
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `admin_user_login_v`
+-- Stand-in struktur untuk tampilan `admin_user_login_v`
+-- (Lihat di bawah untuk tampilan aktual)
 --
-CREATE TABLE IF NOT EXISTS `admin_user_login_v` (
+CREATE TABLE `admin_user_login_v` (
 `id_log_user` int(11)
 ,`id_dd_user` int(11)
 ,`session_id` varchar(50)
@@ -184,13 +200,14 @@ CREATE TABLE IF NOT EXISTS `admin_user_login_v` (
 ,`nama_group` varchar(100)
 ,`id_dd_jenis_user` int(11)
 );
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `adodb_logsql`
+-- Struktur dari tabel `adodb_logsql`
 --
 
-CREATE TABLE IF NOT EXISTS `adodb_logsql` (
+CREATE TABLE `adodb_logsql` (
   `created` datetime NOT NULL,
   `sql0` varchar(250) NOT NULL,
   `sql1` text NOT NULL,
@@ -202,23 +219,23 @@ CREATE TABLE IF NOT EXISTS `adodb_logsql` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bd_mt_saldo_awal`
+-- Struktur dari tabel `bd_mt_saldo_awal`
 --
 
-CREATE TABLE IF NOT EXISTS `bd_mt_saldo_awal` (
-`id_bd_mt_saldo_awal` int(11) NOT NULL,
+CREATE TABLE `bd_mt_saldo_awal` (
+  `id_bd_mt_saldo_awal` int(11) NOT NULL,
   `id_dd_bank` int(11) NOT NULL,
   `nama_saldo` varchar(50) NOT NULL,
   `keterangan` varchar(250) DEFAULT NULL,
-  `nominal` decimal(19,4) NOT NULL DEFAULT '0.0000',
+  `nominal` decimal(19,4) NOT NULL DEFAULT 0.0000,
   `input_id` int(11) NOT NULL,
   `input_tgl` datetime NOT NULL,
   `edit_id` int(11) DEFAULT NULL,
   `edit_tgl` datetime DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `bd_mt_saldo_awal`
+-- Dumping data untuk tabel `bd_mt_saldo_awal`
 --
 
 INSERT INTO `bd_mt_saldo_awal` (`id_bd_mt_saldo_awal`, `id_dd_bank`, `nama_saldo`, `keterangan`, `nominal`, `input_id`, `input_tgl`, `edit_id`, `edit_tgl`) VALUES
@@ -236,24 +253,24 @@ INSERT INTO `bd_mt_saldo_awal` (`id_bd_mt_saldo_awal`, `id_dd_bank`, `nama_saldo
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ci_sessions`
+-- Struktur dari tabel `ci_sessions`
 --
 
-CREATE TABLE IF NOT EXISTS `ci_sessions` (
+CREATE TABLE `ci_sessions` (
   `session_id` varchar(40) NOT NULL DEFAULT '0',
   `ip_address` varchar(45) NOT NULL DEFAULT '0',
   `user_agent` varchar(120) NOT NULL,
-  `last_activity` int(10) unsigned NOT NULL DEFAULT '0',
+  `last_activity` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `user_data` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `daemons`
+-- Struktur dari tabel `daemons`
 --
 
-CREATE TABLE IF NOT EXISTS `daemons` (
+CREATE TABLE `daemons` (
   `Start` text NOT NULL,
   `Info` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -261,20 +278,20 @@ CREATE TABLE IF NOT EXISTS `daemons` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dc_agama`
+-- Struktur dari tabel `dc_agama`
 --
 
-CREATE TABLE IF NOT EXISTS `dc_agama` (
-`id_dc_agama` int(11) NOT NULL,
+CREATE TABLE `dc_agama` (
+  `id_dc_agama` int(11) NOT NULL,
   `agama` varchar(50) DEFAULT NULL,
   `input_id` int(11) DEFAULT NULL,
   `input_tgl` datetime DEFAULT NULL,
-  `status` tinyint(3) unsigned DEFAULT NULL,
+  `status` tinyint(3) UNSIGNED DEFAULT NULL,
   `status_tgl` datetime DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dc_agama`
+-- Dumping data untuk tabel `dc_agama`
 --
 
 INSERT INTO `dc_agama` (`id_dc_agama`, `agama`, `input_id`, `input_tgl`, `status`, `status_tgl`) VALUES
@@ -289,17 +306,17 @@ INSERT INTO `dc_agama` (`id_dc_agama`, `agama`, `input_id`, `input_tgl`, `status
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dc_client_group`
+-- Struktur dari tabel `dc_client_group`
 --
 
-CREATE TABLE IF NOT EXISTS `dc_client_group` (
-`id_dc_client_group` int(11) NOT NULL,
+CREATE TABLE `dc_client_group` (
+  `id_dc_client_group` int(11) NOT NULL,
   `nama_group_client` varchar(100) NOT NULL,
   `keterangan` varchar(255) DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dc_client_group`
+-- Dumping data untuk tabel `dc_client_group`
 --
 
 INSERT INTO `dc_client_group` (`id_dc_client_group`, `nama_group_client`, `keterangan`) VALUES
@@ -309,10 +326,10 @@ INSERT INTO `dc_client_group` (`id_dc_client_group`, `nama_group_client`, `keter
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dc_client_group_detail`
+-- Struktur dari tabel `dc_client_group_detail`
 --
 
-CREATE TABLE IF NOT EXISTS `dc_client_group_detail` (
+CREATE TABLE `dc_client_group_detail` (
   `id_dc_client_group_detail` int(11) NOT NULL,
   `id_dc_client_group` int(11) DEFAULT NULL,
   `nama_group_detail` varchar(100) DEFAULT NULL,
@@ -320,7 +337,7 @@ CREATE TABLE IF NOT EXISTS `dc_client_group_detail` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dc_client_group_detail`
+-- Dumping data untuk tabel `dc_client_group_detail`
 --
 
 INSERT INTO `dc_client_group_detail` (`id_dc_client_group_detail`, `id_dc_client_group`, `nama_group_detail`, `keterangan`) VALUES
@@ -330,17 +347,17 @@ INSERT INTO `dc_client_group_detail` (`id_dc_client_group_detail`, `id_dc_client
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dc_customer_group`
+-- Struktur dari tabel `dc_customer_group`
 --
 
-CREATE TABLE IF NOT EXISTS `dc_customer_group` (
-`id_dc_customer_group` int(11) NOT NULL,
+CREATE TABLE `dc_customer_group` (
+  `id_dc_customer_group` int(11) NOT NULL,
   `nama_group_customer` varchar(100) NOT NULL,
   `keterangan` varchar(255) DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dc_customer_group`
+-- Dumping data untuk tabel `dc_customer_group`
 --
 
 INSERT INTO `dc_customer_group` (`id_dc_customer_group`, `nama_group_customer`, `keterangan`) VALUES
@@ -353,20 +370,20 @@ INSERT INTO `dc_customer_group` (`id_dc_customer_group`, `nama_group_customer`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dc_darah`
+-- Struktur dari tabel `dc_darah`
 --
 
-CREATE TABLE IF NOT EXISTS `dc_darah` (
-`id_dc_darah` int(11) NOT NULL,
+CREATE TABLE `dc_darah` (
+  `id_dc_darah` int(11) NOT NULL,
   `darah` varchar(50) DEFAULT NULL,
   `input_id` int(11) DEFAULT NULL,
   `input_tgl` datetime DEFAULT NULL,
-  `status` tinyint(3) unsigned DEFAULT NULL,
+  `status` tinyint(3) UNSIGNED DEFAULT NULL,
   `status_tgl` datetime DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dc_darah`
+-- Dumping data untuk tabel `dc_darah`
 --
 
 INSERT INTO `dc_darah` (`id_dc_darah`, `darah`, `input_id`, `input_tgl`, `status`, `status_tgl`) VALUES
@@ -378,20 +395,20 @@ INSERT INTO `dc_darah` (`id_dc_darah`, `darah`, `input_id`, `input_tgl`, `status
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dc_kawin`
+-- Struktur dari tabel `dc_kawin`
 --
 
-CREATE TABLE IF NOT EXISTS `dc_kawin` (
-`id_dc_kawin` int(11) NOT NULL,
+CREATE TABLE `dc_kawin` (
+  `id_dc_kawin` int(11) NOT NULL,
   `kawin` varchar(50) DEFAULT NULL,
   `input_id` int(11) DEFAULT NULL,
   `input_tgl` datetime DEFAULT NULL,
-  `status` tinyint(3) unsigned DEFAULT NULL,
+  `status` tinyint(3) UNSIGNED DEFAULT NULL,
   `status_tgl` datetime DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dc_kawin`
+-- Dumping data untuk tabel `dc_kawin`
 --
 
 INSERT INTO `dc_kawin` (`id_dc_kawin`, `kawin`, `input_id`, `input_tgl`, `status`, `status_tgl`) VALUES
@@ -403,10 +420,10 @@ INSERT INTO `dc_kawin` (`id_dc_kawin`, `kawin`, `input_id`, `input_tgl`, `status
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dc_kecamatan`
+-- Struktur dari tabel `dc_kecamatan`
 --
 
-CREATE TABLE IF NOT EXISTS `dc_kecamatan` (
+CREATE TABLE `dc_kecamatan` (
   `id_dc_kecamatan` int(11) NOT NULL,
   `id_dc_kota` int(11) DEFAULT NULL,
   `inisial_kecamatan` char(10) DEFAULT NULL,
@@ -421,7 +438,7 @@ CREATE TABLE IF NOT EXISTS `dc_kecamatan` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dc_kecamatan`
+-- Dumping data untuk tabel `dc_kecamatan`
 --
 
 INSERT INTO `dc_kecamatan` (`id_dc_kecamatan`, `id_dc_kota`, `inisial_kecamatan`, `nama_kecamatan`, `id_dc_negara`, `id_dc_propinsi`, `id_user_input`, `id_user_setuju`, `tgl_input`, `tgl_setuju`, `flag_setuju`) VALUES
@@ -434,7 +451,7 @@ INSERT INTO `dc_kecamatan` (`id_dc_kecamatan`, `id_dc_kota`, `inisial_kecamatan`
 (252, 22, NULL, 'Gido', 1, 2, NULL, NULL, NULL, NULL, NULL),
 (253, 22, NULL, 'Lolofitu Moi', 1, 2, NULL, NULL, NULL, NULL, NULL),
 (254, 22, NULL, 'Lolomatua', 1, 2, NULL, NULL, NULL, NULL, NULL),
-(255, 22, NULL, 'Lolo Wa''U', 1, 2, NULL, NULL, NULL, NULL, NULL),
+(255, 22, NULL, 'Lolo Wa\'U', 1, 2, NULL, NULL, NULL, NULL, NULL),
 (256, 22, NULL, 'Sirombo', 1, 2, NULL, NULL, NULL, NULL, NULL),
 (257, 22, NULL, 'Mandrehe', 1, 2, NULL, NULL, NULL, NULL, NULL),
 (258, 22, NULL, 'Hiliduho', 1, 2, NULL, NULL, NULL, NULL, NULL),
@@ -6371,21 +6388,23 @@ INSERT INTO `dc_kecamatan` (`id_dc_kecamatan`, `id_dc_kota`, `inisial_kecamatan`
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `dc_kecamatan_view`
+-- Stand-in struktur untuk tampilan `dc_kecamatan_view`
+-- (Lihat di bawah untuk tampilan aktual)
 --
-CREATE TABLE IF NOT EXISTS `dc_kecamatan_view` (
+CREATE TABLE `dc_kecamatan_view` (
 `nama_kota` varchar(255)
 ,`id_dc_kecamatan` int(11)
 ,`nama_kecamatan` varchar(50)
 ,`inisial_kecamatan` char(10)
 );
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dc_kelurahan`
+-- Struktur dari tabel `dc_kelurahan`
 --
 
-CREATE TABLE IF NOT EXISTS `dc_kelurahan` (
+CREATE TABLE `dc_kelurahan` (
   `id_dc_kelurahan` int(11) NOT NULL,
   `id_dc_kecamatan` int(11) DEFAULT NULL,
   `inisial_kelurahan` char(10) DEFAULT NULL,
@@ -6403,7 +6422,7 @@ CREATE TABLE IF NOT EXISTS `dc_kelurahan` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dc_kelurahan`
+-- Dumping data untuk tabel `dc_kelurahan`
 --
 
 INSERT INTO `dc_kelurahan` (`id_dc_kelurahan`, `id_dc_kecamatan`, `inisial_kelurahan`, `nama_kelurahan`, `kode_pos`, `id_dc_negara`, `id_dc_propinsi`, `id_dc_kota`, `id_user_input`, `tgl_input`, `id_user_setuju`, `tgl_setuju`, `flag_setuju`, `kode_kelurahan`) VALUES
@@ -7065,33 +7084,35 @@ INSERT INTO `dc_kelurahan` (`id_dc_kelurahan`, `id_dc_kecamatan`, `inisial_kelur
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `dc_kelurahan_view`
+-- Stand-in struktur untuk tampilan `dc_kelurahan_view`
+-- (Lihat di bawah untuk tampilan aktual)
 --
-CREATE TABLE IF NOT EXISTS `dc_kelurahan_view` (
+CREATE TABLE `dc_kelurahan_view` (
 `nama_kecamatan` varchar(50)
 ,`id_dc_kelurahan` int(11)
 ,`nama_kelurahan` varchar(50)
 ,`inisial_kelurahan` char(10)
 ,`kode_pos` varchar(5)
 );
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dc_kota`
+-- Struktur dari tabel `dc_kota`
 --
 
-CREATE TABLE IF NOT EXISTS `dc_kota` (
-`id_dc_kota` int(11) NOT NULL,
+CREATE TABLE `dc_kota` (
+  `id_dc_kota` int(11) NOT NULL,
   `inisial_kota` varchar(20) DEFAULT NULL,
   `nama_kota` varchar(255) DEFAULT NULL,
   `id_dc_propinsi` int(11) DEFAULT NULL,
   `id_dc_negara` int(11) DEFAULT NULL,
   `flag_kab` decimal(38,0) DEFAULT NULL,
   `kd_kota` varchar(6) DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=444 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dc_kota`
+-- Dumping data untuk tabel `dc_kota`
 --
 
 INSERT INTO `dc_kota` (`id_dc_kota`, `inisial_kota`, `nama_kota`, `id_dc_propinsi`, `id_dc_negara`, `flag_kab`, `kd_kota`) VALUES
@@ -7541,18 +7562,18 @@ INSERT INTO `dc_kota` (`id_dc_kota`, `inisial_kota`, `nama_kota`, `id_dc_propins
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dc_level_struktur_org`
+-- Struktur dari tabel `dc_level_struktur_org`
 --
 
-CREATE TABLE IF NOT EXISTS `dc_level_struktur_org` (
-`id_level_struktur_org` int(11) NOT NULL,
+CREATE TABLE `dc_level_struktur_org` (
+  `id_level_struktur_org` int(11) NOT NULL,
   `kode_level_org` char(2) DEFAULT NULL,
   `nama_level` varchar(50) DEFAULT NULL,
   `keterangan` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dc_level_struktur_org`
+-- Dumping data untuk tabel `dc_level_struktur_org`
 --
 
 INSERT INTO `dc_level_struktur_org` (`id_level_struktur_org`, `kode_level_org`, `nama_level`, `keterangan`) VALUES
@@ -7566,22 +7587,22 @@ INSERT INTO `dc_level_struktur_org` (`id_level_struktur_org`, `kode_level_org`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dc_menu`
+-- Struktur dari tabel `dc_menu`
 --
 
-CREATE TABLE IF NOT EXISTS `dc_menu` (
-`id_dc_menu` int(11) NOT NULL,
+CREATE TABLE `dc_menu` (
+  `id_dc_menu` int(11) NOT NULL,
   `id_dc_modul` int(11) DEFAULT NULL,
   `nama_menu` varchar(50) DEFAULT NULL,
   `url` varchar(50) DEFAULT NULL,
   `no_urut` int(11) DEFAULT NULL,
-  `status_menu` tinyint(3) unsigned DEFAULT '0',
+  `status_menu` tinyint(3) UNSIGNED DEFAULT 0,
   `input_id` int(11) DEFAULT NULL,
   `input_tgl` datetime DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=322 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dc_menu`
+-- Dumping data untuk tabel `dc_menu`
 --
 
 INSERT INTO `dc_menu` (`id_dc_menu`, `id_dc_modul`, `nama_menu`, `url`, `no_urut`, `status_menu`, `input_id`, `input_tgl`) VALUES
@@ -7641,25 +7662,25 @@ INSERT INTO `dc_menu` (`id_dc_menu`, `id_dc_modul`, `nama_menu`, `url`, `no_urut
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dc_modul`
+-- Struktur dari tabel `dc_modul`
 --
 
-CREATE TABLE IF NOT EXISTS `dc_modul` (
-`id_dc_modul` int(11) NOT NULL,
+CREATE TABLE `dc_modul` (
+  `id_dc_modul` int(11) NOT NULL,
   `nama_modul` varchar(50) DEFAULT NULL,
   `logo` varchar(50) DEFAULT NULL,
   `id_dc_modular` int(11) DEFAULT NULL,
   `no_urut` int(11) DEFAULT NULL,
-  `status_modul` tinyint(3) unsigned DEFAULT '0',
+  `status_modul` tinyint(3) UNSIGNED DEFAULT 0,
   `input_id` int(11) DEFAULT NULL,
   `input_tgl` datetime DEFAULT NULL,
   `kode_bagian` varchar(50) DEFAULT NULL,
   `folder` varchar(50) DEFAULT NULL,
   `nama_modul_alt` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=39 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dc_modul`
+-- Dumping data untuk tabel `dc_modul`
 --
 
 INSERT INTO `dc_modul` (`id_dc_modul`, `nama_modul`, `logo`, `id_dc_modular`, `no_urut`, `status_modul`, `input_id`, `input_tgl`, `kode_bagian`, `folder`, `nama_modul_alt`) VALUES
@@ -7670,10 +7691,10 @@ INSERT INTO `dc_modul` (`id_dc_modul`, `nama_modul`, `logo`, `id_dc_modular`, `n
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dc_modular`
+-- Struktur dari tabel `dc_modular`
 --
 
-CREATE TABLE IF NOT EXISTS `dc_modular` (
+CREATE TABLE `dc_modular` (
   `id_dc_modular` int(11) NOT NULL,
   `nama_modular` varchar(50) DEFAULT NULL,
   `no_urut_modular` int(11) DEFAULT NULL,
@@ -7681,7 +7702,7 @@ CREATE TABLE IF NOT EXISTS `dc_modular` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dc_modular`
+-- Dumping data untuk tabel `dc_modular`
 --
 
 INSERT INTO `dc_modular` (`id_dc_modular`, `nama_modular`, `no_urut_modular`, `kd_modular`) VALUES
@@ -7691,17 +7712,17 @@ INSERT INTO `dc_modular` (`id_dc_modular`, `nama_modular`, `no_urut_modular`, `k
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dc_negara`
+-- Struktur dari tabel `dc_negara`
 --
 
-CREATE TABLE IF NOT EXISTS `dc_negara` (
-`id_dc_negara` int(11) NOT NULL,
+CREATE TABLE `dc_negara` (
+  `id_dc_negara` int(11) NOT NULL,
   `inisial_negara` varchar(5) DEFAULT NULL,
   `nama_negara` varchar(50) DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=121 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dc_negara`
+-- Dumping data untuk tabel `dc_negara`
 --
 
 INSERT INTO `dc_negara` (`id_dc_negara`, `inisial_negara`, `nama_negara`) VALUES
@@ -7824,20 +7845,20 @@ INSERT INTO `dc_negara` (`id_dc_negara`, `inisial_negara`, `nama_negara`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dc_pekerjaan`
+-- Struktur dari tabel `dc_pekerjaan`
 --
 
-CREATE TABLE IF NOT EXISTS `dc_pekerjaan` (
-`id_dc_pekerjaan` int(11) NOT NULL,
+CREATE TABLE `dc_pekerjaan` (
+  `id_dc_pekerjaan` int(11) NOT NULL,
   `pekerjaan` varchar(50) DEFAULT NULL,
   `input_id` int(11) DEFAULT NULL,
   `input_tgl` datetime DEFAULT NULL,
-  `status` tinyint(3) unsigned DEFAULT NULL,
+  `status` tinyint(3) UNSIGNED DEFAULT NULL,
   `status_tgl` datetime DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dc_pekerjaan`
+-- Dumping data untuk tabel `dc_pekerjaan`
 --
 
 INSERT INTO `dc_pekerjaan` (`id_dc_pekerjaan`, `pekerjaan`, `input_id`, `input_tgl`, `status`, `status_tgl`) VALUES
@@ -7852,21 +7873,21 @@ INSERT INTO `dc_pekerjaan` (`id_dc_pekerjaan`, `pekerjaan`, `input_id`, `input_t
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dc_pendidikan`
+-- Struktur dari tabel `dc_pendidikan`
 --
 
-CREATE TABLE IF NOT EXISTS `dc_pendidikan` (
-`id_dc_pendidikan` int(11) NOT NULL,
+CREATE TABLE `dc_pendidikan` (
+  `id_dc_pendidikan` int(11) NOT NULL,
   `pendidikan` varchar(50) DEFAULT NULL,
   `id_dc_tingkat_pnddkan` int(11) DEFAULT NULL,
   `input_id` int(11) DEFAULT NULL,
   `input_tgl` datetime DEFAULT NULL,
-  `status` tinyint(3) unsigned DEFAULT NULL,
+  `status` tinyint(3) UNSIGNED DEFAULT NULL,
   `status_tgl` datetime DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dc_pendidikan`
+-- Dumping data untuk tabel `dc_pendidikan`
 --
 
 INSERT INTO `dc_pendidikan` (`id_dc_pendidikan`, `pendidikan`, `id_dc_tingkat_pnddkan`, `input_id`, `input_tgl`, `status`, `status_tgl`) VALUES
@@ -7895,11 +7916,11 @@ INSERT INTO `dc_pendidikan` (`id_dc_pendidikan`, `pendidikan`, `id_dc_tingkat_pn
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dc_propinsi`
+-- Struktur dari tabel `dc_propinsi`
 --
 
-CREATE TABLE IF NOT EXISTS `dc_propinsi` (
-`id_dc_propinsi` int(11) NOT NULL,
+CREATE TABLE `dc_propinsi` (
+  `id_dc_propinsi` int(11) NOT NULL,
   `inisial_propinsi` char(10) DEFAULT NULL,
   `nama_propinsi` varchar(50) DEFAULT NULL,
   `id_dc_negara` int(65) DEFAULT NULL,
@@ -7908,10 +7929,10 @@ CREATE TABLE IF NOT EXISTS `dc_propinsi` (
   `tgl_setuju` datetime DEFAULT NULL,
   `flag_setuju` decimal(1,0) DEFAULT NULL,
   `id_user_input` decimal(10,0) DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dc_propinsi`
+-- Dumping data untuk tabel `dc_propinsi`
 --
 
 INSERT INTO `dc_propinsi` (`id_dc_propinsi`, `inisial_propinsi`, `nama_propinsi`, `id_dc_negara`, `id_user_setuju`, `tgl_input`, `tgl_setuju`, `flag_setuju`, `id_user_input`) VALUES
@@ -7953,20 +7974,20 @@ INSERT INTO `dc_propinsi` (`id_dc_propinsi`, `inisial_propinsi`, `nama_propinsi`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dc_sex`
+-- Struktur dari tabel `dc_sex`
 --
 
-CREATE TABLE IF NOT EXISTS `dc_sex` (
-`id_dc_sex` int(11) NOT NULL,
+CREATE TABLE `dc_sex` (
+  `id_dc_sex` int(11) NOT NULL,
   `sex` char(2) DEFAULT NULL,
   `input_id` int(11) DEFAULT NULL,
   `input_tgl` datetime DEFAULT NULL,
-  `status` tinyint(3) unsigned DEFAULT NULL,
+  `status` tinyint(3) UNSIGNED DEFAULT NULL,
   `status_tgl` datetime DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dc_sex`
+-- Dumping data untuk tabel `dc_sex`
 --
 
 INSERT INTO `dc_sex` (`id_dc_sex`, `sex`, `input_id`, `input_tgl`, `status`, `status_tgl`) VALUES
@@ -7976,11 +7997,11 @@ INSERT INTO `dc_sex` (`id_dc_sex`, `sex`, `input_id`, `input_tgl`, `status`, `st
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dc_struktur_organisasi`
+-- Struktur dari tabel `dc_struktur_organisasi`
 --
 
-CREATE TABLE IF NOT EXISTS `dc_struktur_organisasi` (
-`id_dc_struktur_organisasi` int(11) NOT NULL,
+CREATE TABLE `dc_struktur_organisasi` (
+  `id_dc_struktur_organisasi` int(11) NOT NULL,
   `kode_level` char(10) DEFAULT NULL,
   `nama_struktur` varchar(50) DEFAULT NULL,
   `kode_level_org` char(10) DEFAULT NULL,
@@ -7988,10 +8009,10 @@ CREATE TABLE IF NOT EXISTS `dc_struktur_organisasi` (
   `ko_wil` int(11) DEFAULT NULL,
   `jenis_struktur` int(11) DEFAULT NULL,
   `default_modul` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=69 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dc_struktur_organisasi`
+-- Dumping data untuk tabel `dc_struktur_organisasi`
 --
 
 INSERT INTO `dc_struktur_organisasi` (`id_dc_struktur_organisasi`, `kode_level`, `nama_struktur`, `kode_level_org`, `kode_level_ref`, `ko_wil`, `jenis_struktur`, `default_modul`) VALUES
@@ -8067,24 +8088,24 @@ INSERT INTO `dc_struktur_organisasi` (`id_dc_struktur_organisasi`, `kode_level`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dc_sub_menu`
+-- Struktur dari tabel `dc_sub_menu`
 --
 
-CREATE TABLE IF NOT EXISTS `dc_sub_menu` (
-`id_dc_sub_menu` int(11) NOT NULL,
+CREATE TABLE `dc_sub_menu` (
+  `id_dc_sub_menu` int(11) NOT NULL,
   `id_dc_menu` int(11) DEFAULT NULL,
   `nama_sub_menu` varchar(50) DEFAULT NULL,
   `url_sub_menu` varchar(255) DEFAULT NULL,
   `keterangan` varchar(100) DEFAULT NULL,
   `no_urut` int(11) DEFAULT NULL,
-  `status_sub_menu` tinyint(3) unsigned DEFAULT '0',
+  `status_sub_menu` tinyint(3) UNSIGNED DEFAULT 0,
   `input_id` int(11) DEFAULT NULL,
   `input_tgl` datetime DEFAULT NULL,
   `ket_sub_menu` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=824 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dc_sub_menu`
+-- Dumping data untuk tabel `dc_sub_menu`
 --
 
 INSERT INTO `dc_sub_menu` (`id_dc_sub_menu`, `id_dc_menu`, `nama_sub_menu`, `url_sub_menu`, `keterangan`, `no_urut`, `status_sub_menu`, `input_id`, `input_tgl`, `ket_sub_menu`) VALUES
@@ -8290,24 +8311,24 @@ INSERT INTO `dc_sub_menu` (`id_dc_sub_menu`, `id_dc_menu`, `nama_sub_menu`, `url
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dc_sub_menu_old`
+-- Struktur dari tabel `dc_sub_menu_old`
 --
 
-CREATE TABLE IF NOT EXISTS `dc_sub_menu_old` (
-`id_dc_sub_menu` int(11) NOT NULL,
+CREATE TABLE `dc_sub_menu_old` (
+  `id_dc_sub_menu` int(11) NOT NULL,
   `id_dc_menu` int(11) DEFAULT NULL,
   `nama_sub_menu` varchar(50) DEFAULT NULL,
   `url_sub_menu` varchar(255) DEFAULT NULL,
   `keterangan` varchar(100) DEFAULT NULL,
   `no_urut` int(11) DEFAULT NULL,
-  `status_sub_menu` tinyint(3) unsigned DEFAULT '0',
+  `status_sub_menu` tinyint(3) UNSIGNED DEFAULT 0,
   `input_id` int(11) DEFAULT NULL,
   `input_tgl` datetime DEFAULT NULL,
   `ket_sub_menu` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=585 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dc_sub_menu_old`
+-- Dumping data untuk tabel `dc_sub_menu_old`
 --
 
 INSERT INTO `dc_sub_menu_old` (`id_dc_sub_menu`, `id_dc_menu`, `nama_sub_menu`, `url_sub_menu`, `keterangan`, `no_urut`, `status_sub_menu`, `input_id`, `input_tgl`, `ket_sub_menu`) VALUES
@@ -8335,20 +8356,20 @@ INSERT INTO `dc_sub_menu_old` (`id_dc_sub_menu`, `id_dc_menu`, `nama_sub_menu`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dc_suku`
+-- Struktur dari tabel `dc_suku`
 --
 
-CREATE TABLE IF NOT EXISTS `dc_suku` (
-`id_dc_suku` int(11) NOT NULL,
+CREATE TABLE `dc_suku` (
+  `id_dc_suku` int(11) NOT NULL,
   `suku` varchar(50) DEFAULT NULL,
   `input_id` int(11) DEFAULT NULL,
   `input_tgl` datetime DEFAULT NULL,
   `status` smallint(6) DEFAULT NULL,
   `status_tgl` datetime DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dc_suku`
+-- Dumping data untuk tabel `dc_suku`
 --
 
 INSERT INTO `dc_suku` (`id_dc_suku`, `suku`, `input_id`, `input_tgl`, `status`, `status_tgl`) VALUES
@@ -8367,22 +8388,22 @@ INSERT INTO `dc_suku` (`id_dc_suku`, `suku`, `input_id`, `input_tgl`, `status`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dc_tab`
+-- Struktur dari tabel `dc_tab`
 --
 
-CREATE TABLE IF NOT EXISTS `dc_tab` (
-`id_dc_tab` int(11) NOT NULL,
+CREATE TABLE `dc_tab` (
+  `id_dc_tab` int(11) NOT NULL,
   `id_dc_sub_menu` int(11) DEFAULT NULL,
   `nama_tab` varchar(50) DEFAULT NULL,
   `url_tab` varchar(50) DEFAULT NULL,
   `url_tab_default` varchar(50) DEFAULT NULL,
   `jumlah_file` int(11) DEFAULT NULL,
   `no_urut_tab` int(11) DEFAULT NULL,
-  `status_tab` tinyint(3) unsigned DEFAULT '0'
-) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8;
+  `status_tab` tinyint(3) UNSIGNED DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dc_tab`
+-- Dumping data untuk tabel `dc_tab`
 --
 
 INSERT INTO `dc_tab` (`id_dc_tab`, `id_dc_sub_menu`, `nama_tab`, `url_tab`, `url_tab_default`, `jumlah_file`, `no_urut_tab`, `status_tab`) VALUES
@@ -8437,16 +8458,16 @@ INSERT INTO `dc_tab` (`id_dc_tab`, `id_dc_sub_menu`, `nama_tab`, `url_tab`, `url
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dc_tingkat_pnddkan`
+-- Struktur dari tabel `dc_tingkat_pnddkan`
 --
 
-CREATE TABLE IF NOT EXISTS `dc_tingkat_pnddkan` (
-`id_dc_tingkat_pnddkan` int(11) NOT NULL,
+CREATE TABLE `dc_tingkat_pnddkan` (
+  `id_dc_tingkat_pnddkan` int(11) NOT NULL,
   `tingkat_pnddkan` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dc_tingkat_pnddkan`
+-- Dumping data untuk tabel `dc_tingkat_pnddkan`
 --
 
 INSERT INTO `dc_tingkat_pnddkan` (`id_dc_tingkat_pnddkan`, `tingkat_pnddkan`) VALUES
@@ -8461,11 +8482,11 @@ INSERT INTO `dc_tingkat_pnddkan` (`id_dc_tingkat_pnddkan`, `tingkat_pnddkan`) VA
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dc_wilayah_kerja`
+-- Struktur dari tabel `dc_wilayah_kerja`
 --
 
-CREATE TABLE IF NOT EXISTS `dc_wilayah_kerja` (
-`id_dc_wilayah_kerja` int(11) NOT NULL,
+CREATE TABLE `dc_wilayah_kerja` (
+  `id_dc_wilayah_kerja` int(11) NOT NULL,
   `ko_wil` int(11) NOT NULL,
   `nawil_search` char(8) DEFAULT NULL,
   `nawil_kerja` varchar(30) DEFAULT NULL,
@@ -8484,10 +8505,10 @@ CREATE TABLE IF NOT EXISTS `dc_wilayah_kerja` (
   `pemotong_pajak` varchar(50) DEFAULT NULL,
   `alamat_KPJ` varchar(50) DEFAULT NULL,
   `kode_KLU` varchar(20) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dc_wilayah_kerja`
+-- Dumping data untuk tabel `dc_wilayah_kerja`
 --
 
 INSERT INTO `dc_wilayah_kerja` (`id_dc_wilayah_kerja`, `ko_wil`, `nawil_search`, `nawil_kerja`, `ket_wil_kerja`, `alamat`, `id_dc_kota`, `kota`, `id_dc_propinsi`, `propinsi`, `kode_pos`, `telpon`, `fax`, `keterangan`, `nama_pimpinan`, `NPWP`, `pemotong_pajak`, `alamat_KPJ`, `kode_KLU`) VALUES
@@ -8507,11 +8528,11 @@ INSERT INTO `dc_wilayah_kerja` (`id_dc_wilayah_kerja`, `ko_wil`, `nawil_search`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_akta_background_ppat`
+-- Struktur dari tabel `dd_akta_background_ppat`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_akta_background_ppat` (
-  `id_dd_akta_background_ppat` int(11) NOT NULL DEFAULT '0',
+CREATE TABLE `dd_akta_background_ppat` (
+  `id_dd_akta_background_ppat` int(11) NOT NULL DEFAULT 0,
   `url_akta` varchar(255) DEFAULT NULL,
   `ukuran_akta` varchar(10) DEFAULT NULL,
   `id_mt_jenis_permintaan_detail` int(11) DEFAULT NULL,
@@ -8522,11 +8543,11 @@ CREATE TABLE IF NOT EXISTS `dd_akta_background_ppat` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_akta_background_ppat_pdf`
+-- Struktur dari tabel `dd_akta_background_ppat_pdf`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_akta_background_ppat_pdf` (
-  `id_dd_akta_background_ppat_pdf` int(11) NOT NULL DEFAULT '0',
+CREATE TABLE `dd_akta_background_ppat_pdf` (
+  `id_dd_akta_background_ppat_pdf` int(11) NOT NULL DEFAULT 0,
   `url_akta` varchar(255) DEFAULT NULL,
   `ukuran_akta` varchar(10) DEFAULT NULL,
   `id_mt_jenis_permintaan_detail` int(11) DEFAULT NULL,
@@ -8537,10 +8558,10 @@ CREATE TABLE IF NOT EXISTS `dd_akta_background_ppat_pdf` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_akta_ppat`
+-- Struktur dari tabel `dd_akta_ppat`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_akta_ppat` (
+CREATE TABLE `dd_akta_ppat` (
   `id_dd_akta_ppat` int(11) NOT NULL,
   `id_mt_jenis_permintaan_detail` int(11) DEFAULT NULL,
   `kolom` varchar(100) DEFAULT NULL,
@@ -8560,10 +8581,10 @@ CREATE TABLE IF NOT EXISTS `dd_akta_ppat` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_akta_ppat_old`
+-- Struktur dari tabel `dd_akta_ppat_old`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_akta_ppat_old` (
+CREATE TABLE `dd_akta_ppat_old` (
   `id_dd_akta_ppat` int(11) NOT NULL,
   `id_mt_jenis_permintaan_detail` int(11) DEFAULT NULL,
   `kolom` varchar(100) DEFAULT NULL,
@@ -8587,10 +8608,10 @@ CREATE TABLE IF NOT EXISTS `dd_akta_ppat_old` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_akta_ppat_pdf`
+-- Struktur dari tabel `dd_akta_ppat_pdf`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_akta_ppat_pdf` (
+CREATE TABLE `dd_akta_ppat_pdf` (
   `id_dd_akta_ppat_pdf` int(11) NOT NULL,
   `id_mt_jenis_permintaan_detail` int(11) DEFAULT NULL,
   `kolom` varchar(100) DEFAULT NULL,
@@ -8610,11 +8631,11 @@ CREATE TABLE IF NOT EXISTS `dd_akta_ppat_pdf` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_bank`
+-- Struktur dari tabel `dd_bank`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_bank` (
-`id_dd_bank` int(11) NOT NULL,
+CREATE TABLE `dd_bank` (
+  `id_dd_bank` int(11) NOT NULL,
   `nama_bank` varchar(50) DEFAULT NULL,
   `nama_bank_sink` varchar(10) DEFAULT NULL,
   `alamat` varchar(100) DEFAULT NULL,
@@ -8622,26 +8643,26 @@ CREATE TABLE IF NOT EXISTS `dd_bank` (
   `status_bank` int(11) DEFAULT NULL COMMENT '1 (aktif),9(tidak aktif)',
   `input_id` int(11) DEFAULT NULL,
   `input_tgl` datetime DEFAULT NULL,
-  `status` tinyint(3) unsigned DEFAULT NULL,
+  `status` tinyint(3) UNSIGNED DEFAULT NULL,
   `status_tgl` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_biaya_pengurusan`
+-- Struktur dari tabel `dd_biaya_pengurusan`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_biaya_pengurusan` (
+CREATE TABLE `dd_biaya_pengurusan` (
   `id_dd_biaya_pengurusan` int(11) NOT NULL,
   `biaya` decimal(10,0) DEFAULT NULL,
-  `pengeluaran` decimal(10,0) DEFAULT '0',
+  `pengeluaran` decimal(10,0) DEFAULT 0,
   `keterangan` varchar(255) DEFAULT NULL,
   `id_mt_jenis_permintaan_detail` int(11) DEFAULT NULL COMMENT 'lihat di mt_jenis_permintaan_detail'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dd_biaya_pengurusan`
+-- Dumping data untuk tabel `dd_biaya_pengurusan`
 --
 
 INSERT INTO `dd_biaya_pengurusan` (`id_dd_biaya_pengurusan`, `biaya`, `pengeluaran`, `keterangan`, `id_mt_jenis_permintaan_detail`) VALUES
@@ -8682,9 +8703,10 @@ INSERT INTO `dd_biaya_pengurusan` (`id_dd_biaya_pengurusan`, `biaya`, `pengeluar
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `dd_biaya_pengurusan_v`
+-- Stand-in struktur untuk tampilan `dd_biaya_pengurusan_v`
+-- (Lihat di bawah untuk tampilan aktual)
 --
-CREATE TABLE IF NOT EXISTS `dd_biaya_pengurusan_v` (
+CREATE TABLE `dd_biaya_pengurusan_v` (
 `id_mt_jenis_permintaan` int(11)
 ,`jenis_permintaan` varchar(100)
 ,`id_mt_jenis_permintaan_detail` int(11)
@@ -8694,27 +8716,28 @@ CREATE TABLE IF NOT EXISTS `dd_biaya_pengurusan_v` (
 ,`biaya` decimal(10,0)
 ,`pengeluaran` decimal(10,0)
 );
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_cnt_akta`
+-- Struktur dari tabel `dd_cnt_akta`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_cnt_akta` (
-`id_akta` int(11) NOT NULL,
+CREATE TABLE `dd_cnt_akta` (
+  `id_akta` int(11) NOT NULL,
   `nama_akta` varchar(255) DEFAULT NULL,
-  `url` text,
+  `url` text DEFAULT NULL,
   `jenis_akta` tinyint(4) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_dokumen_client`
+-- Struktur dari tabel `dd_dokumen_client`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_dokumen_client` (
-`id_dd_dokumen_client` int(11) NOT NULL,
+CREATE TABLE `dd_dokumen_client` (
+  `id_dd_dokumen_client` int(11) NOT NULL,
   `nama_dokumen_client` varchar(100) DEFAULT NULL,
   `keterangan` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -8722,20 +8745,20 @@ CREATE TABLE IF NOT EXISTS `dd_dokumen_client` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_group`
+-- Struktur dari tabel `dd_group`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_group` (
-`id_dd_group` int(11) NOT NULL,
+CREATE TABLE `dd_group` (
+  `id_dd_group` int(11) NOT NULL,
   `nama_group` varchar(50) DEFAULT NULL,
   `keterangan_group` varchar(255) DEFAULT NULL,
   `input_id` int(11) DEFAULT NULL,
   `input_tgl` datetime DEFAULT NULL,
   `status` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dd_group`
+-- Dumping data untuk tabel `dd_group`
 --
 
 INSERT INTO `dd_group` (`id_dd_group`, `nama_group`, `keterangan_group`, `input_id`, `input_tgl`, `status`) VALUES
@@ -8750,20 +8773,20 @@ INSERT INTO `dd_group` (`id_dd_group`, `nama_group`, `keterangan_group`, `input_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_group_menu`
+-- Struktur dari tabel `dd_group_menu`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_group_menu` (
-`id_dd_group_menu` int(11) NOT NULL,
+CREATE TABLE `dd_group_menu` (
+  `id_dd_group_menu` int(11) NOT NULL,
   `id_dd_user` int(11) NOT NULL,
   `id_dc_menu` int(11) DEFAULT NULL,
   `hak_akses` int(11) DEFAULT NULL,
   `input_id` int(11) DEFAULT NULL,
   `input_tgl` datetime DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=352 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dd_group_menu`
+-- Dumping data untuk tabel `dd_group_menu`
 --
 
 INSERT INTO `dd_group_menu` (`id_dd_group_menu`, `id_dd_user`, `id_dc_menu`, `hak_akses`, `input_id`, `input_tgl`) VALUES
@@ -9060,20 +9083,20 @@ INSERT INTO `dd_group_menu` (`id_dd_group_menu`, `id_dd_user`, `id_dc_menu`, `ha
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_group_modul`
+-- Struktur dari tabel `dd_group_modul`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_group_modul` (
-`id_dd_group_modul` int(11) NOT NULL,
+CREATE TABLE `dd_group_modul` (
+  `id_dd_group_modul` int(11) NOT NULL,
   `id_dd_user` int(11) DEFAULT NULL,
   `id_dc_modul` int(11) DEFAULT NULL,
   `hak_akses` int(11) DEFAULT NULL,
   `input_id` int(11) DEFAULT NULL,
   `input_tgl` datetime DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dd_group_modul`
+-- Dumping data untuk tabel `dd_group_modul`
 --
 
 INSERT INTO `dd_group_modul` (`id_dd_group_modul`, `id_dd_user`, `id_dc_modul`, `hak_akses`, `input_id`, `input_tgl`) VALUES
@@ -9096,9 +9119,10 @@ INSERT INTO `dd_group_modul` (`id_dd_group_modul`, `id_dd_user`, `id_dc_modul`, 
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `dd_group_user_detail_new_v`
+-- Stand-in struktur untuk tampilan `dd_group_user_detail_new_v`
+-- (Lihat di bawah untuk tampilan aktual)
 --
-CREATE TABLE IF NOT EXISTS `dd_group_user_detail_new_v` (
+CREATE TABLE `dd_group_user_detail_new_v` (
 `nama_group` varchar(100)
 ,`id_dc_sub_menu` int(11)
 ,`nama_sub_menu` varchar(50)
@@ -9114,13 +9138,14 @@ CREATE TABLE IF NOT EXISTS `dd_group_user_detail_new_v` (
 ,`id_dd_user_group` int(11)
 ,`id_dd_user_group_detail` int(11)
 );
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_jabatan_pt`
+-- Struktur dari tabel `dd_jabatan_pt`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_jabatan_pt` (
+CREATE TABLE `dd_jabatan_pt` (
   `id_jabatan_pt` varchar(2) NOT NULL,
   `nama_jabatan_pt` varchar(100) DEFAULT NULL,
   `keterangan_jabatan_pt` varchar(255) DEFAULT NULL,
@@ -9131,16 +9156,16 @@ CREATE TABLE IF NOT EXISTS `dd_jabatan_pt` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_jangka_waktu`
+-- Struktur dari tabel `dd_jangka_waktu`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_jangka_waktu` (
+CREATE TABLE `dd_jangka_waktu` (
   `id_dd_jangka_waktu` int(65) NOT NULL,
   `nama_jangka_waktu` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dd_jangka_waktu`
+-- Dumping data untuk tabel `dd_jangka_waktu`
 --
 
 INSERT INTO `dd_jangka_waktu` (`id_dd_jangka_waktu`, `nama_jangka_waktu`) VALUES
@@ -9151,10 +9176,10 @@ INSERT INTO `dd_jangka_waktu` (`id_dd_jangka_waktu`, `nama_jangka_waktu`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_jenis_akta`
+-- Struktur dari tabel `dd_jenis_akta`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_jenis_akta` (
+CREATE TABLE `dd_jenis_akta` (
   `id_dd_jenis_akta` int(11) NOT NULL,
   `nama_akta` varchar(255) DEFAULT NULL,
   `keterangan` varchar(255) DEFAULT NULL
@@ -9163,30 +9188,30 @@ CREATE TABLE IF NOT EXISTS `dd_jenis_akta` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_jenis_pengurusan`
+-- Struktur dari tabel `dd_jenis_pengurusan`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_jenis_pengurusan` (
-`id_jenis_pengurusan` int(11) NOT NULL,
+CREATE TABLE `dd_jenis_pengurusan` (
+  `id_jenis_pengurusan` int(11) NOT NULL,
   `nama_jenis_pengurusan` varchar(255) DEFAULT NULL,
   `keterangan_jenis_pengurusan` varchar(255) DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=1072 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_jenis_user`
+-- Struktur dari tabel `dd_jenis_user`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_jenis_user` (
-`id_dd_jenis_user` int(11) NOT NULL,
+CREATE TABLE `dd_jenis_user` (
+  `id_dd_jenis_user` int(11) NOT NULL,
   `nama_jenis_user` varchar(255) DEFAULT NULL,
   `nama_tabel` varchar(255) DEFAULT NULL,
   `keterangan` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dd_jenis_user`
+-- Dumping data untuk tabel `dd_jenis_user`
 --
 
 INSERT INTO `dd_jenis_user` (`id_dd_jenis_user`, `nama_jenis_user`, `nama_tabel`, `keterangan`) VALUES
@@ -9197,10 +9222,10 @@ INSERT INTO `dd_jenis_user` (`id_dd_jenis_user`, `nama_jenis_user`, `nama_tabel`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_jns_kegiatan`
+-- Struktur dari tabel `dd_jns_kegiatan`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_jns_kegiatan` (
+CREATE TABLE `dd_jns_kegiatan` (
   `kd_jns_kegiatan` varchar(8) NOT NULL,
   `nm_jns_kegiatan` varchar(120) NOT NULL,
   `uraian_kegiatan` longtext NOT NULL,
@@ -9210,7 +9235,7 @@ CREATE TABLE IF NOT EXISTS `dd_jns_kegiatan` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dd_jns_kegiatan`
+-- Dumping data untuk tabel `dd_jns_kegiatan`
 --
 
 INSERT INTO `dd_jns_kegiatan` (`kd_jns_kegiatan`, `nm_jns_kegiatan`, `uraian_kegiatan`, `kd_jns_maksud`, `is_active`, `flag_jenis_badan_hukum`) VALUES
@@ -9742,7 +9767,7 @@ INSERT INTO `dd_jns_kegiatan` (`kd_jns_kegiatan`, `nm_jns_kegiatan`, `uraian_keg
 ('503101', 'Menghimpun dana masyarakat', 'Menghimpun dana dari masyarakat dalam bentuk simpanan berupa  deposito berjangka, Tabungan, dan atau bentuk lainnya yang dipersamakan dengan itu.', '5031', '1', NULL),
 ('503104', 'Menempatkan dana', 'Menempatkan dananya dalam bentuk Sertifikat Bank Indonesia ( SBBI ), deposito berjangka, sertifikat deposito, dan / atau tabungan dana bank lain.', '5031', '1', NULL),
 ('503105', 'Pelelangan Agunan', 'Membeli melalui pelelangan agunan baik semua maupun sebagian dalam hal debitur tidak memenuhi kewajibannya kepada Bank, dengan ketentuan agunan yang dibeli tersebut wajib dicairkan secepatnya.', '5031', '1', NULL),
-('504101', 'Menghimpun dana dari masyarakat.', 'Menghimpun dana dari masyarakat dalam bentuk: (a) Simpanan berupa Tabungan atau yang dipersamakan dengan itu berdasarkan Akad wadi''ah atau Akad lain yang tidak bertentangan dengan Prinsip Syariah, dan (b) Investasi berupa Deposito atau Tabungan atau bentuk lainnya yang dipersamakan dengan itu berdasarkan Akad Mudharabah atau Akad lain yang tidak bertentangan dengan Prinsip Syariah.', '5041', '1', NULL),
+('504101', 'Menghimpun dana dari masyarakat.', 'Menghimpun dana dari masyarakat dalam bentuk: (a) Simpanan berupa Tabungan atau yang dipersamakan dengan itu berdasarkan Akad wadi\'ah atau Akad lain yang tidak bertentangan dengan Prinsip Syariah, dan (b) Investasi berupa Deposito atau Tabungan atau bentuk lainnya yang dipersamakan dengan itu berdasarkan Akad Mudharabah atau Akad lain yang tidak bertentangan dengan Prinsip Syariah.', '5041', '1', NULL),
 ('103245', 'Industri rekaman', 'Industri rekaman kaset, yang meliputi rekaman kaset dakwah, lagu rohani dan lagu lagu kesenian lain dan kegiatan lain yang terkait.', '1032', '1', NULL),
 ('611202', 'Jasa Cash in Save', 'Meliputi jasa penyimpanan uang tunai.', '6112', '1', NULL),
 ('611204', 'Jasa Pengisian ATM ', 'Meliputi jasa pendistribusian, pengisian,balancing/penyesuaian uang tunai di ATM', '6112', '1', NULL),
@@ -10189,9 +10214,9 @@ INSERT INTO `dd_jns_kegiatan` (`kd_jns_kegiatan`, `nm_jns_kegiatan`, `uraian_keg
 ('102268', 'Perdagangan Hasil Produksi Keras dan Pulp', 'Perdagangan Hasil Produksi Keras dan Pulp meliputi mengemas dan memperdagangkan hasil-hasil produksi kertas dan pulp tersebut baik di dalam maupun di luar negeri termasuk pengelolaan pelabuhan khusus', '1022', '1', NULL),
 ('102269', 'Perdagangan dan Export Import Barang-barang Plasterboard (Plafon, Gypsum)', 'Perdagangan dan Export Import barang-barang Plasterboard(Plafon, Gypsum), bertindak sebagai agen, grosir barang-barant tersebut, dan manjadi distributor atau perwakilan perusahaan plasterboard ', '1022', '1', NULL),
 ('109382', 'Jasa Reparasi dan Perawatan barang-barang yang terbuat dari kulit dan karet', 'Jasa Reparasi dan Perawatan barang-barang yang terbuat dari kulit dan karet serta kegiatan usaha terkait.', '1093', '1', NULL),
-('502103', 'Menghimpun dana dalam bentuk Simpanan berupa Giro, Tabungan  atau bentuk lainnya.', 'Menghimpun dana dalam bentuk Simpanan berupa Giro, Tabungan  atau bentuk lainnya yang dipersamakan dengan itu berdasarkan Akad wadi''ah atau Akad lain yang tidak bertentangan dengan Prinsip Syariah.', '5021', '1', NULL),
+('502103', 'Menghimpun dana dalam bentuk Simpanan berupa Giro, Tabungan  atau bentuk lainnya.', 'Menghimpun dana dalam bentuk Simpanan berupa Giro, Tabungan  atau bentuk lainnya yang dipersamakan dengan itu berdasarkan Akad wadi\'ah atau Akad lain yang tidak bertentangan dengan Prinsip Syariah.', '5021', '1', NULL),
 ('502105', 'Menyalurkan Pembiayaan bagi hasil.', 'Menyalurkan Pembiayaan bagi hasil berdasarkan Akad mudharabah, Akad musyarakah, atau Akad lain yang tidak bertentangan dengan Prinsip Syariah', '5021', '1', NULL),
-('502106', 'Menyalurkan Pembiayaan.', 'Menyalurkan Pembiayaan berdasarkan Akad mudharabah, Akad salam, Akad istishna'', Akad qardh, atau Akad lain yang tidak bertentangan dengan Prinsip Syariah', '5021', '1', NULL),
+('502106', 'Menyalurkan Pembiayaan.', 'Menyalurkan Pembiayaan berdasarkan Akad mudharabah, Akad salam, Akad istishna\', Akad qardh, atau Akad lain yang tidak bertentangan dengan Prinsip Syariah', '5021', '1', NULL),
 ('502107', 'Menyalurkan Pembiayaan penyewaan barang bergerak atau tidak bergerak kepada Nasabah.', 'Menyalurkan Pembiayaan penyewaan barang bergerak atau tidak bergerak kepada Nasabah berdasarkan Akad ijarah dah /atau sewa beli dalam bentuk ijarah muntahiya bittamlik atau Akad lain yang tidak bertentangan dengan Prinsip Syariah', '5021', '1', NULL),
 ('502110', 'Membeli, menjual, atau menjamin atas risiko sendiri surat berharga pihak ketiga.', 'Membeli, menjual, atau menjamin atas risiko sendiri surat berharga pihak ketiga yang diterbitkan atas dasar transaksi nyata berdasarkan Prinsip Syariah, antara lain, seperti Akad ijarah, musyarakah, mudharabah, murabanah, kafalah, atau hawalah.', '5021', '1', NULL),
 ('502112', 'Menerima pembayaran dari tagihan atas surat berharga', 'Menerima pembayaran dari tagihan atas surat berharga dan melakukan perhitungan dengan pihak ketiga atau antar pihak ketiga berdasarkan Prinsip Syariah', '5021', '1', NULL),
@@ -10312,7 +10337,7 @@ INSERT INTO `dd_jns_kegiatan` (`kd_jns_kegiatan`, `nm_jns_kegiatan`, `uraian_keg
 ('502114', 'Menyediakan tempat untuk menyimpan baran dan surat berharga berdasarkan Prinsip Syariah', 'Menyediakan tempat untuk menyimpan baran dan surat berharga berdasarkan Prinsip Syariah', '5021', '1', NULL),
 ('502116', 'Melakukan fungsi sebagai Wali Amanat berdasarkan Akad Wakalah', 'Melakukan fungsi sebagai Wali Amanat berdasarkan Akad Wakalah', '5021', '1', NULL),
 ('502117', 'Memberikan fasilitas letter of credit atau bank garansi berdasarkan Prinsip Syariah', 'Memberikan fasilitas letter of credit atau bank garansi berdasarkan Prinsip Syariah', '5021', '1', NULL),
-('504103', 'Menempatkan dana pada Bank Syariah lain.', 'Menempatkan dana pada Bank Syariah lain dalam bentuk titipan berdasarkan Akad wadi''ah atau investasi berdasarkan Akad mudharabah dan/atau Akad lain yang tidak bertentangan dengan Prinsip Syariah.', '5041', '1', NULL),
+('504103', 'Menempatkan dana pada Bank Syariah lain.', 'Menempatkan dana pada Bank Syariah lain dalam bentuk titipan berdasarkan Akad wadi\'ah atau investasi berdasarkan Akad mudharabah dan/atau Akad lain yang tidak bertentangan dengan Prinsip Syariah.', '5041', '1', NULL),
 ('504105', 'Menyediakan produk atau melakukan kegiatan usaha Bank Syariah lainnya', 'Menyediakan produk atau melakukan kegiatan usaha Bank Syariah lainnya yang sesuai dengan Prinsip Syariah berdasarkan persetujuan Bank Indonesia', '5041', '1', NULL),
 ('103296', 'Industri Polyurethane dan barang-barang dari polyurethane', 'Meliputi pembuatan bahan dan barang-barang dari polyurethane', '1032', '1', NULL),
 ('731215', 'Jasa Penyediaan dan Pemanfaatan Multimedia melalui perangkat Telekomunikasi', 'Jasa Penyediaan dan Pemanfaatan Multimedia melalui perangkat Telekomunikasi', '7312', '1', NULL),
@@ -10341,10 +10366,10 @@ INSERT INTO `dd_jns_kegiatan` (`kd_jns_kegiatan`, `nm_jns_kegiatan`, `uraian_keg
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_jns_maksud`
+-- Struktur dari tabel `dd_jns_maksud`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_jns_maksud` (
+CREATE TABLE `dd_jns_maksud` (
   `kd_jns_maksud` varchar(4) NOT NULL,
   `nm_jns_maksud` varchar(90) DEFAULT NULL,
   `uraian_maksud` varchar(128) DEFAULT NULL,
@@ -10354,7 +10379,7 @@ CREATE TABLE IF NOT EXISTS `dd_jns_maksud` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dd_jns_maksud`
+-- Dumping data untuk tabel `dd_jns_maksud`
 --
 
 INSERT INTO `dd_jns_maksud` (`kd_jns_maksud`, `nm_jns_maksud`, `uraian_maksud`, `iscenter`, `is_active`, `id_jns_perseroan`) VALUES
@@ -10431,10 +10456,10 @@ INSERT INTO `dd_jns_maksud` (`kd_jns_maksud`, `nm_jns_maksud`, `uraian_maksud`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_jns_perseroan`
+-- Struktur dari tabel `dd_jns_perseroan`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_jns_perseroan` (
+CREATE TABLE `dd_jns_perseroan` (
   `id_jns_perseroan` varchar(2) NOT NULL,
   `nm_jns_perseroan` varchar(25) NOT NULL,
   `perseroan` varchar(40) NOT NULL,
@@ -10442,7 +10467,7 @@ CREATE TABLE IF NOT EXISTS `dd_jns_perseroan` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dd_jns_perseroan`
+-- Dumping data untuk tabel `dd_jns_perseroan`
 --
 
 INSERT INTO `dd_jns_perseroan` (`id_jns_perseroan`, `nm_jns_perseroan`, `perseroan`, `is_active`) VALUES
@@ -10459,26 +10484,26 @@ INSERT INTO `dd_jns_perseroan` (`id_jns_perseroan`, `nm_jns_perseroan`, `persero
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_kamus_data_variabel`
+-- Struktur dari tabel `dd_kamus_data_variabel`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_kamus_data_variabel` (
-`id_dd_kamus_data_variabel` int(11) NOT NULL,
+CREATE TABLE `dd_kamus_data_variabel` (
+  `id_dd_kamus_data_variabel` int(11) NOT NULL,
   `nama_variabel` varchar(100) DEFAULT NULL,
   `nama_pengganti` varchar(100) DEFAULT NULL,
   `nama_tabel` varchar(100) DEFAULT NULL,
   `nama_field` varchar(100) DEFAULT NULL,
   `sql_kamus` varchar(1000) DEFAULT NULL,
   `keterangan` varchar(1000) DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_klui`
+-- Struktur dari tabel `dd_klui`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_klui` (
+CREATE TABLE `dd_klui` (
   `ID_KLUI` decimal(20,0) NOT NULL,
   `ID_KLUI_KATEGORI` varchar(1) NOT NULL,
   `GP` varchar(2) DEFAULT NULL,
@@ -10491,7 +10516,7 @@ CREATE TABLE IF NOT EXISTS `dd_klui` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dd_klui`
+-- Dumping data untuk tabel `dd_klui`
 --
 
 INSERT INTO `dd_klui` (`ID_KLUI`, `ID_KLUI_KATEGORI`, `GP`, `GOL`, `SUB`, `KEL`, `LVL`, `JUDUL`, `URAIAN`) VALUES
@@ -11193,10 +11218,10 @@ INSERT INTO `dd_klui` (`ID_KLUI`, `ID_KLUI_KATEGORI`, `GP`, `GOL`, `SUB`, `KEL`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_klui_kategori`
+-- Struktur dari tabel `dd_klui_kategori`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_klui_kategori` (
+CREATE TABLE `dd_klui_kategori` (
   `ID_KLUI_KATEGORI` varchar(1) NOT NULL,
   `KATAGORI` varchar(80) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -11204,11 +11229,11 @@ CREATE TABLE IF NOT EXISTS `dd_klui_kategori` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_konfigurasi`
+-- Struktur dari tabel `dd_konfigurasi`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_konfigurasi` (
-`id_dd_konfigurasi` int(11) NOT NULL,
+CREATE TABLE `dd_konfigurasi` (
+  `id_dd_konfigurasi` int(11) NOT NULL,
   `kode_rs` char(2) DEFAULT NULL,
   `nama_perusahaan` varchar(50) DEFAULT NULL,
   `nama_singkat` varchar(16) DEFAULT NULL,
@@ -11226,10 +11251,10 @@ CREATE TABLE IF NOT EXISTS `dd_konfigurasi` (
   `logo_small` varchar(50) DEFAULT NULL,
   `html_title` varchar(255) DEFAULT NULL,
   `kd_notaris` varchar(6) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dd_konfigurasi`
+-- Dumping data untuk tabel `dd_konfigurasi`
 --
 
 INSERT INTO `dd_konfigurasi` (`id_dd_konfigurasi`, `kode_rs`, `nama_perusahaan`, `nama_singkat`, `nama_aplikasi`, `alamat`, `kota`, `propinsi`, `kode_pos`, `telpon`, `fax`, `nama_pimpinan`, `kontak_person`, `keterangan`, `logo`, `logo_small`, `html_title`, `kd_notaris`) VALUES
@@ -11238,11 +11263,11 @@ INSERT INTO `dd_konfigurasi` (`id_dd_konfigurasi`, `kode_rs`, `nama_perusahaan`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_lokasi`
+-- Struktur dari tabel `dd_lokasi`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_lokasi` (
-`id_dd_lokasi` int(11) NOT NULL,
+CREATE TABLE `dd_lokasi` (
+  `id_dd_lokasi` int(11) NOT NULL,
   `kode_lantai` int(11) NOT NULL,
   `kode_lokasi` char(10) NOT NULL,
   `nama_singkat` varchar(10) NOT NULL,
@@ -11255,12 +11280,12 @@ CREATE TABLE IF NOT EXISTS `dd_lokasi` (
   `tgl_berlaku` datetime DEFAULT NULL,
   `input_id` smallint(6) NOT NULL,
   `input_tgl` datetime NOT NULL,
-  `status` tinyint(3) unsigned NOT NULL,
+  `status` tinyint(3) UNSIGNED NOT NULL,
   `status_tgl` datetime NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dd_lokasi`
+-- Dumping data untuk tabel `dd_lokasi`
 --
 
 INSERT INTO `dd_lokasi` (`id_dd_lokasi`, `kode_lantai`, `kode_lokasi`, `nama_singkat`, `nama_lengkap`, `luas_lantai`, `area_umum`, `keterangan`, `ko_wil`, `fungsi`, `tgl_berlaku`, `input_id`, `input_tgl`, `status`, `status_tgl`) VALUES
@@ -11281,35 +11306,35 @@ INSERT INTO `dd_lokasi` (`id_dd_lokasi`, `kode_lantai`, `kode_lokasi`, `nama_sin
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_notaris_kerjasama`
+-- Struktur dari tabel `dd_notaris_kerjasama`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_notaris_kerjasama` (
-`id_dd_notaris_kerjasama` int(11) NOT NULL,
+CREATE TABLE `dd_notaris_kerjasama` (
+  `id_dd_notaris_kerjasama` int(11) NOT NULL,
   `nama_notaris` varchar(255) DEFAULT NULL,
-  `status` tinyint(4) DEFAULT '1' COMMENT '1:aktif,2:non aktif',
+  `status` tinyint(4) DEFAULT 1 COMMENT '1:aktif,2:non aktif',
   `daerah_kerja` varchar(255) DEFAULT NULL,
   `no_sk` varchar(100) DEFAULT NULL,
   `alamat` varchar(255) DEFAULT NULL,
   `telp` varchar(100) DEFAULT NULL,
   `fax` varchar(100) DEFAULT NULL,
   `tgl_sk` datetime DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_pp_26`
+-- Struktur dari tabel `dd_pp_26`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_pp_26` (
+CREATE TABLE `dd_pp_26` (
   `ID_PP_26` char(18) NOT NULL,
   `NAMA_PERUSAHAAN_PP_26` char(18) DEFAULT NULL,
   `KETERANGAN_PP_26` char(18) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dd_pp_26`
+-- Dumping data untuk tabel `dd_pp_26`
 --
 
 INSERT INTO `dd_pp_26` (`ID_PP_26`, `NAMA_PERUSAHAAN_PP_26`, `KETERANGAN_PP_26`) VALUES
@@ -11318,17 +11343,17 @@ INSERT INTO `dd_pp_26` (`ID_PP_26`, `NAMA_PERUSAHAAN_PP_26`, `KETERANGAN_PP_26`)
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_stat_perseroan`
+-- Struktur dari tabel `dd_stat_perseroan`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_stat_perseroan` (
+CREATE TABLE `dd_stat_perseroan` (
   `id_stat_perseroan` decimal(65,30) NOT NULL,
   `nm_stat_perseroan` varchar(50) NOT NULL,
   `status` varchar(8) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dd_stat_perseroan`
+-- Dumping data untuk tabel `dd_stat_perseroan`
 --
 
 INSERT INTO `dd_stat_perseroan` (`id_stat_perseroan`, `nm_stat_perseroan`, `status`) VALUES
@@ -11339,10 +11364,10 @@ INSERT INTO `dd_stat_perseroan` (`id_stat_perseroan`, `nm_stat_perseroan`, `stat
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_syarat_pengurusan`
+-- Struktur dari tabel `dd_syarat_pengurusan`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_syarat_pengurusan` (
+CREATE TABLE `dd_syarat_pengurusan` (
   `id_dd_syarat_pengurusan` int(11) NOT NULL,
   `nama_syarat_pengurusan` varchar(150) DEFAULT NULL,
   `asumsi_lama_waktu` int(11) DEFAULT NULL COMMENT 'dalam hari',
@@ -11359,10 +11384,10 @@ CREATE TABLE IF NOT EXISTS `dd_syarat_pengurusan` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_syarat_pt`
+-- Struktur dari tabel `dd_syarat_pt`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_syarat_pt` (
+CREATE TABLE `dd_syarat_pt` (
   `id_syarat` int(65) NOT NULL,
   `nama_syarat` varchar(150) DEFAULT NULL,
   `keterangan_syarat` varchar(255) DEFAULT NULL,
@@ -11376,9 +11401,10 @@ CREATE TABLE IF NOT EXISTS `dd_syarat_pt` (
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `dd_syarat_pt_v`
+-- Stand-in struktur untuk tampilan `dd_syarat_pt_v`
+-- (Lihat di bawah untuk tampilan aktual)
 --
-CREATE TABLE IF NOT EXISTS `dd_syarat_pt_v` (
+CREATE TABLE `dd_syarat_pt_v` (
 `jenis_permintaan` varchar(100)
 ,`jenis_permintaan_detail` varchar(100)
 ,`nama_syarat` varchar(150)
@@ -11388,65 +11414,66 @@ CREATE TABLE IF NOT EXISTS `dd_syarat_pt_v` (
 ,`id_mt_jenis_permintaan` int(11)
 ,`id_mt_jenis_permintaan_detail` int(11)
 );
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_template_akta`
+-- Struktur dari tabel `dd_template_akta`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_template_akta` (
-`id_dd_template_akta` int(11) NOT NULL,
+CREATE TABLE `dd_template_akta` (
+  `id_dd_template_akta` int(11) NOT NULL,
   `id_dd_jenis_akta` int(11) DEFAULT NULL,
   `model_template` varchar(255) DEFAULT NULL,
   `urutan` int(11) DEFAULT NULL,
-  `isi_template` longtext,
-  `keterangan` text,
+  `isi_template` longtext DEFAULT NULL,
+  `keterangan` text DEFAULT NULL,
   `id_mt_jenis_permintaan_detail` int(11) DEFAULT NULL,
-  `flag_aktif` tinyint(4) DEFAULT '0' COMMENT '9:Tidak Aktif'
-) ENGINE=MyISAM AUTO_INCREMENT=206 DEFAULT CHARSET=utf8;
+  `flag_aktif` tinyint(4) DEFAULT 0 COMMENT '9:Tidak Aktif'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_template_akta_old`
+-- Struktur dari tabel `dd_template_akta_old`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_template_akta_old` (
-`id_dd_template_akta` int(11) NOT NULL,
+CREATE TABLE `dd_template_akta_old` (
+  `id_dd_template_akta` int(11) NOT NULL,
   `id_dd_jenis_akta` int(11) DEFAULT NULL,
   `model_template` varchar(255) DEFAULT NULL,
   `urutan` int(11) DEFAULT NULL,
-  `isi_template` longtext,
-  `keterangan` text,
+  `isi_template` longtext DEFAULT NULL,
+  `keterangan` text DEFAULT NULL,
   `id_mt_jenis_permintaan_detail` int(11) DEFAULT NULL,
-  `flag_aktif` tinyint(4) DEFAULT '0' COMMENT '9:Tidak Aktif'
-) ENGINE=MyISAM AUTO_INCREMENT=290 DEFAULT CHARSET=utf8;
+  `flag_aktif` tinyint(4) DEFAULT 0 COMMENT '9:Tidak Aktif'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_template_akta_ppat`
+-- Struktur dari tabel `dd_template_akta_ppat`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_template_akta_ppat` (
-`id_dd_template_akta` int(11) NOT NULL,
+CREATE TABLE `dd_template_akta_ppat` (
+  `id_dd_template_akta` int(11) NOT NULL,
   `id_dd_jenis_akta` int(11) DEFAULT NULL,
   `model_template` varchar(255) DEFAULT NULL,
   `urutan` int(11) DEFAULT NULL,
-  `isi_template` longtext,
-  `keterangan` text,
+  `isi_template` longtext DEFAULT NULL,
+  `keterangan` text DEFAULT NULL,
   `id_mt_jenis_permintaan_detail` int(11) DEFAULT NULL,
-  `flag_aktif` tinyint(4) DEFAULT '0' COMMENT '9:Tidak Aktif'
-) ENGINE=MyISAM AUTO_INCREMENT=290 DEFAULT CHARSET=utf8;
+  `flag_aktif` tinyint(4) DEFAULT 0 COMMENT '9:Tidak Aktif'
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_user`
+-- Struktur dari tabel `dd_user`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_user` (
-`id_dd_user` int(11) NOT NULL,
+CREATE TABLE `dd_user` (
+  `id_dd_user` int(11) NOT NULL,
   `name` varchar(100) NOT NULL,
   `username` varchar(50) DEFAULT NULL,
   `password` varchar(500) DEFAULT NULL,
@@ -11465,37 +11492,38 @@ CREATE TABLE IF NOT EXISTS `dd_user` (
   `foto` varchar(255) DEFAULT NULL,
   `role_id` varchar(100) NOT NULL,
   `id_active` varchar(100) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dd_user`
+-- Dumping data untuk tabel `dd_user`
 --
 
 INSERT INTO `dd_user` (`id_dd_user`, `name`, `username`, `password`, `npp`, `no_induk`, `id_dd_group`, `id_dd_user_group`, `status`, `ko_wil`, `input_id`, `input_tgl`, `status_tgl`, `id_dd_jenis_user`, `no_id_jenis`, `kd_notaris`, `foto`, `role_id`, `id_active`) VALUES
 (3, 'Wildan Arindi', 'wildan', '$2y$10$aFPhfSYlccoGFvLbYRozn.OhZ4G5rL6Us78gu0GJb18knEQUFjRuG', NULL, '2', NULL, NULL, NULL, NULL, NULL, '0000-00-00 00:00:00', NULL, NULL, NULL, NULL, 'default.jpg', '1', '1'),
 (15, 'yyy', 'rosi', '$2y$10$X6gfRPKERZqu00mguz32UuliHqzplW26cn2wS/4kBEqT/PA142Vm.', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-12-04 19:46:42', NULL, NULL, NULL, NULL, 'default.jpg', 'Karyawan', ''),
-(16, 'Dr. Mariani Indahri', 'mariani', '$2y$10$UHKQeNUfhrRnyRE9xVAlleGZZC9ygkaENibEikqVYBXSDlT/x2ncO', NULL, '4', NULL, NULL, NULL, NULL, NULL, '2019-12-07 01:53:48', NULL, NULL, NULL, NULL, 'default.jpg', '2', '1'),
+(16, 'dr. Mariani Indahri', 'mariani', '$2y$10$UHKQeNUfhrRnyRE9xVAlleGZZC9ygkaENibEikqVYBXSDlT/x2ncO', NULL, '4', NULL, NULL, NULL, NULL, NULL, '2019-12-07 01:53:48', NULL, NULL, NULL, NULL, 'default.jpg', '2', '1'),
 (21, 'rrrr', 're', '$2y$10$zGXNnVdEikVJ3MtbNQiVyeNcGxO/XFPd3MbX0Pdl0Q9dCTOzaMqde', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-12-07 02:38:31', NULL, NULL, NULL, NULL, 'default.jpg', 'Sekretariat', ''),
 (22, 'Andri Eko Prasetyo', 'andri', '$2y$10$Ss.Wmt6uWDyZdPRKAVoW8uGi53wSq9R.8v4DemaQIykLlUbTAmMqi', NULL, '1', NULL, NULL, NULL, NULL, NULL, '2019-12-11 01:09:48', NULL, NULL, NULL, NULL, 'default.jpg', '4', '1'),
-(23, 'Meiryna', 'meiryna', '$2y$10$UHKQeNUfhrRnyRE9xVAlleGZZC9ygkaENibEikqVYBXSDlT/x2ncO', NULL, '5', NULL, NULL, NULL, NULL, NULL, '2019-12-15 20:20:48', NULL, NULL, NULL, NULL, 'default.jpg', '3', '1'),
-(24, 'Dra. Endah Kusumaningrum', 'endah', '$2y$10$dYfWyrnWK4.gETzE8NRoPOQcLDDkS6.a7WroJWJerSj.J8LVt1gD6', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-12-18 01:21:10', NULL, NULL, NULL, NULL, 'default.jpg', '2', '1');
+(23, 'dr, Alberti Shintya Sari', 'shintya', '$2y$10$UHKQeNUfhrRnyRE9xVAlleGZZC9ygkaENibEikqVYBXSDlT/x2ncO', NULL, '5', NULL, NULL, NULL, NULL, NULL, '2019-12-15 20:20:48', NULL, NULL, NULL, NULL, 'default.jpg', '6', '1'),
+(24, 'Dra. Endah Kusumaningrum', 'endah', '$2y$10$dYfWyrnWK4.gETzE8NRoPOQcLDDkS6.a7WroJWJerSj.J8LVt1gD6', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-12-18 01:21:10', NULL, NULL, NULL, NULL, 'default.jpg', '5', '1'),
+(25, 'Wildan A', 'wildan4', '$2y$10$5C1LKN2emOyTLObJWrDi9..TOeIcClfoJ2pPztaoQjeo4Kc9TafOC', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-04-26 23:20:01', NULL, NULL, NULL, NULL, 'default.jpg', '3', '1');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_user_group`
+-- Struktur dari tabel `dd_user_group`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_user_group` (
-`id_dd_user_group` int(11) NOT NULL,
+CREATE TABLE `dd_user_group` (
+  `id_dd_user_group` int(11) NOT NULL,
   `nama_group` varchar(100) DEFAULT NULL,
   `keterangan` varchar(255) DEFAULT NULL,
   `input_id` int(11) DEFAULT NULL,
   `input_tgl` datetime DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=97 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dd_user_group`
+-- Dumping data untuk tabel `dd_user_group`
 --
 
 INSERT INTO `dd_user_group` (`id_dd_user_group`, `nama_group`, `keterangan`, `input_id`, `input_tgl`) VALUES
@@ -11506,19 +11534,19 @@ INSERT INTO `dd_user_group` (`id_dd_user_group`, `nama_group`, `keterangan`, `in
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_user_group_detail`
+-- Struktur dari tabel `dd_user_group_detail`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_user_group_detail` (
-`id_dd_user_group_detail` int(11) NOT NULL,
+CREATE TABLE `dd_user_group_detail` (
+  `id_dd_user_group_detail` int(11) NOT NULL,
   `id_dd_user_group` int(11) DEFAULT NULL,
   `id_dc_sub_menu` int(11) DEFAULT NULL,
   `hak_akses_menu` int(11) DEFAULT NULL,
   `keterangan` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3192 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dd_user_group_detail`
+-- Dumping data untuk tabel `dd_user_group_detail`
 --
 
 INSERT INTO `dd_user_group_detail` (`id_dd_user_group_detail`, `id_dd_user_group`, `id_dc_sub_menu`, `hak_akses_menu`, `keterangan`) VALUES
@@ -13662,11 +13690,11 @@ INSERT INTO `dd_user_group_detail` (`id_dd_user_group_detail`, `id_dd_user_group
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dd_user_old`
+-- Struktur dari tabel `dd_user_old`
 --
 
-CREATE TABLE IF NOT EXISTS `dd_user_old` (
-`id_dd_user` int(11) NOT NULL,
+CREATE TABLE `dd_user_old` (
+  `id_dd_user` int(11) NOT NULL,
   `username` varchar(50) DEFAULT NULL,
   `password` varchar(50) DEFAULT NULL,
   `npp` varchar(5) DEFAULT NULL,
@@ -13686,25 +13714,25 @@ CREATE TABLE IF NOT EXISTS `dd_user_old` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dev_bugs_report`
+-- Struktur dari tabel `dev_bugs_report`
 --
 
-CREATE TABLE IF NOT EXISTS `dev_bugs_report` (
-`id_dev_bugs_report` int(11) NOT NULL,
+CREATE TABLE `dev_bugs_report` (
+  `id_dev_bugs_report` int(11) NOT NULL,
   `id_dc_modul` int(11) DEFAULT NULL,
   `id_dc_menu` int(11) DEFAULT NULL,
   `id_dc_sub_menu` int(11) DEFAULT NULL,
   `nama_tab` varchar(100) DEFAULT NULL,
-  `bugs_report` text,
+  `bugs_report` text DEFAULT NULL,
   `tgl_report` datetime DEFAULT NULL,
   `user_report` varchar(100) DEFAULT NULL,
   `tgl_input` datetime DEFAULT NULL,
   `tgl_follow_up` datetime DEFAULT NULL,
-  `ket_follow_up` text
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+  `ket_follow_up` text DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dev_bugs_report`
+-- Dumping data untuk tabel `dev_bugs_report`
 --
 
 INSERT INTO `dev_bugs_report` (`id_dev_bugs_report`, `id_dc_modul`, `id_dc_menu`, `id_dc_sub_menu`, `nama_tab`, `bugs_report`, `tgl_report`, `user_report`, `tgl_input`, `tgl_follow_up`, `ket_follow_up`) VALUES
@@ -13713,22 +13741,22 @@ INSERT INTO `dev_bugs_report` (`id_dev_bugs_report`, `id_dc_modul`, `id_dc_menu`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dev_progress`
+-- Struktur dari tabel `dev_progress`
 --
 
-CREATE TABLE IF NOT EXISTS `dev_progress` (
-`id_dev_progress` int(11) NOT NULL,
+CREATE TABLE `dev_progress` (
+  `id_dev_progress` int(11) NOT NULL,
   `id_dc_sub_menu` int(11) DEFAULT NULL,
   `target_tgl_mulai` datetime DEFAULT NULL,
   `target_tgl_selesai` datetime DEFAULT NULL,
   `tgl_update_status` datetime DEFAULT NULL,
   `persen_status` int(11) DEFAULT NULL,
   `programmer` varchar(100) DEFAULT NULL,
-  `keterangan` text
-) ENGINE=MyISAM AUTO_INCREMENT=254 DEFAULT CHARSET=utf8;
+  `keterangan` text DEFAULT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `dev_progress`
+-- Dumping data untuk tabel `dev_progress`
 --
 
 INSERT INTO `dev_progress` (`id_dev_progress`, `id_dc_sub_menu`, `target_tgl_mulai`, `target_tgl_selesai`, `tgl_update_status`, `persen_status`, `programmer`, `keterangan`) VALUES
@@ -13989,9 +14017,10 @@ INSERT INTO `dev_progress` (`id_dev_progress`, `id_dc_sub_menu`, `target_tgl_mul
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `dev_progress_v`
+-- Stand-in struktur untuk tampilan `dev_progress_v`
+-- (Lihat di bawah untuk tampilan aktual)
 --
-CREATE TABLE IF NOT EXISTS `dev_progress_v` (
+CREATE TABLE `dev_progress_v` (
 `id_dc_modular` int(11)
 ,`nama_modular` varchar(50)
 ,`id_dc_modul` int(11)
@@ -14006,19 +14035,20 @@ CREATE TABLE IF NOT EXISTS `dev_progress_v` (
 ,`no_urut_sub_menu` int(11)
 ,`ket_sub_menu` varchar(50)
 );
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `disposisi`
+-- Struktur dari tabel `disposisi`
 --
 
-CREATE TABLE IF NOT EXISTS `disposisi` (
-`id` int(128) NOT NULL,
+CREATE TABLE `disposisi` (
+  `id` int(128) NOT NULL,
   `type` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `disposisi`
+-- Dumping data untuk tabel `disposisi`
 --
 
 INSERT INTO `disposisi` (`id`, `type`) VALUES
@@ -14035,15 +14065,27 @@ INSERT INTO `disposisi` (`id`, `type`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `gammu`
+-- Stand-in struktur untuk tampilan `e_office2`
+-- (Lihat di bawah untuk tampilan aktual)
+--
+CREATE TABLE `e_office2` (
+`id_tc_surat_masuk` int(11)
+,`id_mt_client` int(11)
+,`nm_persero` varchar(255)
+);
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `gammu`
 --
 
-CREATE TABLE IF NOT EXISTS `gammu` (
-  `Version` int(11) NOT NULL DEFAULT '0'
+CREATE TABLE `gammu` (
+  `Version` int(11) NOT NULL DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `gammu`
+-- Dumping data untuk tabel `gammu`
 --
 
 INSERT INTO `gammu` (`Version`) VALUES
@@ -14052,30 +14094,31 @@ INSERT INTO `gammu` (`Version`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `inbox`
+-- Struktur dari tabel `inbox`
 --
 
-CREATE TABLE IF NOT EXISTS `inbox` (
-  `UpdatedInDB` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+CREATE TABLE `inbox` (
+  `UpdatedInDB` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `ReceivingDateTime` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `Text` text NOT NULL,
   `SenderNumber` varchar(20) NOT NULL DEFAULT '',
   `Coding` enum('Default_No_Compression','Unicode_No_Compression','8bit','Default_Compression','Unicode_Compression') NOT NULL DEFAULT 'Default_No_Compression',
   `UDH` text NOT NULL,
   `SMSCNumber` varchar(20) NOT NULL DEFAULT '',
-  `Class` int(11) NOT NULL DEFAULT '-1',
+  `Class` int(11) NOT NULL DEFAULT -1,
   `TextDecoded` text NOT NULL,
-`ID` int(10) unsigned NOT NULL,
+  `ID` int(10) UNSIGNED NOT NULL,
   `RecipientID` text NOT NULL,
   `Processed` enum('false','true') NOT NULL DEFAULT 'false'
-) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `karyawan_v`
+-- Stand-in struktur untuk tampilan `karyawan_v`
+-- (Lihat di bawah untuk tampilan aktual)
 --
-CREATE TABLE IF NOT EXISTS `karyawan_v` (
+CREATE TABLE `karyawan_v` (
 `username` varchar(50)
 ,`nama_pegawai` varchar(50)
 ,`nama_bagian` varchar(40)
@@ -14089,23 +14132,24 @@ CREATE TABLE IF NOT EXISTS `karyawan_v` (
 ,`kd_notaris` varchar(6)
 ,`id_dd_user` int(11)
 );
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `log_cek_kp`
+-- Struktur dari tabel `log_cek_kp`
 --
 
-CREATE TABLE IF NOT EXISTS `log_cek_kp` (
-`id_log_cek_kp` int(11) NOT NULL,
+CREATE TABLE `log_cek_kp` (
+  `id_log_cek_kp` int(11) NOT NULL,
   `id_dd_user` int(11) DEFAULT NULL,
   `kode_pengaman` varchar(25) DEFAULT NULL,
   `tgl_cek_kp` datetime DEFAULT NULL,
   `status` int(11) DEFAULT NULL COMMENT '0=tidak alid,1=valid',
   `kd_notaris` varchar(10) DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `log_cek_kp`
+-- Dumping data untuk tabel `log_cek_kp`
 --
 
 INSERT INTO `log_cek_kp` (`id_log_cek_kp`, `id_dd_user`, `kode_pengaman`, `tgl_cek_kp`, `status`, `kd_notaris`) VALUES
@@ -14114,10 +14158,10 @@ INSERT INTO `log_cek_kp` (`id_log_cek_kp`, `id_dd_user`, `kode_pengaman`, `tgl_c
 -- --------------------------------------------------------
 
 --
--- Table structure for table `log_user_activity`
+-- Struktur dari tabel `log_user_activity`
 --
 
-CREATE TABLE IF NOT EXISTS `log_user_activity` (
+CREATE TABLE `log_user_activity` (
   `id_log_user_activity` decimal(65,30) NOT NULL,
   `id_dd_user` decimal(65,30) DEFAULT NULL,
   `tgl_activity` datetime DEFAULT NULL,
@@ -14131,21 +14175,21 @@ CREATE TABLE IF NOT EXISTS `log_user_activity` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `log_user_login`
+-- Struktur dari tabel `log_user_login`
 --
 
-CREATE TABLE IF NOT EXISTS `log_user_login` (
-`id_log_user` int(11) NOT NULL,
+CREATE TABLE `log_user_login` (
+  `id_log_user` int(11) NOT NULL,
   `id_dd_user` int(11) DEFAULT NULL,
   `session_id` varchar(50) DEFAULT NULL,
   `login_time` datetime DEFAULT NULL,
   `ip_address` varchar(50) DEFAULT NULL,
   `logoff_time` datetime DEFAULT NULL,
   `ko_wil` int(11) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8120 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `log_user_login`
+-- Dumping data untuk tabel `log_user_login`
 --
 
 INSERT INTO `log_user_login` (`id_log_user`, `id_dd_user`, `session_id`, `login_time`, `ip_address`, `logoff_time`, `ko_wil`) VALUES
@@ -14455,26 +14499,27 @@ INSERT INTO `log_user_login` (`id_log_user`, `id_dd_user`, `session_id`, `login_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `log_user_login_detail`
+-- Struktur dari tabel `log_user_login_detail`
 --
 
-CREATE TABLE IF NOT EXISTS `log_user_login_detail` (
-`id_log_user_login_detail` int(11) NOT NULL,
+CREATE TABLE `log_user_login_detail` (
+  `id_log_user_login_detail` int(11) NOT NULL,
   `id_log_user` int(11) DEFAULT NULL,
   `login_time_detail` datetime DEFAULT NULL,
   `id_dc_modul` int(11) DEFAULT NULL,
   `id_dc_menu` int(11) DEFAULT NULL,
   `id_dc_sub_menu` int(11) DEFAULT NULL,
   `hak_akses` int(11) DEFAULT NULL,
-  `status` tinyint(3) unsigned DEFAULT NULL
+  `status` tinyint(3) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `modul_submodul_v`
+-- Stand-in struktur untuk tampilan `modul_submodul_v`
+-- (Lihat di bawah untuk tampilan aktual)
 --
-CREATE TABLE IF NOT EXISTS `modul_submodul_v` (
+CREATE TABLE `modul_submodul_v` (
 `id_dc_modular` int(11)
 ,`nama_modular` varchar(50)
 ,`id_dc_modul` int(11)
@@ -14489,14 +14534,15 @@ CREATE TABLE IF NOT EXISTS `modul_submodul_v` (
 ,`no_urut_sub_menu` int(11)
 ,`ket_sub_menu` varchar(50)
 );
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_arsip`
+-- Struktur dari tabel `mt_arsip`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_arsip` (
-`id_arsip` int(11) NOT NULL,
+CREATE TABLE `mt_arsip` (
+  `id_arsip` int(11) NOT NULL,
   `kode_simpan` varchar(255) DEFAULT NULL,
   `nama_arsip` varchar(255) DEFAULT NULL,
   `gedung_simpan` varchar(255) DEFAULT NULL,
@@ -14515,10 +14561,10 @@ CREATE TABLE IF NOT EXISTS `mt_arsip` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_arus_kas`
+-- Struktur dari tabel `mt_arus_kas`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_arus_kas` (
+CREATE TABLE `mt_arus_kas` (
   `id_mt_arus_kas` int(11) NOT NULL,
   `tgl_arus_kas` datetime DEFAULT NULL,
   `no_bukti` varchar(100) DEFAULT NULL,
@@ -14544,11 +14590,11 @@ CREATE TABLE IF NOT EXISTS `mt_arus_kas` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_bagian`
+-- Struktur dari tabel `mt_bagian`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_bagian` (
-`id_mt_bagian` int(11) NOT NULL,
+CREATE TABLE `mt_bagian` (
+  `id_mt_bagian` int(11) NOT NULL,
   `kode_bagian` varchar(18) NOT NULL,
   `nama_bagian` varchar(40) DEFAULT NULL,
   `group_bag` varchar(10) DEFAULT NULL,
@@ -14558,12 +14604,12 @@ CREATE TABLE IF NOT EXISTS `mt_bagian` (
   `template` varchar(255) DEFAULT NULL,
   `pelayanan` int(11) DEFAULT NULL,
   `kelompok_unit` int(11) DEFAULT NULL,
-  `status_aktif` tinyint(3) unsigned DEFAULT NULL,
+  `status_aktif` tinyint(3) UNSIGNED DEFAULT NULL,
   `kode_rs` char(2) DEFAULT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mt_bagian`
+-- Dumping data untuk tabel `mt_bagian`
 --
 
 INSERT INTO `mt_bagian` (`id_mt_bagian`, `kode_bagian`, `nama_bagian`, `group_bag`, `validasi`, `jumlah_kamar`, `harga_kamar`, `template`, `pelayanan`, `kelompok_unit`, `status_aktif`, `kode_rs`) VALUES
@@ -14575,10 +14621,10 @@ INSERT INTO `mt_bagian` (`id_mt_bagian`, `kode_bagian`, `nama_bagian`, `group_ba
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_bank`
+-- Struktur dari tabel `mt_bank`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_bank` (
+CREATE TABLE `mt_bank` (
   `kode_bank` int(11) NOT NULL,
   `nama_bank` varchar(20) DEFAULT NULL,
   `acc_no` varchar(20) DEFAULT NULL
@@ -14587,10 +14633,10 @@ CREATE TABLE IF NOT EXISTS `mt_bank` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_banner`
+-- Struktur dari tabel `mt_banner`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_banner` (
+CREATE TABLE `mt_banner` (
   `id_mt_banner` int(11) NOT NULL,
   `nama_banner` varchar(255) DEFAULT NULL,
   `url_target` varchar(255) DEFAULT NULL,
@@ -14604,11 +14650,11 @@ CREATE TABLE IF NOT EXISTS `mt_banner` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_chat`
+-- Struktur dari tabel `mt_chat`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_chat` (
-`id_mt_chat` int(11) NOT NULL,
+CREATE TABLE `mt_chat` (
+  `id_mt_chat` int(11) NOT NULL,
   `id_dd_user` int(11) DEFAULT NULL,
   `nama_cs` varchar(50) DEFAULT NULL,
   `yahoo_id` varchar(50) DEFAULT NULL,
@@ -14621,11 +14667,11 @@ CREATE TABLE IF NOT EXISTS `mt_chat` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client`
+-- Struktur dari tabel `mt_client`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client` (
-`id_mt_client` int(11) NOT NULL,
+CREATE TABLE `mt_client` (
+  `id_mt_client` int(11) NOT NULL,
   `kd_notaris` varchar(6) DEFAULT NULL,
   `id_dc_client_group` int(11) DEFAULT NULL,
   `id_dc_client_group_detail` int(11) DEFAULT NULL,
@@ -14659,23 +14705,23 @@ CREATE TABLE IF NOT EXISTS `mt_client` (
   `alamat_email_client` varchar(50) DEFAULT NULL,
   `no_urut` varchar(2) DEFAULT NULL,
   `url_foto` varchar(255) DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mt_client`
+-- Dumping data untuk tabel `mt_client`
 --
 
 INSERT INTO `mt_client` (`id_mt_client`, `kd_notaris`, `id_dc_client_group`, `id_dc_client_group_detail`, `nm_persero`, `kd_stat_perseroan`, `kd_jns_perseroan`, `kd_jns_perusahaan`, `alamat_persero`, `group_persero`, `nm_persero_singkat`, `nm_persero_lama`, `id_dc_kota`, `flag_proses`, `id_dd_jangka_waktu`, `lama_jangka_waktu`, `nama_notaris_pendiri`, `kd_perusahaan`, `nama_notaris_terakhir`, `flag_aktif`, `flag_jenis_perubahan`, `id_dc_kecamatan`, `id_dc_kelurahan`, `id_user_input`, `tgl_input`, `id_mt_customer`, `no_telpon_client`, `no_fax_client`, `id_mt_client_group`, `no_client`, `kode_pos_client`, `alamat_email_client`, `no_urut`, `url_foto`) VALUES
-(1, '123', 13, 1321, 'PT PERSERO', NULL, NULL, NULL, 'dd', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '23424', NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(1, '123', 13, 1321, 'PT PERSERO', NULL, NULL, NULL, 'Jl. Dringu ', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '23424', NULL, NULL, NULL, NULL, 'persero@gmail.com', NULL, NULL),
 (3, NULL, NULL, NULL, 'tik', NULL, NULL, NULL, ' asd', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '214332', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_akta`
+-- Struktur dari tabel `mt_client_akta`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_akta` (
+CREATE TABLE `mt_client_akta` (
   `id_mt_client_akta` int(11) NOT NULL,
   `no_sabh` int(11) DEFAULT NULL,
   `proses_akta` varchar(1) DEFAULT NULL,
@@ -14716,7 +14762,7 @@ CREATE TABLE IF NOT EXISTS `mt_client_akta` (
   `tgl_penyerahan` datetime DEFAULT NULL,
   `tgl_tagih_akta` datetime DEFAULT NULL,
   `tgl_bayar_akta` datetime DEFAULT NULL,
-  `flag_proses_akta` smallint(6) DEFAULT '0' COMMENT '0 = sedang buat akta;1=selesai buat akta;2=penandatanganan selesai;3=pengurusan selesai;4= selesai penyerahan',
+  `flag_proses_akta` smallint(6) DEFAULT 0 COMMENT '0 = sedang buat akta;1=selesai buat akta;2=penandatanganan selesai;3=pengurusan selesai;4= selesai penyerahan',
   `nama_serah_akta` varchar(50) DEFAULT NULL,
   `nama_terima_akta` varchar(50) DEFAULT NULL,
   `no_bukti_serah` varchar(50) DEFAULT NULL,
@@ -14740,13 +14786,13 @@ CREATE TABLE IF NOT EXISTS `mt_client_akta` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_akta_cetak`
+-- Struktur dari tabel `mt_client_akta_cetak`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_akta_cetak` (
+CREATE TABLE `mt_client_akta_cetak` (
   `id_mt_client_akta_cetak` int(11) NOT NULL,
   `id_mt_client_akta` int(11) DEFAULT NULL,
-  `isi_cetak` longtext,
+  `isi_cetak` longtext DEFAULT NULL,
   `tgl_jam_cetak` datetime DEFAULT NULL,
   `kode_pengaman` varchar(25) DEFAULT NULL,
   `kd_notaris` varchar(6) DEFAULT NULL,
@@ -14758,27 +14804,28 @@ CREATE TABLE IF NOT EXISTS `mt_client_akta_cetak` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_akta_cover_note`
+-- Struktur dari tabel `mt_client_akta_cover_note`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_akta_cover_note` (
+CREATE TABLE `mt_client_akta_cover_note` (
   `id_mt_client_akta_cover_note` int(11) NOT NULL,
   `id_mt_client_akta` int(11) DEFAULT NULL,
   `tgl_cetak_cover_note` datetime DEFAULT NULL,
-  `isi_cover_note` longtext,
+  `isi_cover_note` longtext DEFAULT NULL,
   `id_user_input` int(11) DEFAULT NULL,
   `tgl_user_input` datetime DEFAULT NULL,
   `kd_notaris` varchar(6) DEFAULT NULL,
-  `keterangan` text,
+  `keterangan` text DEFAULT NULL,
   `url` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `mt_client_akta_cover_note_v`
+-- Stand-in struktur untuk tampilan `mt_client_akta_cover_note_v`
+-- (Lihat di bawah untuk tampilan aktual)
 --
-CREATE TABLE IF NOT EXISTS `mt_client_akta_cover_note_v` (
+CREATE TABLE `mt_client_akta_cover_note_v` (
 `id_mt_client_akta` int(11)
 ,`id_mt_client_akta_cover_note` int(11)
 ,`tgl_cetak_cover_note` datetime
@@ -14794,22 +14841,23 @@ CREATE TABLE IF NOT EXISTS `mt_client_akta_cover_note_v` (
 ,`nm_persero` varchar(255)
 ,`url` varchar(255)
 );
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_akta_notaris`
+-- Struktur dari tabel `mt_client_akta_notaris`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_akta_notaris` (
+CREATE TABLE `mt_client_akta_notaris` (
   `id_mt_client_akta_notaris` int(11) NOT NULL,
   `id_mt_client_akta` int(11) DEFAULT NULL,
   `jaminan` varchar(100) DEFAULT NULL,
-  `catatan_jaminan` text,
+  `catatan_jaminan` text DEFAULT NULL,
   `harga_beli` decimal(10,0) DEFAULT NULL,
   `harga_jual` decimal(10,0) DEFAULT NULL,
   `margin` decimal(10,0) DEFAULT NULL,
   `nilai_tanggungan` decimal(10,0) DEFAULT NULL,
-  `keterangan` text,
+  `keterangan` text DEFAULT NULL,
   `lokasi` varchar(255) DEFAULT NULL,
   `tgl_input` datetime DEFAULT NULL,
   `kd_notaris` varchar(6) DEFAULT NULL,
@@ -14819,11 +14867,11 @@ CREATE TABLE IF NOT EXISTS `mt_client_akta_notaris` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_akta_penghadap`
+-- Struktur dari tabel `mt_client_akta_penghadap`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_akta_penghadap` (
-`id_mt_client_akta_penghadap` int(11) NOT NULL,
+CREATE TABLE `mt_client_akta_penghadap` (
+  `id_mt_client_akta_penghadap` int(11) NOT NULL,
   `id_mt_client_akta` int(11) DEFAULT NULL COMMENT 'terhubung ke',
   `gelar` varchar(25) DEFAULT NULL,
   `nama_penghadap` varchar(100) DEFAULT NULL,
@@ -14850,15 +14898,15 @@ CREATE TABLE IF NOT EXISTS `mt_client_akta_penghadap` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_akta_ppat`
+-- Struktur dari tabel `mt_client_akta_ppat`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_akta_ppat` (
+CREATE TABLE `mt_client_akta_ppat` (
   `id_mt_client_akta_ppat` int(11) NOT NULL,
   `id_mt_client_akta` int(11) DEFAULT NULL,
   `id_mt_jenis_permintaan_detail` int(11) DEFAULT NULL,
   `kolom_blanko` varchar(100) DEFAULT NULL,
-  `isi_kolom_blanko` text,
+  `isi_kolom_blanko` text DEFAULT NULL,
   `keterangan` varchar(255) DEFAULT NULL,
   `id_dd_akta_ppat` int(11) DEFAULT NULL,
   `top_css` int(11) DEFAULT NULL,
@@ -14869,11 +14917,11 @@ CREATE TABLE IF NOT EXISTS `mt_client_akta_ppat` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_bayar`
+-- Struktur dari tabel `mt_client_bayar`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_bayar` (
-`id_mt_client_bayar` int(11) NOT NULL,
+CREATE TABLE `mt_client_bayar` (
+  `id_mt_client_bayar` int(11) NOT NULL,
   `id_mt_client_tagih` int(11) DEFAULT NULL,
   `id_mt_client_akta` int(11) DEFAULT NULL,
   `nilai_bayar` decimal(10,0) DEFAULT NULL,
@@ -14889,13 +14937,13 @@ CREATE TABLE IF NOT EXISTS `mt_client_bayar` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_cetak_akta`
+-- Struktur dari tabel `mt_client_cetak_akta`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_cetak_akta` (
-`id_mt_client_cetak_akta` int(11) NOT NULL,
+CREATE TABLE `mt_client_cetak_akta` (
+  `id_mt_client_cetak_akta` int(11) NOT NULL,
   `id_mt_client_akta` int(11) DEFAULT NULL,
-  `isi_akta` longtext,
+  `isi_akta` longtext DEFAULT NULL,
   `id_dd_template_akta` int(11) DEFAULT NULL,
   `url_cetak_akta` varchar(255) DEFAULT NULL,
   `tgl_input` datetime DEFAULT NULL,
@@ -14905,11 +14953,11 @@ CREATE TABLE IF NOT EXISTS `mt_client_cetak_akta` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_detail`
+-- Struktur dari tabel `mt_client_detail`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_detail` (
-`id_mt_client_detail` int(11) NOT NULL,
+CREATE TABLE `mt_client_detail` (
+  `id_mt_client_detail` int(11) NOT NULL,
   `id_mt_client` int(11) DEFAULT NULL,
   `kd_notaris` varchar(6) DEFAULT NULL,
   `id_jabatan_pt` varchar(2) DEFAULT NULL COMMENT 'lihat di tabel dd_jabatan_pt',
@@ -14934,15 +14982,15 @@ CREATE TABLE IF NOT EXISTS `mt_client_detail` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_emp`
+-- Struktur dari tabel `mt_client_emp`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_emp` (
-`id_mt_client_emp` int(11) NOT NULL,
+CREATE TABLE `mt_client_emp` (
+  `id_mt_client_emp` int(11) NOT NULL,
   `nm_mt_client_emp` varchar(75) DEFAULT NULL,
   `id_mt_client` int(11) DEFAULT NULL,
   `jbtn_mt_client` varchar(75) DEFAULT NULL,
-  `alamat` text,
+  `alamat` text DEFAULT NULL,
   `no_hp_tlp` varchar(21) DEFAULT NULL,
   `email` varchar(75) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -14950,17 +14998,17 @@ CREATE TABLE IF NOT EXISTS `mt_client_emp` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_group`
+-- Struktur dari tabel `mt_client_group`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_group` (
-`id_mt_client_group` int(11) NOT NULL,
+CREATE TABLE `mt_client_group` (
+  `id_mt_client_group` int(11) NOT NULL,
   `nama_group` varchar(255) DEFAULT NULL,
   `id_dc_client_group` int(4) DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mt_client_group`
+-- Dumping data untuk tabel `mt_client_group`
 --
 
 INSERT INTO `mt_client_group` (`id_mt_client_group`, `nama_group`, `id_dc_client_group`) VALUES
@@ -14969,10 +15017,10 @@ INSERT INTO `mt_client_group` (`id_mt_client_group`, `nama_group`, `id_dc_client
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_kadaluarsa`
+-- Struktur dari tabel `mt_client_kadaluarsa`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_kadaluarsa` (
+CREATE TABLE `mt_client_kadaluarsa` (
   `id_mt_client_kadaluarsa` int(11) NOT NULL,
   `no_urut_perusahaan` varchar(10) DEFAULT NULL,
   `nm_persero` varchar(175) DEFAULT NULL,
@@ -14995,15 +15043,15 @@ CREATE TABLE IF NOT EXISTS `mt_client_kadaluarsa` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_kegiatan`
+-- Struktur dari tabel `mt_client_kegiatan`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_kegiatan` (
+CREATE TABLE `mt_client_kegiatan` (
   `id_mt_client_kegiatan` int(38) NOT NULL,
   `kd_jns_maksud` varchar(8) DEFAULT NULL,
   `kd_jenis_kegiatan` varchar(8) DEFAULT NULL,
   `keterangan_kegiatan` varchar(255) DEFAULT NULL,
-  `kegiatan_koperasi` text COMMENT 'khusus untuk koperasi aja dibebasin',
+  `kegiatan_koperasi` text DEFAULT NULL COMMENT 'khusus untuk koperasi aja dibebasin',
   `no_sabh` int(38) DEFAULT NULL,
   `kd_sk` int(65) DEFAULT NULL,
   `id_user_input` int(65) DEFAULT NULL,
@@ -15020,11 +15068,11 @@ CREATE TABLE IF NOT EXISTS `mt_client_kegiatan` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_kekayaan`
+-- Struktur dari tabel `mt_client_kekayaan`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_kekayaan` (
-`id_mt_client_kekayaan` int(65) NOT NULL,
+CREATE TABLE `mt_client_kekayaan` (
+  `id_mt_client_kekayaan` int(65) NOT NULL,
   `id_mt_client` int(10) DEFAULT NULL,
   `kekayaan_awal_rp` decimal(65,4) DEFAULT NULL,
   `kekayaan_wakaf_rp` decimal(65,4) DEFAULT NULL,
@@ -15050,17 +15098,17 @@ CREATE TABLE IF NOT EXISTS `mt_client_kekayaan` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_maksud`
+-- Struktur dari tabel `mt_client_maksud`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_maksud` (
+CREATE TABLE `mt_client_maksud` (
   `no_kendali` int(20) DEFAULT NULL,
   `kd_jns_maksud` varchar(4) NOT NULL,
   `kd_jns_perseroan` varchar(2) NOT NULL,
   `kd_perusahaan` varchar(10) DEFAULT NULL,
   `status` varchar(1) DEFAULT NULL,
   `kd_maksud` int(38) DEFAULT NULL,
-  `maksud_koperasi` text COMMENT 'khusus untuk koperasi',
+  `maksud_koperasi` text DEFAULT NULL COMMENT 'khusus untuk koperasi',
   `no_sabh` int(38) DEFAULT NULL,
   `kd_sk` int(38) DEFAULT NULL,
   `id_user_input` int(65) DEFAULT NULL,
@@ -15078,11 +15126,11 @@ CREATE TABLE IF NOT EXISTS `mt_client_maksud` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_modal`
+-- Struktur dari tabel `mt_client_modal`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_modal` (
-`id_mt_client_modal` int(65) NOT NULL,
+CREATE TABLE `mt_client_modal` (
+  `id_mt_client_modal` int(65) NOT NULL,
   `kd_perusahaan` varchar(10) DEFAULT NULL,
   `modal_dasar_rp` decimal(65,4) DEFAULT NULL,
   `modal_ditempatkan_rp` decimal(65,4) DEFAULT NULL,
@@ -15122,14 +15170,14 @@ CREATE TABLE IF NOT EXISTS `mt_client_modal` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_pasal`
+-- Struktur dari tabel `mt_client_pasal`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_pasal` (
+CREATE TABLE `mt_client_pasal` (
   `id_mt_client_pasal` int(11) NOT NULL,
   `pasal` varchar(5) DEFAULT NULL,
   `ayat` varchar(10) DEFAULT NULL,
-  `isi` text,
+  `isi` text DEFAULT NULL,
   `id_proses_pengurusan` int(38) DEFAULT NULL,
   `no_sabh` int(38) DEFAULT NULL,
   `flag_ubah` int(38) DEFAULT NULL,
@@ -15141,11 +15189,11 @@ CREATE TABLE IF NOT EXISTS `mt_client_pasal` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_pemilik_modal`
+-- Struktur dari tabel `mt_client_pemilik_modal`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_pemilik_modal` (
-`id_mt_client_pemilik_modal` int(11) NOT NULL,
+CREATE TABLE `mt_client_pemilik_modal` (
+  `id_mt_client_pemilik_modal` int(11) NOT NULL,
   `nama_pemilik_modal` varchar(100) DEFAULT NULL,
   `alamat_pemilik_modal` varchar(255) DEFAULT NULL,
   `tgl_lahir_pemilik_modal` datetime DEFAULT NULL,
@@ -15155,7 +15203,7 @@ CREATE TABLE IF NOT EXISTS `mt_client_pemilik_modal` (
   `tgl_npwp` datetime DEFAULT NULL,
   `jml_saham` varchar(25) DEFAULT NULL,
   `id_proses_pengurusan` int(65) DEFAULT NULL,
-  `id_dc_kota` int(65) unsigned DEFAULT NULL,
+  `id_dc_kota` int(65) UNSIGNED DEFAULT NULL,
   `tempat_lahir_pemilik_modal` varchar(50) DEFAULT NULL,
   `no_telp` varchar(25) DEFAULT NULL,
   `no_hp` varchar(18) DEFAULT NULL,
@@ -15178,10 +15226,10 @@ CREATE TABLE IF NOT EXISTS `mt_client_pemilik_modal` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_pemodal`
+-- Struktur dari tabel `mt_client_pemodal`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_pemodal` (
+CREATE TABLE `mt_client_pemodal` (
   `id_mt_client_pemodal` int(65) NOT NULL,
   `nama` varchar(175) NOT NULL,
   `kd_kota` varchar(6) NOT NULL,
@@ -15242,10 +15290,10 @@ CREATE TABLE IF NOT EXISTS `mt_client_pemodal` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_pengurus`
+-- Struktur dari tabel `mt_client_pengurus`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_pengurus` (
+CREATE TABLE `mt_client_pengurus` (
   `ID_PENGURUS` int(11) NOT NULL,
   `NO_URUT` varchar(10) DEFAULT NULL,
   `NAMA` varchar(175) DEFAULT NULL,
@@ -15280,10 +15328,10 @@ CREATE TABLE IF NOT EXISTS `mt_client_pengurus` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_pengurus_pt`
+-- Struktur dari tabel `mt_client_pengurus_pt`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_pengurus_pt` (
+CREATE TABLE `mt_client_pengurus_pt` (
   `id_pengurus_pt` int(11) NOT NULL,
   `nama_pengurus_pt` varchar(100) DEFAULT NULL,
   `alamat_pengurus_pt` varchar(255) DEFAULT NULL,
@@ -15312,19 +15360,19 @@ CREATE TABLE IF NOT EXISTS `mt_client_pengurus_pt` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_ppat`
+-- Struktur dari tabel `mt_client_ppat`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_ppat` (
-`id_mt_client_ppat` int(10) NOT NULL,
+CREATE TABLE `mt_client_ppat` (
+  `id_mt_client_ppat` int(10) NOT NULL,
   `id_mt_client_akta` int(10) DEFAULT NULL,
   `id_tc_pesan` int(10) DEFAULT NULL,
   `tipe_order` varchar(100) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
   `jenis_sertifikat` varchar(50) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
   `nomor_sertifikat` varchar(100) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
   `surat_ukur` varchar(200) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
-  `pihak_mengalihkan` text CHARACTER SET latin1 COLLATE latin1_general_ci,
-  `pihak_menerima` text CHARACTER SET latin1 COLLATE latin1_general_ci,
+  `pihak_mengalihkan` text CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
+  `pihak_menerima` text CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
   `letak_tanah` varchar(100) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
   `luas_tanah` varchar(100) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
   `luas_bangunan` varchar(100) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
@@ -15343,7 +15391,7 @@ CREATE TABLE IF NOT EXISTS `mt_client_ppat` (
   `pbb` char(1) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
   `sertifikat` char(1) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
   `ktp` char(1) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
-  `keterangan` text CHARACTER SET latin1 COLLATE latin1_general_ci,
+  `keterangan` text CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
   `tanggal_masuk` date DEFAULT NULL,
   `tanggal_sps` date DEFAULT NULL,
   `tanggal_selesai` date DEFAULT NULL,
@@ -15361,22 +15409,22 @@ CREATE TABLE IF NOT EXISTS `mt_client_ppat` (
   `atas_nama` varchar(150) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
   `nama_akta` varchar(150) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
   `id_blanko` int(10) DEFAULT NULL,
-  `alamat_mengalihkan` text CHARACTER SET latin1 COLLATE latin1_general_ci,
-  `alamat_menerima` text CHARACTER SET latin1 COLLATE latin1_general_ci,
+  `alamat_mengalihkan` text CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
+  `alamat_menerima` text CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
   `tanggal_surat_ukur` date DEFAULT NULL,
-  `gambar_situasi` text CHARACTER SET latin1 COLLATE latin1_general_ci,
-  `penjamin` text CHARACTER SET latin1 COLLATE latin1_general_ci,
-  `jabatan` text CHARACTER SET latin1 COLLATE latin1_general_ci
+  `gambar_situasi` text CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
+  `penjamin` text CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
+  `jabatan` text CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_proses_pengurusan`
+-- Struktur dari tabel `mt_client_proses_pengurusan`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_proses_pengurusan` (
-`id_mt_client_proses_pengurusan` int(11) NOT NULL,
+CREATE TABLE `mt_client_proses_pengurusan` (
+  `id_mt_client_proses_pengurusan` int(11) NOT NULL,
   `id_mt_client_akta` int(11) DEFAULT NULL,
   `nama_proses` varchar(100) DEFAULT NULL,
   `tgl_proses` datetime DEFAULT NULL,
@@ -15399,10 +15447,10 @@ CREATE TABLE IF NOT EXISTS `mt_client_proses_pengurusan` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_quorum`
+-- Struktur dari tabel `mt_client_quorum`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_quorum` (
+CREATE TABLE `mt_client_quorum` (
   `id_mt_quorum` int(11) NOT NULL,
   `quorum_rups1_1` int(11) DEFAULT NULL,
   `quorum_rups2_2` int(11) DEFAULT NULL,
@@ -15427,10 +15475,10 @@ CREATE TABLE IF NOT EXISTS `mt_client_quorum` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_rups`
+-- Struktur dari tabel `mt_client_rups`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_rups` (
+CREATE TABLE `mt_client_rups` (
   `id_mt_client_rups` int(11) NOT NULL,
   `no_kendali` int(11) DEFAULT NULL,
   `no_hadir` int(11) DEFAULT NULL,
@@ -15456,10 +15504,10 @@ CREATE TABLE IF NOT EXISTS `mt_client_rups` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_rups_proses`
+-- Struktur dari tabel `mt_client_rups_proses`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_rups_proses` (
+CREATE TABLE `mt_client_rups_proses` (
   `id_mt_client_rups_proses` int(11) NOT NULL,
   `kd_sk` int(11) DEFAULT NULL,
   `no_sabh` int(11) DEFAULT NULL,
@@ -15481,11 +15529,11 @@ CREATE TABLE IF NOT EXISTS `mt_client_rups_proses` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_saham`
+-- Struktur dari tabel `mt_client_saham`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_saham` (
-`id_mt_client_saham` int(11) NOT NULL,
+CREATE TABLE `mt_client_saham` (
+  `id_mt_client_saham` int(11) NOT NULL,
   `kd_perusahaan` varchar(10) DEFAULT NULL,
   `jumlah_seluruh` decimal(11,0) DEFAULT NULL,
   `jumlah_ditempatkan` decimal(11,0) DEFAULT NULL,
@@ -15507,11 +15555,11 @@ CREATE TABLE IF NOT EXISTS `mt_client_saham` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_saham_jenis`
+-- Struktur dari tabel `mt_client_saham_jenis`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_saham_jenis` (
-`id_mt_client_saham_jenis` int(5) NOT NULL,
+CREATE TABLE `mt_client_saham_jenis` (
+  `id_mt_client_saham_jenis` int(5) NOT NULL,
   `nama_jenis_saham` varchar(100) DEFAULT NULL,
   `jumlah_jenis_saham` decimal(11,0) DEFAULT NULL,
   `nilai_jenis_saham_rp` decimal(11,0) DEFAULT NULL,
@@ -15536,10 +15584,10 @@ CREATE TABLE IF NOT EXISTS `mt_client_saham_jenis` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_saham_jenis_old`
+-- Struktur dari tabel `mt_client_saham_jenis_old`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_saham_jenis_old` (
+CREATE TABLE `mt_client_saham_jenis_old` (
   `id_mt_client_saham_jenis` int(5) NOT NULL,
   `nama_jenis_saham` varchar(100) DEFAULT NULL,
   `jumlah_jenis_saham` int(11) DEFAULT NULL,
@@ -15565,10 +15613,10 @@ CREATE TABLE IF NOT EXISTS `mt_client_saham_jenis_old` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_saham_old`
+-- Struktur dari tabel `mt_client_saham_old`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_saham_old` (
+CREATE TABLE `mt_client_saham_old` (
   `id_mt_client_saham` int(11) NOT NULL,
   `kd_perusahaan` varchar(10) DEFAULT NULL,
   `jumlah_seluruh` int(11) DEFAULT NULL,
@@ -15591,11 +15639,11 @@ CREATE TABLE IF NOT EXISTS `mt_client_saham_old` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_saham_person`
+-- Struktur dari tabel `mt_client_saham_person`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_saham_person` (
-`id_mt_client_saham_person` int(38) NOT NULL,
+CREATE TABLE `mt_client_saham_person` (
+  `id_mt_client_saham_person` int(38) NOT NULL,
   `id_mt_client_pemilik_modal` int(38) DEFAULT NULL,
   `no_sabh` varchar(38) DEFAULT NULL,
   `id_mt_client_saham_jenis` int(38) DEFAULT NULL,
@@ -15620,10 +15668,10 @@ CREATE TABLE IF NOT EXISTS `mt_client_saham_person` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_saham_person_old`
+-- Struktur dari tabel `mt_client_saham_person_old`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_saham_person_old` (
+CREATE TABLE `mt_client_saham_person_old` (
   `ID_MT_PERUSAHAAN_SAHAM_PERSON` decimal(38,0) NOT NULL,
   `ID_PERUSAHAAN_PEMODAL` decimal(38,0) DEFAULT NULL,
   `NO_SABH` decimal(38,0) DEFAULT NULL,
@@ -15649,10 +15697,10 @@ CREATE TABLE IF NOT EXISTS `mt_client_saham_person_old` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_sk`
+-- Struktur dari tabel `mt_client_sk`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_sk` (
+CREATE TABLE `mt_client_sk` (
   `KD_PERUSAHAAN` varchar(10) DEFAULT NULL,
   `NO_KENDALI` decimal(65,30) DEFAULT NULL,
   `PROSES_AKTA` varchar(1) DEFAULT NULL,
@@ -15681,40 +15729,42 @@ CREATE TABLE IF NOT EXISTS `mt_client_sk` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_tagih`
+-- Struktur dari tabel `mt_client_tagih`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_tagih` (
-`id_mt_client_tagih` int(11) NOT NULL,
+CREATE TABLE `mt_client_tagih` (
+  `id_mt_client_tagih` int(11) NOT NULL,
   `id_mt_client_akta` int(11) DEFAULT NULL,
   `nilai_tagihan` decimal(10,0) DEFAULT NULL,
   `tgl_tagihan` datetime DEFAULT NULL,
   `kd_notaris` varchar(6) DEFAULT NULL,
   `id_user_input` int(11) DEFAULT NULL,
   `tgl_input` datetime DEFAULT NULL,
-  `flag_stat_bayar` tinyint(4) DEFAULT '0' COMMENT '1=Tertagih/BelomBayar;2=BayarNyicil;3=BayarLunas'
+  `flag_stat_bayar` tinyint(4) DEFAULT 0 COMMENT '1=Tertagih/BelomBayar;2=BayarNyicil;3=BayarLunas'
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Stand-in structure for view `mt_client_tagih_v`
+-- Stand-in struktur untuk tampilan `mt_client_tagih_v`
+-- (Lihat di bawah untuk tampilan aktual)
 --
-CREATE TABLE IF NOT EXISTS `mt_client_tagih_v` (
+CREATE TABLE `mt_client_tagih_v` (
 `nm_persero` varchar(255)
 ,`nilai_tagihan` decimal(10,0)
 ,`jml_bayar` decimal(32,0)
 ,`flag_stat_bayar` tinyint(4)
 ,`id_mt_client_akta` int(11)
 );
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_client_usaha`
+-- Struktur dari tabel `mt_client_usaha`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_client_usaha` (
-`id_mt_client_usaha` int(11) NOT NULL,
+CREATE TABLE `mt_client_usaha` (
+  `id_mt_client_usaha` int(11) NOT NULL,
   `nama_usaha` varchar(255) DEFAULT NULL,
   `id_mt_client_akta` int(11) DEFAULT NULL,
   `id_jenis_pengurusan` int(11) DEFAULT NULL,
@@ -15725,11 +15775,11 @@ CREATE TABLE IF NOT EXISTS `mt_client_usaha` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_customer`
+-- Struktur dari tabel `mt_customer`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_customer` (
-`id_mt_customer` int(11) NOT NULL,
+CREATE TABLE `mt_customer` (
+  `id_mt_customer` int(11) NOT NULL,
   `nama_customer` varchar(100) NOT NULL,
   `alamat_customer` varchar(255) DEFAULT NULL,
   `id_dc_kota` int(11) DEFAULT NULL,
@@ -15744,11 +15794,11 @@ CREATE TABLE IF NOT EXISTS `mt_customer` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_dokumen`
+-- Struktur dari tabel `mt_dokumen`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_dokumen` (
-`id_dokumen` int(11) NOT NULL,
+CREATE TABLE `mt_dokumen` (
+  `id_dokumen` int(11) NOT NULL,
   `kode_dokumen` varchar(255) DEFAULT NULL,
   `nama_dokumen` varchar(255) DEFAULT NULL,
   `tgl_terima` datetime DEFAULT NULL,
@@ -15773,11 +15823,11 @@ CREATE TABLE IF NOT EXISTS `mt_dokumen` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_dokumen_akta`
+-- Struktur dari tabel `mt_dokumen_akta`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_dokumen_akta` (
-`id_mt_dokumen_akta` int(11) NOT NULL,
+CREATE TABLE `mt_dokumen_akta` (
+  `id_mt_dokumen_akta` int(11) NOT NULL,
   `id_mt_client_akta` int(11) DEFAULT NULL,
   `id_dokumen` int(11) DEFAULT NULL COMMENT '1:Minuta;2:Salinan;',
   `url_dokumen_akta` varchar(255) DEFAULT NULL,
@@ -15787,16 +15837,16 @@ CREATE TABLE IF NOT EXISTS `mt_dokumen_akta` (
   `keterangan` varchar(255) DEFAULT NULL,
   `no_akta` varchar(150) DEFAULT NULL,
   `tgl_akta` datetime DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_dokumen_client`
+-- Struktur dari tabel `mt_dokumen_client`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_dokumen_client` (
-`id_mt_dokumen_client` int(11) NOT NULL,
+CREATE TABLE `mt_dokumen_client` (
+  `id_mt_dokumen_client` int(11) NOT NULL,
   `nama_dokumen_client` varchar(255) DEFAULT NULL,
   `id_dd_dokumen_client` int(11) DEFAULT NULL,
   `id_mt_client` int(11) DEFAULT NULL,
@@ -15805,7 +15855,7 @@ CREATE TABLE IF NOT EXISTS `mt_dokumen_client` (
   `keterangan` varchar(255) DEFAULT NULL,
   `tgl_input_dokumen` datetime DEFAULT NULL,
   `id_user_input` int(11) DEFAULT NULL,
-  `jenis_dokumen` tinyint(4) DEFAULT '1' COMMENT '1. surat,2 lampiran',
+  `jenis_dokumen` tinyint(4) DEFAULT 1 COMMENT '1. surat,2 lampiran',
   `id_tc_surat_masuk` int(11) DEFAULT NULL,
   `tgl_expired` datetime DEFAULT NULL,
   `pembuat_dok` varchar(100) DEFAULT NULL,
@@ -15816,11 +15866,11 @@ CREATE TABLE IF NOT EXISTS `mt_dokumen_client` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_email`
+-- Struktur dari tabel `mt_email`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_email` (
-`id_mt_email` int(10) NOT NULL,
+CREATE TABLE `mt_email` (
+  `id_mt_email` int(10) NOT NULL,
   `kd_unik` varchar(50) NOT NULL,
   `name` varchar(100) NOT NULL,
   `to` varchar(200) NOT NULL,
@@ -15829,10 +15879,10 @@ CREATE TABLE IF NOT EXISTS `mt_email` (
   `file` varchar(200) NOT NULL,
   `tgl_input` date NOT NULL,
   `keterangan` varchar(300) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `mt_email`
+-- Dumping data untuk tabel `mt_email`
 --
 
 INSERT INTO `mt_email` (`id_mt_email`, `kd_unik`, `name`, `to`, `subject`, `message`, `file`, `tgl_input`, `keterangan`) VALUES
@@ -15844,14 +15894,14 @@ INSERT INTO `mt_email` (`id_mt_email`, `kd_unik`, `name`, `to`, `subject`, `mess
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_faq`
+-- Struktur dari tabel `mt_faq`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_faq` (
+CREATE TABLE `mt_faq` (
   `id_mt_faq` int(11) NOT NULL,
   `id_mt_faq_kategori` int(11) DEFAULT NULL,
-  `pertanyaan` text,
-  `jawaban` text,
+  `pertanyaan` text DEFAULT NULL,
+  `jawaban` text DEFAULT NULL,
   `url_image_pertanyaan` varchar(100) DEFAULT NULL,
   `url_image_jawaban` varchar(100) DEFAULT NULL,
   `user_input` varchar(100) DEFAULT NULL,
@@ -15862,10 +15912,10 @@ CREATE TABLE IF NOT EXISTS `mt_faq` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_faq_kategori`
+-- Struktur dari tabel `mt_faq_kategori`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_faq_kategori` (
+CREATE TABLE `mt_faq_kategori` (
   `id_mt_faq_kategori` int(11) NOT NULL,
   `nama_kategori_faq` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -15873,14 +15923,14 @@ CREATE TABLE IF NOT EXISTS `mt_faq_kategori` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_forum`
+-- Struktur dari tabel `mt_forum`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_forum` (
+CREATE TABLE `mt_forum` (
   `id_mt_forum` int(11) NOT NULL,
   `id_mt_forum_kategori` int(11) DEFAULT NULL,
   `tgl_kirim` datetime DEFAULT NULL,
-  `isi_forum_awal` text,
+  `isi_forum_awal` text DEFAULT NULL,
   `user_pengirim` varchar(100) DEFAULT NULL,
   `status_publish` tinyint(4) DEFAULT NULL COMMENT 'status boleh di publish atau tidak oleh admin 0=belum boleh;1=boleh;2=closing;',
   `user_admin` varchar(100) DEFAULT NULL,
@@ -15890,29 +15940,29 @@ CREATE TABLE IF NOT EXISTS `mt_forum` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_forum_kategori`
+-- Struktur dari tabel `mt_forum_kategori`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_forum_kategori` (
+CREATE TABLE `mt_forum_kategori` (
   `id_mt_forum_kategori` int(11) NOT NULL,
   `nama_forum_kategori` varchar(255) DEFAULT NULL,
-  `keterangan` text
+  `keterangan` text DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_jabatan`
+-- Struktur dari tabel `mt_jabatan`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_jabatan` (
+CREATE TABLE `mt_jabatan` (
   `kode_jabatan` varchar(11) NOT NULL,
   `nama_jabatan` varchar(50) DEFAULT NULL,
-  `tingkatan` tinyint(3) unsigned DEFAULT NULL
+  `tingkatan` tinyint(3) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mt_jabatan`
+-- Dumping data untuk tabel `mt_jabatan`
 --
 
 INSERT INTO `mt_jabatan` (`kode_jabatan`, `nama_jabatan`, `tingkatan`) VALUES
@@ -15924,16 +15974,16 @@ INSERT INTO `mt_jabatan` (`kode_jabatan`, `nama_jabatan`, `tingkatan`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_jenis_fax`
+-- Struktur dari tabel `mt_jenis_fax`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_jenis_fax` (
-`id_jenis_fax` int(11) NOT NULL,
+CREATE TABLE `mt_jenis_fax` (
+  `id_jenis_fax` int(11) NOT NULL,
   `nama_jenis_fax` varchar(255) DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mt_jenis_fax`
+-- Dumping data untuk tabel `mt_jenis_fax`
 --
 
 INSERT INTO `mt_jenis_fax` (`id_jenis_fax`, `nama_jenis_fax`) VALUES
@@ -15943,35 +15993,35 @@ INSERT INTO `mt_jenis_fax` (`id_jenis_fax`, `nama_jenis_fax`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_jenis_permintaan`
+-- Struktur dari tabel `mt_jenis_permintaan`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_jenis_permintaan` (
-`id_mt_jenis_permintaan` int(11) NOT NULL,
+CREATE TABLE `mt_jenis_permintaan` (
+  `id_mt_jenis_permintaan` int(11) NOT NULL,
   `jenis_permintaan` varchar(100) DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_jenis_permintaan_detail`
+-- Struktur dari tabel `mt_jenis_permintaan_detail`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_jenis_permintaan_detail` (
-`id_mt_jenis_permintaan_detail` int(11) NOT NULL,
+CREATE TABLE `mt_jenis_permintaan_detail` (
+  `id_mt_jenis_permintaan_detail` int(11) NOT NULL,
   `id_mt_jenis_permintaan` int(11) NOT NULL,
   `jenis_permintaan_detail` varchar(100) NOT NULL,
   `flag_jenis_badan_hukum` int(11) DEFAULT NULL COMMENT '1=perusahaan;2=koperasi;3=yayasan;4=perbankan,5=CV,6=umum,9=lainnya',
   `id_jenis_pengurusan` int(10) DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=110 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_jenis_permintaan_v`
+-- Struktur dari tabel `mt_jenis_permintaan_v`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_jenis_permintaan_v` (
+CREATE TABLE `mt_jenis_permintaan_v` (
   `id_mt_jenis_permintaan` int(11) DEFAULT NULL,
   `id_mt_jenis_permintaan_detail` int(11) DEFAULT NULL,
   `jenis_permintaan` varchar(100) DEFAULT NULL,
@@ -15984,19 +16034,19 @@ CREATE TABLE IF NOT EXISTS `mt_jenis_permintaan_v` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_jenis_surat`
+-- Struktur dari tabel `mt_jenis_surat`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_jenis_surat` (
-`id_jenis_surat` int(11) NOT NULL,
+CREATE TABLE `mt_jenis_surat` (
+  `id_jenis_surat` int(11) NOT NULL,
   `id_rubrik_surat` int(10) NOT NULL,
   `kd_jenis_surat` varchar(10) NOT NULL,
   `nama_jenis_surat` varchar(255) DEFAULT NULL,
   `isi_jenis_surat` varchar(300) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=46 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mt_jenis_surat`
+-- Dumping data untuk tabel `mt_jenis_surat`
 --
 
 INSERT INTO `mt_jenis_surat` (`id_jenis_surat`, `id_rubrik_surat`, `kd_jenis_surat`, `nama_jenis_surat`, `isi_jenis_surat`) VALUES
@@ -16049,10 +16099,10 @@ INSERT INTO `mt_jenis_surat` (`id_jenis_surat`, `id_rubrik_surat`, `kd_jenis_sur
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_karyawan`
+-- Struktur dari tabel `mt_karyawan`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_karyawan` (
+CREATE TABLE `mt_karyawan` (
   `no_induk` int(20) NOT NULL,
   `urutan_karyawan` int(11) DEFAULT NULL,
   `nama_pegawai` varchar(50) DEFAULT NULL,
@@ -16066,15 +16116,15 @@ CREATE TABLE IF NOT EXISTS `mt_karyawan` (
   `jatah_kelas` varchar(50) DEFAULT NULL,
   `level_id` int(11) DEFAULT NULL,
   `no_mr` varchar(8) DEFAULT NULL,
-  `flag_tenaga_medis` tinyint(3) unsigned DEFAULT NULL,
+  `flag_tenaga_medis` tinyint(3) UNSIGNED DEFAULT NULL,
   `kd_notaris` varchar(6) DEFAULT NULL,
-  `alamat` text,
+  `alamat` text DEFAULT NULL,
   `no_hp` varchar(21) DEFAULT NULL,
   `email` varchar(75) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `mt_karyawan`
+-- Dumping data untuk tabel `mt_karyawan`
 --
 
 INSERT INTO `mt_karyawan` (`no_induk`, `urutan_karyawan`, `nama_pegawai`, `kode_jabatan`, `kode_bagian`, `kode_dokter`, `kode_spesialisasi`, `status_dr`, `status`, `available`, `jatah_kelas`, `level_id`, `no_mr`, `flag_tenaga_medis`, `kd_notaris`, `alamat`, `no_hp`, `email`) VALUES
@@ -16088,10 +16138,56 @@ INSERT INTO `mt_karyawan` (`no_induk`, `urutan_karyawan`, `nama_pegawai`, `kode_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_notaris`
+-- Struktur dari tabel `mt_kecamatan`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_notaris` (
+CREATE TABLE `mt_kecamatan` (
+  `id_mt_kecamatan` int(20) NOT NULL,
+  `id_prob` int(20) NOT NULL,
+  `nama_kecamatan` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `mt_kecamatan`
+--
+
+INSERT INTO `mt_kecamatan` (`id_mt_kecamatan`, `id_prob`, `nama_kecamatan`) VALUES
+(1, 2, 'Kecamatan Bantaran'),
+(2, 2, 'Kecamatan Banyu Anyar'),
+(3, 2, 'Kecamatan Dringu'),
+(4, 2, 'Kecamatan Gending'),
+(5, 2, 'Kecamatan Kota Anyar'),
+(6, 2, 'Kecamatan Kraksaan'),
+(7, 2, 'Kecamatan Besuk'),
+(8, 2, 'Kecamatan Krejengan'),
+(9, 2, 'Kecamatan Krucil\r\n\r\n'),
+(10, 2, 'Kecamatan Kuripan'),
+(11, 2, 'Kecamatan Leces\r\n'),
+(12, 2, 'Kecamatan Lumbang'),
+(13, 2, 'Kecamatan Maron\r\n'),
+(14, 2, 'Kecamatan Paiton'),
+(15, 2, 'Kecamatan Pajarakan\r\n'),
+(16, 2, 'Kecamatan Pakuniran'),
+(17, 2, 'Kecamatan Sukapura\r\n'),
+(18, 2, 'Kecamatan Sumber'),
+(19, 2, 'Kecamatan Sumberasih\r\n'),
+(20, 2, 'Kecamatan Tegalsiwalan'),
+(21, 2, 'Kecamatan Tiris\r\n'),
+(22, 2, 'Kecamatan Tongas'),
+(23, 2, 'Kecamatan Wonomerto'),
+(24, 1, 'Kecamatan Kademangan\r\n'),
+(25, 1, 'Kecamatan Kanigaran'),
+(26, 1, 'Kecamatan Kedopok\r\n'),
+(27, 1, 'Kecamatan Mayangan'),
+(28, 1, 'Kecamatan Wonoasih');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `mt_notaris`
+--
+
+CREATE TABLE `mt_notaris` (
   `kd_notaris` varchar(6) NOT NULL,
   `kd_organisasi` varchar(2) NOT NULL,
   `kd_kota` varchar(6) NOT NULL,
@@ -16144,7 +16240,7 @@ CREATE TABLE IF NOT EXISTS `mt_notaris` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `mt_notaris`
+-- Dumping data untuk tabel `mt_notaris`
 --
 
 INSERT INTO `mt_notaris` (`kd_notaris`, `kd_organisasi`, `kd_kota`, `e_mail`, `almamater`, `rid_notaris`, `almamater_thn`, `notariat`, `notariat_thn`, `title`, `nm_notaris`, `gedung`, `alamat`, `blok_wilayah`, `kd_pos`, `KD_AREA`, `KD_AREA1`, `NO_TELP1`, `NO_FAX`, `KD_AREA2`, `NO_TELP2`, `HINT_QUESTION`, `HINT_ANSWER`, `EMAIL_EXT`, `NO_SK_KEHAKIMAN`, `TGL_SK_KEHAKIMAN`, `NO_SK_MENDAGRI`, `TGL_SK_MENDAGRI`, `NO_SK_PELANTIKAN`, `TGL_SK_PELANTIKAN`, `NPWP`, `PROVIDER`, `CETAK_KEDUDUKAN`, `GEDUNG_RESMI`, `ALAMAT_RESMI`, `BLOK_WILAYAH_RESMI`, `KD_POS_RESMI`, `KD_AREA_RESMI`, `NO_TELP_RESMI`, `NO_FAX_RESMI`, `TGL_UPDATE_RESMI`, `CREATED_DATE`, `KD_SK_KANWIL`, `KOTA_SK`, `ID_MT_NOTARIS`, `URL_FOTO`, `ID_DC_KOTA`, `NO_SK_PPAT`, `TGL_SK_PPAT`) VALUES
@@ -16153,11 +16249,40 @@ INSERT INTO `mt_notaris` (`kd_notaris`, `kd_organisasi`, `kd_kota`, `e_mail`, `a
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_peminjaman_arsip`
+-- Struktur dari tabel `mt_pasien_covid`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_peminjaman_arsip` (
-`id_peminjaman_arsip` int(11) NOT NULL,
+CREATE TABLE `mt_pasien_covid` (
+  `id_pasien` int(20) NOT NULL,
+  `no_rm` varchar(128) DEFAULT NULL,
+  `nama_pasien` varchar(128) DEFAULT NULL,
+  `tgl_lahir` varchar(128) DEFAULT NULL,
+  `umur` varchar(128) DEFAULT NULL,
+  `jenkel` varchar(128) DEFAULT NULL,
+  `alamat_lengkap` varchar(128) DEFAULT NULL,
+  `kecamatan` varchar(128) DEFAULT NULL,
+  `kab_kota` varchar(128) DEFAULT NULL,
+  `kota_lain` varchar(128) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `mt_pasien_covid`
+--
+
+INSERT INTO `mt_pasien_covid` (`id_pasien`, `no_rm`, `nama_pasien`, `tgl_lahir`, `umur`, `jenkel`, `alamat_lengkap`, `kecamatan`, `kab_kota`, `kota_lain`) VALUES
+(2, '09876', 'Wildan Arindi', '2020-05-05', NULL, 'Laki-laki', ' Jl. Patimura', 'Leces', 'Probolinggo', '-'),
+(4, '12345', 'Andri Eko', '2020-05-21', NULL, 'Laki-laki', ' Jl. Pelita 2', 'Leces', 'Probolinggo', '-'),
+(5, '44444', 'ssa', '2020-05-12', NULL, 'Laki-laki', 'dfasa', 'a', 'a', 's'),
+(6, '123456', 'Alnara Hasan', '2020-05-08', NULL, 'Perempuan', ' Jl. Pelita 2', 'Leces', 'Kabupaten Probolinggo', '-');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `mt_peminjaman_arsip`
+--
+
+CREATE TABLE `mt_peminjaman_arsip` (
+  `id_peminjaman_arsip` int(11) NOT NULL,
   `tgl_pinjam` datetime DEFAULT NULL,
   `nama_penerima_pinjam` varchar(100) DEFAULT NULL,
   `nama_serah_pinjam` varchar(100) DEFAULT NULL,
@@ -16175,13 +16300,13 @@ CREATE TABLE IF NOT EXISTS `mt_peminjaman_arsip` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_peraturan`
+-- Struktur dari tabel `mt_peraturan`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_peraturan` (
+CREATE TABLE `mt_peraturan` (
   `id_mt_peraturan` int(11) NOT NULL,
   `id_mt_peraturan_kategori` int(11) DEFAULT NULL,
-  `nama_peraturan` text,
+  `nama_peraturan` text DEFAULT NULL,
   `tahun_terbit` int(11) DEFAULT NULL,
   `url_file` varchar(255) DEFAULT NULL,
   `tgl_input` datetime DEFAULT NULL,
@@ -16193,10 +16318,10 @@ CREATE TABLE IF NOT EXISTS `mt_peraturan` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_peraturan_kategori`
+-- Struktur dari tabel `mt_peraturan_kategori`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_peraturan_kategori` (
+CREATE TABLE `mt_peraturan_kategori` (
   `id_mt_peraturan_kategori` int(11) NOT NULL,
   `nama_kategori` varchar(255) DEFAULT NULL,
   `pemutus_peraturan` varchar(255) DEFAULT NULL
@@ -16205,10 +16330,10 @@ CREATE TABLE IF NOT EXISTS `mt_peraturan_kategori` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_peraturan_tema`
+-- Struktur dari tabel `mt_peraturan_tema`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_peraturan_tema` (
+CREATE TABLE `mt_peraturan_tema` (
   `id_mt_peraturan_tema` int(11) NOT NULL,
   `id_mt_peraturan_tema_kelompok` int(11) DEFAULT NULL,
   `deskripsi_tema` varchar(255) DEFAULT NULL
@@ -16217,10 +16342,10 @@ CREATE TABLE IF NOT EXISTS `mt_peraturan_tema` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_peraturan_tema_kelompok`
+-- Struktur dari tabel `mt_peraturan_tema_kelompok`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_peraturan_tema_kelompok` (
+CREATE TABLE `mt_peraturan_tema_kelompok` (
   `id_mt_peraturan_tema_kelompok` int(11) NOT NULL,
   `nama_kelompok` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -16228,11 +16353,11 @@ CREATE TABLE IF NOT EXISTS `mt_peraturan_tema_kelompok` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_permohonan_pinjam_arsip`
+-- Struktur dari tabel `mt_permohonan_pinjam_arsip`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_permohonan_pinjam_arsip` (
-`id_permohonan_pinjam_arsip` int(11) NOT NULL,
+CREATE TABLE `mt_permohonan_pinjam_arsip` (
+  `id_permohonan_pinjam_arsip` int(11) NOT NULL,
   `nama_peminjam` varchar(100) DEFAULT NULL,
   `tgl_permohonan` datetime DEFAULT NULL,
   `nama_arsip` varchar(255) DEFAULT NULL,
@@ -16250,19 +16375,19 @@ CREATE TABLE IF NOT EXISTS `mt_permohonan_pinjam_arsip` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_polling`
+-- Struktur dari tabel `mt_polling`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_polling` (
+CREATE TABLE `mt_polling` (
   `ID_MT_POLLING` int(11) NOT NULL,
   `KD_KATEGORI_POLLING` int(11) DEFAULT NULL,
-  `PERTANYAAN` text,
-  `JAWABAN_A` text,
-  `JAWABAN_B` text,
-  `JAWABAN_C` text,
-  `JAWABAN_D` text,
-  `JAWABAN_E` text,
-  `JAWABAN_F` text,
+  `PERTANYAAN` text DEFAULT NULL,
+  `JAWABAN_A` text DEFAULT NULL,
+  `JAWABAN_B` text DEFAULT NULL,
+  `JAWABAN_C` text DEFAULT NULL,
+  `JAWABAN_D` text DEFAULT NULL,
+  `JAWABAN_E` text DEFAULT NULL,
+  `JAWABAN_F` text DEFAULT NULL,
   `USER_INPUT` varchar(50) DEFAULT NULL,
   `TGL_INPUT` datetime DEFAULT NULL,
   `STATUS_PUBLISH` tinyint(4) DEFAULT NULL COMMENT '0/null=tidak publish;1=siap publish;2=sedang publish;3=sudah publish',
@@ -16273,22 +16398,41 @@ CREATE TABLE IF NOT EXISTS `mt_polling` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_rubrik_surat`
+-- Struktur dari tabel `mt_probolinggo`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_rubrik_surat` (
-`id_rubrik_surat` int(11) NOT NULL,
+CREATE TABLE `mt_probolinggo` (
+  `id_prob` int(20) NOT NULL,
+  `dom_prob` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `mt_probolinggo`
+--
+
+INSERT INTO `mt_probolinggo` (`id_prob`, `dom_prob`) VALUES
+(1, 'Kota Probolinggo'),
+(2, 'Kabupaten Probolinggo');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `mt_rubrik_surat`
+--
+
+CREATE TABLE `mt_rubrik_surat` (
+  `id_rubrik_surat` int(11) NOT NULL,
   `nama_rubrik` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_saldo_awal_arus_kas`
+-- Struktur dari tabel `mt_saldo_awal_arus_kas`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_saldo_awal_arus_kas` (
-`id_mt_saldo_awal_arus_kas` int(11) NOT NULL,
+CREATE TABLE `mt_saldo_awal_arus_kas` (
+  `id_mt_saldo_awal_arus_kas` int(11) NOT NULL,
   `bulan` int(11) DEFAULT NULL,
   `tahun` int(11) DEFAULT NULL,
   `nilai_saldo_awal` decimal(10,0) DEFAULT NULL,
@@ -16302,17 +16446,17 @@ CREATE TABLE IF NOT EXISTS `mt_saldo_awal_arus_kas` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_surat_intern`
+-- Struktur dari tabel `mt_surat_intern`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_surat_intern` (
-`id_mt_surat_intern` int(11) NOT NULL,
+CREATE TABLE `mt_surat_intern` (
+  `id_mt_surat_intern` int(11) NOT NULL,
   `kd_surat_intern` varchar(128) NOT NULL,
   `nama_surat_intern` varchar(128) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `mt_surat_intern`
+-- Dumping data untuk tabel `mt_surat_intern`
 --
 
 INSERT INTO `mt_surat_intern` (`id_mt_surat_intern`, `kd_surat_intern`, `nama_surat_intern`) VALUES
@@ -16336,17 +16480,17 @@ INSERT INTO `mt_surat_intern` (`id_mt_surat_intern`, `kd_surat_intern`, `nama_su
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mt_surat_ptnsm`
+-- Struktur dari tabel `mt_surat_ptnsm`
 --
 
-CREATE TABLE IF NOT EXISTS `mt_surat_ptnsm` (
-`id_mt_surat_ptnsm` int(11) NOT NULL,
+CREATE TABLE `mt_surat_ptnsm` (
+  `id_mt_surat_ptnsm` int(11) NOT NULL,
   `kd_surat_ptnsm` varchar(10) NOT NULL,
   `nama_surat_ptnsm` varchar(128) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `mt_surat_ptnsm`
+-- Dumping data untuk tabel `mt_surat_ptnsm`
 --
 
 INSERT INTO `mt_surat_ptnsm` (`id_mt_surat_ptnsm`, `kd_surat_ptnsm`, `nama_surat_ptnsm`) VALUES
@@ -16356,18 +16500,18 @@ INSERT INTO `mt_surat_ptnsm` (`id_mt_surat_ptnsm`, `kd_surat_ptnsm`, `nama_surat
 -- --------------------------------------------------------
 
 --
--- Table structure for table `m_tc_berita`
+-- Struktur dari tabel `m_tc_berita`
 --
 
-CREATE TABLE IF NOT EXISTS `m_tc_berita` (
-`ID_TC_BERITA` bigint(20) NOT NULL,
+CREATE TABLE `m_tc_berita` (
+  `ID_TC_BERITA` bigint(20) NOT NULL,
   `AUTHOR` varchar(50) DEFAULT NULL,
-  `JUDUL` text,
-  `ISI` text,
+  `JUDUL` text DEFAULT NULL,
+  `ISI` text DEFAULT NULL,
   `STATUS` smallint(6) DEFAULT NULL COMMENT 'null/0=tidak publish,1=publish',
   `GAMBAR` varchar(255) DEFAULT NULL,
   `TANGGAL` datetime DEFAULT NULL,
-  `HEADLINE` text,
+  `HEADLINE` text DEFAULT NULL,
   `KATEGORI` varchar(50) DEFAULT NULL,
   `KD_JENIS_BERITA` smallint(6) DEFAULT NULL COMMENT '0=welcome text,1=berita,2=artikel,3=info singkat,4=pengumuman'
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -16375,22 +16519,22 @@ CREATE TABLE IF NOT EXISTS `m_tc_berita` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `outbox`
+-- Struktur dari tabel `outbox`
 --
 
-CREATE TABLE IF NOT EXISTS `outbox` (
-  `UpdatedInDB` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+CREATE TABLE `outbox` (
+  `UpdatedInDB` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `InsertIntoDB` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `SendingDateTime` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `Text` text,
+  `Text` text DEFAULT NULL,
   `DestinationNumber` varchar(20) NOT NULL DEFAULT '',
   `Coding` enum('Default_No_Compression','Unicode_No_Compression','8bit','Default_Compression','Unicode_Compression') NOT NULL DEFAULT 'Default_No_Compression',
-  `UDH` text,
-  `Class` int(11) DEFAULT '-1',
+  `UDH` text DEFAULT NULL,
+  `Class` int(11) DEFAULT -1,
   `TextDecoded` text NOT NULL,
-`ID` int(10) unsigned NOT NULL,
+  `ID` int(10) UNSIGNED NOT NULL,
   `MultiPart` enum('false','true') DEFAULT 'false',
-  `RelativeValidity` int(11) DEFAULT '-1',
+  `RelativeValidity` int(11) DEFAULT -1,
   `SenderID` varchar(255) DEFAULT NULL,
   `SendingTimeOut` timestamp NULL DEFAULT '0000-00-00 00:00:00',
   `DeliveryReport` enum('default','yes','no') DEFAULT 'default',
@@ -16400,28 +16544,28 @@ CREATE TABLE IF NOT EXISTS `outbox` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `outbox_multipart`
+-- Struktur dari tabel `outbox_multipart`
 --
 
-CREATE TABLE IF NOT EXISTS `outbox_multipart` (
-  `Text` text,
+CREATE TABLE `outbox_multipart` (
+  `Text` text DEFAULT NULL,
   `Coding` enum('Default_No_Compression','Unicode_No_Compression','8bit','Default_Compression','Unicode_Compression') NOT NULL DEFAULT 'Default_No_Compression',
-  `UDH` text,
-  `Class` int(11) DEFAULT '-1',
-  `TextDecoded` text,
-  `ID` int(10) unsigned NOT NULL DEFAULT '0',
-  `SequencePosition` int(11) NOT NULL DEFAULT '1'
+  `UDH` text DEFAULT NULL,
+  `Class` int(11) DEFAULT -1,
+  `TextDecoded` text DEFAULT NULL,
+  `ID` int(10) UNSIGNED NOT NULL DEFAULT 0,
+  `SequencePosition` int(11) NOT NULL DEFAULT 1
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pbk`
+-- Struktur dari tabel `pbk`
 --
 
-CREATE TABLE IF NOT EXISTS `pbk` (
-`ID` int(11) NOT NULL,
-  `GroupID` int(11) NOT NULL DEFAULT '-1',
+CREATE TABLE `pbk` (
+  `ID` int(11) NOT NULL,
+  `GroupID` int(11) NOT NULL DEFAULT -1,
   `Name` text NOT NULL,
   `Number` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -16429,43 +16573,43 @@ CREATE TABLE IF NOT EXISTS `pbk` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pbk_groups`
+-- Struktur dari tabel `pbk_groups`
 --
 
-CREATE TABLE IF NOT EXISTS `pbk_groups` (
+CREATE TABLE `pbk_groups` (
   `Name` text NOT NULL,
-`ID` int(11) NOT NULL
+  `ID` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `phones`
+-- Struktur dari tabel `phones`
 --
 
-CREATE TABLE IF NOT EXISTS `phones` (
+CREATE TABLE `phones` (
   `ID` text NOT NULL,
-  `UpdatedInDB` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `UpdatedInDB` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `InsertIntoDB` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `TimeOut` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `Send` enum('yes','no') NOT NULL DEFAULT 'no',
   `Receive` enum('yes','no') NOT NULL DEFAULT 'no',
   `IMEI` varchar(35) NOT NULL,
   `Client` text NOT NULL,
-  `Battery` int(11) NOT NULL DEFAULT '0',
-  `Signal` int(11) NOT NULL DEFAULT '0',
-  `Sent` int(11) NOT NULL DEFAULT '0',
-  `Received` int(11) NOT NULL DEFAULT '0'
+  `Battery` int(11) NOT NULL DEFAULT 0,
+  `Signal` int(11) NOT NULL DEFAULT 0,
+  `Sent` int(11) NOT NULL DEFAULT 0,
+  `Received` int(11) NOT NULL DEFAULT 0
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sentitems`
+-- Struktur dari tabel `sentitems`
 --
 
-CREATE TABLE IF NOT EXISTS `sentitems` (
-  `UpdatedInDB` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+CREATE TABLE `sentitems` (
+  `UpdatedInDB` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `InsertIntoDB` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `SendingDateTime` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `DeliveryDateTime` timestamp NULL DEFAULT NULL,
@@ -16474,40 +16618,40 @@ CREATE TABLE IF NOT EXISTS `sentitems` (
   `Coding` enum('Default_No_Compression','Unicode_No_Compression','8bit','Default_Compression','Unicode_Compression') NOT NULL DEFAULT 'Default_No_Compression',
   `UDH` text NOT NULL,
   `SMSCNumber` varchar(20) NOT NULL DEFAULT '',
-  `Class` int(11) NOT NULL DEFAULT '-1',
+  `Class` int(11) NOT NULL DEFAULT -1,
   `TextDecoded` text NOT NULL,
-  `ID` int(10) unsigned NOT NULL DEFAULT '0',
+  `ID` int(10) UNSIGNED NOT NULL DEFAULT 0,
   `SenderID` varchar(255) NOT NULL,
-  `SequencePosition` int(11) NOT NULL DEFAULT '1',
+  `SequencePosition` int(11) NOT NULL DEFAULT 1,
   `Status` enum('SendingOK','SendingOKNoReport','SendingError','DeliveryOK','DeliveryFailed','DeliveryPending','DeliveryUnknown','Error') NOT NULL DEFAULT 'SendingOK',
-  `StatusError` int(11) NOT NULL DEFAULT '-1',
-  `TPMR` int(11) NOT NULL DEFAULT '-1',
-  `RelativeValidity` int(11) NOT NULL DEFAULT '-1',
+  `StatusError` int(11) NOT NULL DEFAULT -1,
+  `TPMR` int(11) NOT NULL DEFAULT -1,
+  `RelativeValidity` int(11) NOT NULL DEFAULT -1,
   `CreatorID` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tc_arsip_surat_keluar`
+-- Struktur dari tabel `tc_arsip_surat_keluar`
 --
 
-CREATE TABLE IF NOT EXISTS `tc_arsip_surat_keluar` (
+CREATE TABLE `tc_arsip_surat_keluar` (
   `id_tc_surat_keluar` int(11) DEFAULT NULL,
-  `url_file_scan` text,
-`id` int(11) NOT NULL,
-  `flag` tinyint(4) DEFAULT '0',
+  `url_file_scan` text DEFAULT NULL,
+  `id` int(11) NOT NULL,
+  `flag` tinyint(4) DEFAULT 0,
   `type` varchar(4) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tc_cc`
+-- Struktur dari tabel `tc_cc`
 --
 
-CREATE TABLE IF NOT EXISTS `tc_cc` (
-`id_tc_cc` int(11) NOT NULL,
+CREATE TABLE `tc_cc` (
+  `id_tc_cc` int(11) NOT NULL,
   `id_tc_surat_masuk` int(11) DEFAULT NULL,
   `nama_cc` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
@@ -16515,10 +16659,10 @@ CREATE TABLE IF NOT EXISTS `tc_cc` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tc_client_akta_v`
+-- Struktur dari tabel `tc_client_akta_v`
 --
 
-CREATE TABLE IF NOT EXISTS `tc_client_akta_v` (
+CREATE TABLE `tc_client_akta_v` (
   `kd_notaris` varchar(6) DEFAULT NULL,
   `nm_notaris` varchar(120) DEFAULT NULL,
   `no_akta_notaris` varchar(50) DEFAULT NULL,
@@ -16532,12 +16676,131 @@ CREATE TABLE IF NOT EXISTS `tc_client_akta_v` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tc_file_arsip`
+-- Struktur dari tabel `tc_daftar_pasien`
 --
 
-CREATE TABLE IF NOT EXISTS `tc_file_arsip` (
+CREATE TABLE `tc_daftar_pasien` (
+  `id_daftar_pasien` int(20) NOT NULL,
+  `id_pasien` varchar(20) NOT NULL,
+  `nama_pasien` varchar(128) DEFAULT NULL,
+  `tgl_lahir` varchar(128) DEFAULT NULL,
+  `umur` varchar(5) DEFAULT NULL,
+  `no_rm` varchar(126) DEFAULT NULL,
+  `jenkel` varchar(128) DEFAULT NULL,
+  `tgl_pemeriksaan` varchar(128) NOT NULL,
+  `alamat_lengkap` varchar(128) DEFAULT NULL,
+  `kecamatan` varchar(128) NOT NULL,
+  `kota_kab` varchar(128) DEFAULT NULL,
+  `kota_lain` varchar(128) DEFAULT NULL,
+  `diagnosa_masuk` varchar(300) NOT NULL,
+  `komorbid` varchar(300) NOT NULL,
+  `status_covid_awal` varchar(128) NOT NULL,
+  `totalaksana` varchar(128) NOT NULL,
+  `rujuk_rs` varchar(128) DEFAULT NULL,
+  `meninggal_waktu` varchar(128) DEFAULT NULL,
+  `rawat_inap_ruang` varchar(128) DEFAULT NULL,
+  `odpjal_pem_dl` varchar(128) DEFAULT NULL,
+  `odpjal_pem_petugas_thorax` varchar(300) NOT NULL,
+  `odpnap_dpjp` varchar(300) DEFAULT NULL,
+  `odpnap_dl` varchar(128) DEFAULT NULL,
+  `odpnap_ront_thorax` varchar(300) DEFAULT NULL,
+  `odp_ranap` varchar(128) DEFAULT NULL,
+  `odpnap_rapid_tes1` varchar(128) DEFAULT NULL,
+  `odpnap_tgl_rapid_tes1` varchar(128) DEFAULT NULL,
+  `odpnap_hasil_rapid_tes1` varchar(128) DEFAULT NULL,
+  `odpnap_rapid_tes2` varchar(128) DEFAULT NULL,
+  `odpnap_status_covid` varchar(300) DEFAULT NULL,
+  `odpnap_hasil_status` varchar(300) DEFAULT NULL,
+  `odpnap_diagnosa_akhir` varchar(300) DEFAULT NULL,
+  `odpnap_tgl_krs` varchar(300) DEFAULT NULL,
+  `odpnap_kondisi_krs` varchar(300) DEFAULT NULL,
+  `odpnap_rujuk_rs` varchar(128) DEFAULT NULL,
+  `odpnap_meninggal_waktu` varchar(128) DEFAULT NULL,
+  `odpnap_tgl_rjp` varchar(128) DEFAULT NULL,
+  `odpnap_waktu_isolasi` varchar(128) DEFAULT NULL,
+  `pdpjal_dl` varchar(128) DEFAULT NULL,
+  `pdpjal_ront_thorax` varchar(128) DEFAULT NULL,
+  `pdpjal_rapid_tes` varchar(128) DEFAULT NULL,
+  `pdpjal_hasil_rapid` varchar(128) DEFAULT NULL,
+  `pdpjal_swab` varchar(128) DEFAULT NULL,
+  `pdpjal_tgl_ambil_sample` varchar(128) DEFAULT NULL,
+  `pdpjal_tgl_kirim_sample` varchar(128) DEFAULT NULL,
+  `pdpnap_dpjp` varchar(128) DEFAULT NULL,
+  `pdpnap_dl` varchar(128) DEFAULT NULL,
+  `pdpnap_ront_thorax` varchar(128) DEFAULT NULL,
+  `pdpnap_rapid_tes1` varchar(128) DEFAULT NULL,
+  `pdpnap_tgl_rapid_tes1` varchar(128) DEFAULT NULL,
+  `pdpnap_hasil_rapid_tes1` varchar(128) DEFAULT NULL,
+  `pdpnap_rapid_tes2` varchar(128) DEFAULT NULL,
+  `pdpnap_swab` varchar(128) NOT NULL,
+  `pdpnap_tgl__ambil_sample` varchar(128) NOT NULL,
+  `pdpnap_kirim_sample` varchar(128) NOT NULL,
+  `pdpnap_status_covid` varchar(128) DEFAULT NULL,
+  `pdpnap_hasil_status` varchar(128) DEFAULT NULL,
+  `pdpnap_diagnosa_akhir` varchar(128) DEFAULT NULL,
+  `pdpnap_tgl_krs` varchar(128) DEFAULT NULL,
+  `pdpnap_kondisi_krs` varchar(128) DEFAULT NULL,
+  `pdpnap_rujuk_rs` varchar(128) DEFAULT NULL,
+  `pdpnap_meninggal_waktu` varchar(128) DEFAULT NULL,
+  `pdpnap_tgl_rjp` varchar(128) DEFAULT NULL,
+  `pdpnap_waktu_isolasi` varchar(128) DEFAULT NULL,
+  `control` varchar(128) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tc_daftar_pasien`
+--
+
+INSERT INTO `tc_daftar_pasien` (`id_daftar_pasien`, `id_pasien`, `nama_pasien`, `tgl_lahir`, `umur`, `no_rm`, `jenkel`, `tgl_pemeriksaan`, `alamat_lengkap`, `kecamatan`, `kota_kab`, `kota_lain`, `diagnosa_masuk`, `komorbid`, `status_covid_awal`, `totalaksana`, `rujuk_rs`, `meninggal_waktu`, `rawat_inap_ruang`, `odpjal_pem_dl`, `odpjal_pem_petugas_thorax`, `odpnap_dpjp`, `odpnap_dl`, `odpnap_ront_thorax`, `odp_ranap`, `odpnap_rapid_tes1`, `odpnap_tgl_rapid_tes1`, `odpnap_hasil_rapid_tes1`, `odpnap_rapid_tes2`, `odpnap_status_covid`, `odpnap_hasil_status`, `odpnap_diagnosa_akhir`, `odpnap_tgl_krs`, `odpnap_kondisi_krs`, `odpnap_rujuk_rs`, `odpnap_meninggal_waktu`, `odpnap_tgl_rjp`, `odpnap_waktu_isolasi`, `pdpjal_dl`, `pdpjal_ront_thorax`, `pdpjal_rapid_tes`, `pdpjal_hasil_rapid`, `pdpjal_swab`, `pdpjal_tgl_ambil_sample`, `pdpjal_tgl_kirim_sample`, `pdpnap_dpjp`, `pdpnap_dl`, `pdpnap_ront_thorax`, `pdpnap_rapid_tes1`, `pdpnap_tgl_rapid_tes1`, `pdpnap_hasil_rapid_tes1`, `pdpnap_rapid_tes2`, `pdpnap_swab`, `pdpnap_tgl__ambil_sample`, `pdpnap_kirim_sample`, `pdpnap_status_covid`, `pdpnap_hasil_status`, `pdpnap_diagnosa_akhir`, `pdpnap_tgl_krs`, `pdpnap_kondisi_krs`, `pdpnap_rujuk_rs`, `pdpnap_meninggal_waktu`, `pdpnap_tgl_rjp`, `pdpnap_waktu_isolasi`, `control`) VALUES
+(1, '', 'Wildan Arindi', '1997-12-24', '', '123456', 'L', '2020-05-07', ' Jl Pelita 2 No. 116', 'Leces', 'Probolinggo', '-', 'Darah Rendah', 'R', 'ODR', 'Rujuk', NULL, NULL, NULL, 'Ya', 'Ya', '1234', 'Y', 'Y', NULL, 'Y', '2020-05-05', 'Baik123', '', 'Y', 'Baik123', 'Baik123', '2020-05-07', 'Lanjut Isolasi Mandiri', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
+(2, '', 'www1231111111', '2020-05-22', '', '222', 'Laki-laki', '2020-05-22', '', '', NULL, NULL, ' Baik123111122', ' Baik123111122', 'PDP', 'Rawat Inap', 'Rumah Sakit 2', '', '', 'Tidak', 'Tidak', '1111111', 'Ya', 'Ya', NULL, 'Y', '2020-05-03', '111111111', NULL, 'ODR', 'Rajal', '111111111', '2020-05-04', 'Rajal Pulang', 'Rumah Sakit 1', '2020-05-22', '2020-05-06', '05/05/2020 - 06/08/2020', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '11111', 'Ya', 'Ya', 'Ya', '2020-05-06', '1111111', NULL, 'Ya', '2020-05-04', '', 'OTG', 'Ranap', '1111111', '2020-05-14', 'Meninggal', 'Rumah Sakit 2', '2020-05-27', '2020-05-13', '05/13/2020 - 06/17/2020', '6'),
+(4, '', NULL, NULL, NULL, 'Wildan Arindi', NULL, '2020-05-04', NULL, '', NULL, NULL, ' Baik', ' Baik', 'ODR', 'Rujuk', 'Rumah Sakit 2', '23:01', 'Ruang 3', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4'),
+(5, '', NULL, NULL, NULL, '09876', NULL, '2020-05-05', NULL, '', NULL, NULL, ' Baik', ' Baik juga', 'OTG', 'Rujuk', 'Rumah Sakit 2', '23:00', 'Ruang 2', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '4'),
+(6, '', NULL, NULL, NULL, '09876', NULL, '2020-05-12', NULL, '', NULL, NULL, ' Baik', ' Baik', 'OTG', 'Rujuk', 'Rumah Sakit 2', '', '', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2'),
+(7, '', NULL, NULL, NULL, '09876', NULL, '2020-05-10', NULL, '', NULL, NULL, ' as', ' qeq', 'ODR', 'Rajal Pulang', '', '', '', 'Ya', 'Ya', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '3'),
+(8, '', NULL, NULL, NULL, '12345', NULL, '2020-05-06', NULL, '', NULL, NULL, ' Bronkomonemoni', ' Diare', 'ODR', 'Rujuk', '', '', '', 'Ya', 'Ya', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '3'),
+(9, '', '2020-05-14', NULL, '2020-', '123456', '2020-05-20', '2020-05-18', NULL, '', NULL, NULL, ' Kon', ' Gop', 'ODR', '1', 'Rumah Sakit 1', '12:12', 'Ruang 1', NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '', '', '', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tc_diklat`
+--
+
+CREATE TABLE `tc_diklat` (
+  `id_diklat` int(15) NOT NULL,
+  `nom_surat` varchar(30) NOT NULL,
+  `kategori` varchar(128) NOT NULL,
+  `perihal` varchar(128) NOT NULL,
+  `instansi` varchar(128) NOT NULL,
+  `agenda` varchar(128) NOT NULL,
+  `tgl_berangkat` varchar(128) NOT NULL,
+  `tgl_kembali` varchar(128) NOT NULL,
+  `total_waktu` varchar(128) NOT NULL,
+  `ditugaskan` varchar(128) NOT NULL,
+  `up_surat` varchar(128) NOT NULL,
+  `up_bukti_tf` varchar(128) NOT NULL,
+  `up_surat_pengajuan` varchar(128) NOT NULL,
+  `up_surat_tugas` varchar(128) NOT NULL,
+  `up_laporan` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tc_diklat`
+--
+
+INSERT INTO `tc_diklat` (`id_diklat`, `nom_surat`, `kategori`, `perihal`, `instansi`, `agenda`, `tgl_berangkat`, `tgl_kembali`, `total_waktu`, `ditugaskan`, `up_surat`, `up_bukti_tf`, `up_surat_pengajuan`, `up_surat_tugas`, `up_laporan`) VALUES
+(1, '1231', 'asda1', 'ads1', 'asd1', 'asd1', 'asd1', 'asd1', 'assdsdf1', 'asd1', 'asd1', 'asd1', 'asd1', 'asd1', 'asd1');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tc_file_arsip`
+--
+
+CREATE TABLE `tc_file_arsip` (
   `id_dokumen` int(11) DEFAULT NULL,
-  `url` text,
+  `url` text DEFAULT NULL,
   `tipe` varchar(8) DEFAULT NULL,
   `nama_file` varchar(255) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
@@ -16545,10 +16808,10 @@ CREATE TABLE IF NOT EXISTS `tc_file_arsip` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tc_forum`
+-- Struktur dari tabel `tc_forum`
 --
 
-CREATE TABLE IF NOT EXISTS `tc_forum` (
+CREATE TABLE `tc_forum` (
   `id_tc_forum` int(11) NOT NULL,
   `id_mt_forum` int(11) DEFAULT NULL,
   `tgl_kirim_tanggapan` datetime DEFAULT NULL,
@@ -16560,47 +16823,47 @@ CREATE TABLE IF NOT EXISTS `tc_forum` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tc_gmb_surat_keluar`
+-- Struktur dari tabel `tc_gmb_surat_keluar`
 --
 
-CREATE TABLE IF NOT EXISTS `tc_gmb_surat_keluar` (
+CREATE TABLE `tc_gmb_surat_keluar` (
   `id_tc_surat_keluar` int(11) DEFAULT NULL,
-  `url` text
+  `url` text DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tc_gmb_surat_masuk`
+-- Struktur dari tabel `tc_gmb_surat_masuk`
 --
 
-CREATE TABLE IF NOT EXISTS `tc_gmb_surat_masuk` (
+CREATE TABLE `tc_gmb_surat_masuk` (
   `id_tc_surat_masuk` int(11) DEFAULT NULL,
-  `url` text
+  `url` text DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tc_meet`
+-- Struktur dari tabel `tc_meet`
 --
 
-CREATE TABLE IF NOT EXISTS `tc_meet` (
-`meet_id` int(11) NOT NULL,
+CREATE TABLE `tc_meet` (
+  `meet_id` int(11) NOT NULL,
   `meet_judul` varchar(255) DEFAULT NULL,
   `meet_tgl` datetime DEFAULT NULL,
-  `meet_tempat` text,
-  `meet_permasalahan` text,
-  `meet_pembahasan` text,
-  `meet_hasil_kesimpulan` text,
-  `meet_tujuan_rapat` text,
-  `meet_agenda_pertemuan` text,
-  `meet_follow_up` text,
+  `meet_tempat` text DEFAULT NULL,
+  `meet_permasalahan` text DEFAULT NULL,
+  `meet_pembahasan` text DEFAULT NULL,
+  `meet_hasil_kesimpulan` text DEFAULT NULL,
+  `meet_tujuan_rapat` text DEFAULT NULL,
+  `meet_agenda_pertemuan` text DEFAULT NULL,
+  `meet_follow_up` text DEFAULT NULL,
   `meet_waktu` varchar(16) DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tc_meet`
+-- Dumping data untuk tabel `tc_meet`
 --
 
 INSERT INTO `tc_meet` (`meet_id`, `meet_judul`, `meet_tgl`, `meet_tempat`, `meet_permasalahan`, `meet_pembahasan`, `meet_hasil_kesimpulan`, `meet_tujuan_rapat`, `meet_agenda_pertemuan`, `meet_follow_up`, `meet_waktu`) VALUES
@@ -16611,20 +16874,20 @@ INSERT INTO `tc_meet` (`meet_id`, `meet_judul`, `meet_tgl`, `meet_tempat`, `meet
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tc_meet_status`
+-- Struktur dari tabel `tc_meet_status`
 --
 
-CREATE TABLE IF NOT EXISTS `tc_meet_status` (
-  `meet_permasalahan` text,
-  `meet_pembahasan` text,
-  `meet_hasil_kesimpulan` text,
-  `meet_follow_up` text,
+CREATE TABLE `tc_meet_status` (
+  `meet_permasalahan` text DEFAULT NULL,
+  `meet_pembahasan` text DEFAULT NULL,
+  `meet_hasil_kesimpulan` text DEFAULT NULL,
+  `meet_follow_up` text DEFAULT NULL,
   `meet_id` int(11) DEFAULT NULL,
-`tc_meet_status_id` int(11) NOT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+  `tc_meet_status_id` int(11) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tc_meet_status`
+-- Dumping data untuk tabel `tc_meet_status`
 --
 
 INSERT INTO `tc_meet_status` (`meet_permasalahan`, `meet_pembahasan`, `meet_hasil_kesimpulan`, `meet_follow_up`, `meet_id`, `tc_meet_status_id`) VALUES
@@ -16635,10 +16898,10 @@ INSERT INTO `tc_meet_status` (`meet_permasalahan`, `meet_pembahasan`, `meet_hasi
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tc_pembuatan_akta_gen_v`
+-- Struktur dari tabel `tc_pembuatan_akta_gen_v`
 --
 
-CREATE TABLE IF NOT EXISTS `tc_pembuatan_akta_gen_v` (
+CREATE TABLE `tc_pembuatan_akta_gen_v` (
   `id_tc_pesan` int(11) DEFAULT NULL,
   `id_mt_customer` int(11) DEFAULT NULL,
   `tgl_pesan` datetime DEFAULT NULL,
@@ -16674,10 +16937,10 @@ CREATE TABLE IF NOT EXISTS `tc_pembuatan_akta_gen_v` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tc_pembuatan_akta_v`
+-- Struktur dari tabel `tc_pembuatan_akta_v`
 --
 
-CREATE TABLE IF NOT EXISTS `tc_pembuatan_akta_v` (
+CREATE TABLE `tc_pembuatan_akta_v` (
   `id_tc_pesan` int(11) DEFAULT NULL,
   `id_mt_customer` int(11) DEFAULT NULL,
   `tgl_pesan` datetime DEFAULT NULL,
@@ -16709,18 +16972,18 @@ CREATE TABLE IF NOT EXISTS `tc_pembuatan_akta_v` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tc_pesan`
+-- Struktur dari tabel `tc_pesan`
 --
 
-CREATE TABLE IF NOT EXISTS `tc_pesan` (
-`id_tc_pesan` int(11) NOT NULL,
+CREATE TABLE `tc_pesan` (
+  `id_tc_pesan` int(11) NOT NULL,
   `id_mt_customer` int(11) DEFAULT NULL,
   `tgl_pesan` datetime DEFAULT NULL,
   `id_mt_jenis_permintaan` int(11) NOT NULL,
   `id_mt_jenis_permintaan_detail` int(11) NOT NULL,
   `nama_customer` varchar(100) DEFAULT NULL,
   `keterangan` varchar(255) DEFAULT NULL,
-  `status` tinyint(4) DEFAULT '1' COMMENT '1:Pesan,2:pengajuan dalam proses,3:selesai,9=batal',
+  `status` tinyint(4) DEFAULT 1 COMMENT '1:Pesan,2:pengajuan dalam proses,3:selesai,9=batal',
   `tgl_input_pesan` datetime DEFAULT NULL,
   `tgl_proses` datetime DEFAULT NULL,
   `tgl_persetujuan` datetime DEFAULT NULL,
@@ -16734,34 +16997,34 @@ CREATE TABLE IF NOT EXISTS `tc_pesan` (
   `id_user_pelaksana` int(11) DEFAULT NULL,
   `tgl_batal` datetime DEFAULT NULL,
   `id_user_batal` int(11) DEFAULT NULL,
-  `keterangan_batal` text,
+  `keterangan_batal` text DEFAULT NULL,
   `kode_produksi` varchar(12) DEFAULT NULL,
-  `status_terakhir` text,
+  `status_terakhir` text DEFAULT NULL,
   `id_mt_client_akta` int(11) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tc_peserta_meet`
+-- Struktur dari tabel `tc_peserta_meet`
 --
 
-CREATE TABLE IF NOT EXISTS `tc_peserta_meet` (
-`peserta_meet_id` int(11) NOT NULL,
+CREATE TABLE `tc_peserta_meet` (
+  `peserta_meet_id` int(11) NOT NULL,
   `peserta_meet_status` tinyint(4) DEFAULT NULL,
   `peserta_meet_nama` varchar(75) DEFAULT NULL,
   `peserta_meet_jabatan` varchar(255) DEFAULT NULL,
   `peserta_meet_tlp_hp` varchar(21) DEFAULT NULL,
   `peserta_meet_email` varchar(75) DEFAULT NULL,
   `perseta_meet_instansi` varchar(255) DEFAULT NULL,
-  `peserta_meet_alamat` text,
+  `peserta_meet_alamat` text DEFAULT NULL,
   `peserta_meet_jenis` tinyint(4) DEFAULT NULL,
   `meet_id` int(11) DEFAULT NULL,
   `no_induk` int(11) DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tc_peserta_meet`
+-- Dumping data untuk tabel `tc_peserta_meet`
 --
 
 INSERT INTO `tc_peserta_meet` (`peserta_meet_id`, `peserta_meet_status`, `peserta_meet_nama`, `peserta_meet_jabatan`, `peserta_meet_tlp_hp`, `peserta_meet_email`, `perseta_meet_instansi`, `peserta_meet_alamat`, `peserta_meet_jenis`, `meet_id`, `no_induk`) VALUES
@@ -16771,10 +17034,10 @@ INSERT INTO `tc_peserta_meet` (`peserta_meet_id`, `peserta_meet_status`, `pesert
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tc_polling`
+-- Struktur dari tabel `tc_polling`
 --
 
-CREATE TABLE IF NOT EXISTS `tc_polling` (
+CREATE TABLE `tc_polling` (
   `ID_TC_POLLING` int(11) NOT NULL,
   `ID_MT_POLLING` int(11) DEFAULT NULL,
   `IP_ADDRESS` varchar(20) DEFAULT NULL,
@@ -16791,11 +17054,11 @@ CREATE TABLE IF NOT EXISTS `tc_polling` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tc_surat_keluar`
+-- Struktur dari tabel `tc_surat_keluar`
 --
 
-CREATE TABLE IF NOT EXISTS `tc_surat_keluar` (
-`id_tc_surat_keluar` int(11) NOT NULL,
+CREATE TABLE `tc_surat_keluar` (
+  `id_tc_surat_keluar` int(11) NOT NULL,
   `kd_unik` varchar(50) NOT NULL,
   `tujuan` int(11) DEFAULT NULL,
   `alamat` varchar(255) DEFAULT NULL,
@@ -16819,26 +17082,26 @@ CREATE TABLE IF NOT EXISTS `tc_surat_keluar` (
   `url_scan` varchar(255) DEFAULT NULL,
   `alamat_email` varchar(255) DEFAULT NULL,
   `judul` varchar(255) DEFAULT NULL,
-  `isi_email` text,
+  `isi_email` text DEFAULT NULL,
   `tgl_kirim_email` datetime DEFAULT NULL,
   `kd_notaris` varchar(6) DEFAULT NULL,
-  `flag_surat` tinyint(4) DEFAULT '1' COMMENT '1: Dari Client,2:Bukan Client',
+  `flag_surat` tinyint(4) DEFAULT 1 COMMENT '1: Dari Client,2:Bukan Client',
   `id_mt_client` int(11) DEFAULT NULL,
   `lampiran` varchar(5) DEFAULT NULL,
   `jabatan` varchar(255) DEFAULT NULL,
   `id_jenis_surat` tinyint(4) DEFAULT NULL,
-  `flag_approv` tinyint(1) DEFAULT '0',
+  `flag_approv` tinyint(1) DEFAULT 0,
   `url_draft` varchar(255) DEFAULT NULL,
   `url_lampiran` varchar(255) DEFAULT NULL,
-  `komentar` text,
+  `komentar` text DEFAULT NULL,
   `id_user_komen` int(11) DEFAULT NULL,
-  `komentar_aproval` text,
+  `komentar_aproval` text DEFAULT NULL,
   `tgl_koreksi` datetime DEFAULT '0000-00-00 00:00:00',
-  `flag_cetak` tinyint(4) DEFAULT '0'
-) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
+  `flag_cetak` tinyint(4) DEFAULT 0
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tc_surat_keluar`
+-- Dumping data untuk tabel `tc_surat_keluar`
 --
 
 INSERT INTO `tc_surat_keluar` (`id_tc_surat_keluar`, `kd_unik`, `tujuan`, `alamat`, `pengirim`, `status_surat`, `nomor`, `tgl_surat`, `tgl_kirim`, `agendaris`, `hal`, `keterangan`, `id_dd_sekolah`, `id_hrmt_data_pegawai`, `id_dd_user_input`, `tgl_input`, `id_dd_user_edit`, `tgl_edit`, `id_hrmt_data_pegawai_pengirim`, `id_hrmt_data_pegawai_agendaris`, `flag`, `url_scan`, `alamat_email`, `judul`, `isi_email`, `tgl_kirim_email`, `kd_notaris`, `flag_surat`, `id_mt_client`, `lampiran`, `jabatan`, `id_jenis_surat`, `flag_approv`, `url_draft`, `url_lampiran`, `komentar`, `id_user_komen`, `komentar_aproval`, `tgl_koreksi`, `flag_cetak`) VALUES
@@ -16850,14 +17113,14 @@ INSERT INTO `tc_surat_keluar` (`id_tc_surat_keluar`, `kd_unik`, `tujuan`, `alama
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tc_surat_masuk`
+-- Struktur dari tabel `tc_surat_masuk`
 --
 
-CREATE TABLE IF NOT EXISTS `tc_surat_masuk` (
-`id_tc_surat_masuk` int(11) NOT NULL,
+CREATE TABLE `tc_surat_masuk` (
+  `id_tc_surat_masuk` int(11) NOT NULL,
   `kd_unik` varchar(50) NOT NULL,
   `id_disposisi` varchar(200) NOT NULL,
-  `pengirim` int(11) DEFAULT NULL,
+  `pengirim` varchar(50) DEFAULT NULL,
   `nomor` varchar(50) DEFAULT NULL,
   `tgl_surat` varchar(100) DEFAULT NULL,
   `tgl_kirim` varchar(100) NOT NULL,
@@ -16868,7 +17131,7 @@ CREATE TABLE IF NOT EXISTS `tc_surat_masuk` (
   `hal` varchar(100) DEFAULT NULL,
   `kepada` varchar(200) DEFAULT NULL,
   `keterangan` varchar(200) DEFAULT NULL,
-  `status` tinytext,
+  `status` tinytext DEFAULT NULL,
   `id_dd_sekolah` int(11) DEFAULT NULL,
   `id_hrmt_data_pegawai` int(11) DEFAULT NULL,
   `tgl_status` datetime DEFAULT NULL,
@@ -16878,13 +17141,13 @@ CREATE TABLE IF NOT EXISTS `tc_surat_masuk` (
   `id_dd_user_edit` int(11) DEFAULT NULL,
   `tgl_edit` datetime DEFAULT NULL,
   `id_hrmt_data_pegawai_penerima` int(11) DEFAULT NULL,
-  `alamat_pengirim` longtext,
+  `alamat_pengirim` longtext DEFAULT NULL,
   `id_hrmt_data_pegawai_agendaris` int(11) DEFAULT NULL,
-  `flag` tinyint(4) DEFAULT '0' COMMENT '1: surat,2: fax,3: email,4:buku tamu,5:telpon,0: temporari',
+  `flag` tinyint(4) DEFAULT 0 COMMENT '1: surat,2: fax,3: email,4:buku tamu,5:telpon,0: temporari',
   `url_scan` varchar(255) DEFAULT NULL,
   `alamat_email` varchar(255) DEFAULT NULL,
   `judul` varchar(255) DEFAULT NULL,
-  `isi_email` text,
+  `isi_email` text DEFAULT NULL,
   `tgl_terima_email` datetime DEFAULT NULL,
   `nama_pengunjung` varchar(255) DEFAULT NULL,
   `alamat_pengunjung` varchar(255) DEFAULT NULL,
@@ -16892,47 +17155,124 @@ CREATE TABLE IF NOT EXISTS `tc_surat_masuk` (
   `tgl_kunjungan` datetime DEFAULT NULL,
   `tgl_telpon` datetime DEFAULT NULL,
   `no_telpon` varchar(20) DEFAULT NULL,
-  `keterangan_pembicaraan` text,
+  `keterangan_pembicaraan` text DEFAULT NULL,
   `status_pembicaraan` varchar(200) DEFAULT NULL COMMENT '1:Di Lanjutkan,2: Tidak Dilanjutkan',
   `ket_status_pembicaraan` varchar(255) DEFAULT NULL,
   `nama_pembicara` varchar(120) DEFAULT NULL,
   `jam_pembicaraan` varchar(5) DEFAULT NULL,
   `tujuan_pembicaraan` varchar(120) DEFAULT NULL,
   `kd_notaris` varchar(6) DEFAULT NULL,
-  `flag_surat` tinyint(4) DEFAULT '1' COMMENT '1: Client,2:Bukan Client',
+  `flag_surat` tinyint(4) DEFAULT 1 COMMENT '1: Client,2:Bukan Client',
   `id_mt_client` int(11) DEFAULT NULL,
   `lampiran` varchar(5) DEFAULT NULL,
   `bertemu` varchar(255) DEFAULT NULL COMMENT 'buku tamu',
-  `perjanjian_bertemu` tinyint(4) DEFAULT '1' COMMENT '1:Sudah Janji,2:Belum Janji,buku tamu',
+  `perjanjian_bertemu` tinyint(4) DEFAULT 1 COMMENT '1:Sudah Janji,2:Belum Janji,buku tamu',
   `jabatan` varchar(255) DEFAULT NULL,
-  `keperluan` text,
+  `keperluan` text DEFAULT NULL,
   `url` varchar(255) DEFAULT NULL,
   `jenis_surat` tinyint(4) DEFAULT NULL,
   `no_induk` varchar(20) DEFAULT NULL,
-  `status_surat` tinyint(4) DEFAULT '0' COMMENT '0:masuk,1',
+  `status_surat` tinyint(4) DEFAULT 0 COMMENT '0:masuk,1',
   `komentar` varchar(255) DEFAULT NULL
-) ENGINE=MyISAM AUTO_INCREMENT=68 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tc_surat_masuk`
+-- Dumping data untuk tabel `tc_surat_masuk`
 --
 
 INSERT INTO `tc_surat_masuk` (`id_tc_surat_masuk`, `kd_unik`, `id_disposisi`, `pengirim`, `nomor`, `tgl_surat`, `tgl_kirim`, `tgl_terima`, `penerima`, `agendaris`, `no_agenda`, `hal`, `kepada`, `keterangan`, `status`, `id_dd_sekolah`, `id_hrmt_data_pegawai`, `tgl_status`, `flag_status`, `id_dd_user_input`, `tgl_input`, `id_dd_user_edit`, `tgl_edit`, `id_hrmt_data_pegawai_penerima`, `alamat_pengirim`, `id_hrmt_data_pegawai_agendaris`, `flag`, `url_scan`, `alamat_email`, `judul`, `isi_email`, `tgl_terima_email`, `nama_pengunjung`, `alamat_pengunjung`, `telpon_pengunjung`, `tgl_kunjungan`, `tgl_telpon`, `no_telpon`, `keterangan_pembicaraan`, `status_pembicaraan`, `ket_status_pembicaraan`, `nama_pembicara`, `jam_pembicaraan`, `tujuan_pembicaraan`, `kd_notaris`, `flag_surat`, `id_mt_client`, `lampiran`, `bertemu`, `perjanjian_bertemu`, `jabatan`, `keperluan`, `url`, `jenis_surat`, `no_induk`, `status_surat`, `komentar`) VALUES
-(22, '', '', NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, '1,3,4', NULL, NULL, NULL, NULL, '0', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, 0, NULL),
+(22, '', '', NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, '1,3,4', NULL, NULL, NULL, NULL, '0', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, 1, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, 0, NULL),
 (23, '', '', NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, '1,2', NULL, NULL, NULL, NULL, '0', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, 0, NULL),
 (24, '', '', NULL, NULL, NULL, '', NULL, NULL, NULL, NULL, NULL, NULL, '6,2', NULL, NULL, NULL, NULL, '0', NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, 0, NULL),
-(66, '0066', '', 1, '0999', NULL, '', '2020-01-14', 'Sekretariat', ' penting', NULL, ' Penting', 'Kepala RSUW', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-01-03 07:30:57', NULL, NULL, NULL, 'Dringu', NULL, 0, '_Penting.pdf', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, 0, NULL),
-(65, '0065', '1', 1, '901', NULL, '', '2019-12-06', 'Sekretariat', ' Penting', NULL, ' Undangan Penting', 'Kepala RSUW', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2019-12-23 03:37:41', NULL, NULL, NULL, 'Dringu', NULL, 0, '_Undangan_Penting.pdf', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, 0, ''),
-(64, '0064', '1,2', 1, '43', NULL, '', '2019-12-14', 'Sekretariat', ' wildan', NULL, 'wildan', 'Kepala RSUW', '', NULL, NULL, NULL, NULL, NULL, NULL, '2019-12-19 01:31:34', NULL, NULL, NULL, 'wildan', NULL, 0, 'wildan.pdf', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, 0, 'test'),
-(67, '0067', '', 1, '435435', NULL, '', '2020-01-09', 'Sekretariat', ' sdf', NULL, ' sdf', 'Kepala RSUW', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-01-04 04:35:16', NULL, NULL, NULL, 'sf', NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, 0, NULL);
+(66, '0066', '', 'PT PERSERO', '0999', '', '', '2020-01-14', 'Sekretariat', ' penting', NULL, ' Penting', 'Kepala RSUW', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-02-12 01:24:10', NULL, NULL, NULL, 'Dringu', NULL, 0, '_Penting.pdf', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, 0, NULL),
+(65, '0065', '1', 'PT PERSERO', '901', '', '', '2019-12-06', 'Sekretariat', ' Penting', NULL, ' Undangan Penting', 'Kepala RSUW', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-02-12 01:24:35', NULL, NULL, NULL, 'Dringu', NULL, 0, '_Undangan_Penting.pdf', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, 0, ''),
+(64, '0064', '1,2', '1', '43', NULL, '', '2019-12-14', 'Sekretariat', ' wildan', NULL, 'wildan', 'Kepala RSUW', '', NULL, NULL, NULL, NULL, NULL, NULL, '2019-12-19 01:31:34', NULL, NULL, NULL, 'wildan', NULL, 0, 'wildan.pdf', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, 0, 'test'),
+(67, '0067', '', '0', '435435', '', '', '2020-01-09', 'Sekretariat', ' sdf', NULL, ' sdf', 'Kepala RSUW', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-02-12 01:22:52', NULL, NULL, NULL, 'sf', NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, 0, NULL),
+(68, '0068', '1,3', '0', '0000', '2020-02-14', '', '2020-01-15', 'Sekretariat', ' Senin', NULL, ' Pelatihan Diklat', 'Kepala RSUW', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2020-02-12 01:22:20', NULL, NULL, NULL, 'Jl. Dringu', NULL, 0, '_Pelatihan_Diklat.pdf', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, NULL, NULL, 0, 'Pro: Sekretariat\r\n\r\nU/Dibuatkan surat balasan\r\n\r\n');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tc_syarat_akta`
+-- Struktur dari tabel `tc_sur_keluar`
 --
 
-CREATE TABLE IF NOT EXISTS `tc_syarat_akta` (
+CREATE TABLE `tc_sur_keluar` (
+  `id_sur_keluar` int(20) NOT NULL,
+  `kd_unik` varchar(128) NOT NULL,
+  `no_surat` varchar(128) NOT NULL,
+  `jenis_surat` varchar(128) NOT NULL,
+  `tgl_surat` varchar(128) NOT NULL,
+  `perihal_surat` varchar(128) NOT NULL,
+  `status_surat` varchar(128) NOT NULL,
+  `kepada` varchar(128) NOT NULL,
+  `alamat_surat` varchar(128) NOT NULL,
+  `pembuat` varchar(128) NOT NULL,
+  `upload_doc` varchar(128) NOT NULL,
+  `upload_pdf` varchar(128) NOT NULL,
+  `ka_bag_aku` varchar(128) NOT NULL,
+  `ka_bag_yan` varchar(128) NOT NULL,
+  `catatan_surat` varchar(128) NOT NULL,
+  `disetujui_ka_rs` varchar(128) NOT NULL,
+  `catatan_ka_rs` varchar(128) NOT NULL,
+  `tgl_kirim` varchar(128) NOT NULL,
+  `arsip` varchar(128) NOT NULL,
+  `control` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tc_sur_keluar`
+--
+
+INSERT INTO `tc_sur_keluar` (`id_sur_keluar`, `kd_unik`, `no_surat`, `jenis_surat`, `tgl_surat`, `perihal_surat`, `status_surat`, `kepada`, `alamat_surat`, `pembuat`, `upload_doc`, `upload_pdf`, `ka_bag_aku`, `ka_bag_yan`, `catatan_surat`, `disetujui_ka_rs`, `catatan_ka_rs`, `tgl_kirim`, `arsip`, `control`) VALUES
+(1, '0001', '123', 'AA-PESWA', '2020-05-05', ' Inventaris', 'intern', 'PT PERSERO', '', 'Andri Eko', ' Inventaris', '', '', '', '', '', '', '', '', '5');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tc_sur_masuk`
+--
+
+CREATE TABLE `tc_sur_masuk` (
+  `id_sur_masuk` int(20) NOT NULL,
+  `kd_unik` varchar(50) NOT NULL,
+  `no_surat` varchar(128) NOT NULL,
+  `tgl_surat` varchar(128) NOT NULL,
+  `tgl_terima` varchar(128) NOT NULL,
+  `penerima` varchar(128) NOT NULL,
+  `sur_dari` varchar(128) NOT NULL,
+  `alamat_surat` varchar(128) NOT NULL,
+  `jenis_surat` varchar(128) NOT NULL,
+  `perihal_surat` varchar(128) NOT NULL,
+  `agenda_surat` varchar(128) NOT NULL,
+  `kepada` varchar(128) NOT NULL,
+  `upload_surat` varchar(128) NOT NULL,
+  `paraf` varchar(128) NOT NULL,
+  `ka_bag_aku` varchar(128) NOT NULL,
+  `ka_bag_yan` varchar(128) NOT NULL,
+  `catatan_surat` varchar(500) NOT NULL,
+  `id_disposisi` varchar(200) NOT NULL,
+  `pro_disposisi` varchar(128) NOT NULL,
+  `catatan_ka_rs` varchar(500) NOT NULL,
+  `pro_diterima` varchar(128) NOT NULL,
+  `arsip` varchar(128) NOT NULL,
+  `status` varchar(128) NOT NULL,
+  `control` varchar(128) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tc_sur_masuk`
+--
+
+INSERT INTO `tc_sur_masuk` (`id_sur_masuk`, `kd_unik`, `no_surat`, `tgl_surat`, `tgl_terima`, `penerima`, `sur_dari`, `alamat_surat`, `jenis_surat`, `perihal_surat`, `agenda_surat`, `kepada`, `upload_surat`, `paraf`, `ka_bag_aku`, `ka_bag_yan`, `catatan_surat`, `id_disposisi`, `pro_disposisi`, `catatan_ka_rs`, `pro_diterima`, `arsip`, `status`, `control`) VALUES
+(1, '0001', '001', '2020-04-01', '2020-04-24', 'Sekretariat', 'PT PERSERO', '', 'PESWA', ' Pelatihan', ' Senin', 'Kepala RSUW', '_Pelatihan.pdf', 'Kabag AKU', 'yes1', 'yes2', 'Sudah dikondisikan', 'u / ditindak lanjuti', 'administrator', 'Agar dikondisikan', 'diterima', '', 'Rahasia', '5');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tc_syarat_akta`
+--
+
+CREATE TABLE `tc_syarat_akta` (
   `id_tc_syarat_akta` int(11) NOT NULL,
   `id_tc_pesan` int(11) DEFAULT NULL,
   `id_syarat` int(10) DEFAULT NULL,
@@ -16946,11 +17286,11 @@ CREATE TABLE IF NOT EXISTS `tc_syarat_akta` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Struktur dari tabel `user`
 --
 
-CREATE TABLE IF NOT EXISTS `user` (
-`id` int(11) NOT NULL,
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
   `nim` varchar(128) NOT NULL,
   `nama` varchar(128) NOT NULL,
   `email` varchar(128) NOT NULL,
@@ -16962,10 +17302,10 @@ CREATE TABLE IF NOT EXISTS `user` (
   `role` varchar(40) DEFAULT NULL,
   `id_active` int(1) NOT NULL,
   `date_created` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user`
+-- Dumping data untuk tabel `user`
 --
 
 INSERT INTO `user` (`id`, `nim`, `nama`, `email`, `judul`, `tahun`, `gambar`, `password`, `role_id`, `role`, `id_active`, `date_created`) VALUES
@@ -16977,11 +17317,10 @@ INSERT INTO `user` (`id`, `nim`, `nama`, `email`, `judul`, `tahun`, `gambar`, `p
 (10, '002', 'DWI YANTO, M.KOM', 'wildan.arindi24@gmail.com', '', '2019', 'IMG_22.jpg', '$2y$10$mB50fzwiqvEJAyEEEQhgTOQKz6loJj58Vh.n0w7txulAkS1bWIbZe', 3, 'Dosen', 1, 1564029876);
 
 --
--- Triggers `user`
+-- Trigger `user`
 --
-DELIMITER //
-CREATE TRIGGER `INPUTuser` BEFORE INSERT ON `user`
- FOR EACH ROW BEGIN
+DELIMITER $$
+CREATE TRIGGER `INPUTuser` BEFORE INSERT ON `user` FOR EACH ROW BEGIN
 DECLARE namarole VARCHAR(30);
 
 
@@ -16990,11 +17329,10 @@ SET NEW.role = namarole;
 
 
 END
-//
+$$
 DELIMITER ;
-DELIMITER //
-CREATE TRIGGER `UPDATEuser` BEFORE UPDATE ON `user`
- FOR EACH ROW BEGIN
+DELIMITER $$
+CREATE TRIGGER `UPDATEuser` BEFORE UPDATE ON `user` FOR EACH ROW BEGIN
 DECLARE namarole VARCHAR(30);
 
 
@@ -17003,34 +17341,30 @@ SET NEW.role = namarole;
 
 
 END
-//
+$$
 DELIMITER ;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_access_menu`
+-- Struktur dari tabel `user_access_menu`
 --
 
-CREATE TABLE IF NOT EXISTS `user_access_menu` (
-`id` int(11) NOT NULL,
+CREATE TABLE `user_access_menu` (
+  `id` int(11) NOT NULL,
   `role_id` int(11) NOT NULL,
   `menu_id` int(11) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user_access_menu`
+-- Dumping data untuk tabel `user_access_menu`
 --
 
 INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
 (1, 1, 1),
 (3, 1, 3),
-(11, 1, 2),
 (12, 2, 3),
 (14, 3, 3),
-(46, 1, 5),
-(47, 1, 4),
-(50, 2, 6),
 (69, 2, 5),
 (70, 4, 5),
 (71, 4, 3),
@@ -17038,15 +17372,23 @@ INSERT INTO `user_access_menu` (`id`, `role_id`, `menu_id`) VALUES
 (73, 3, 2),
 (74, 4, 2),
 (75, 3, 5),
-(79, 1, 8);
+(82, 5, 2),
+(83, 5, 3),
+(85, 5, 5),
+(86, 6, 2),
+(87, 6, 3),
+(88, 6, 5),
+(90, 1, 11),
+(91, 1, 4),
+(92, 1, 2);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_karyawan_v`
+-- Struktur dari tabel `user_karyawan_v`
 --
 
-CREATE TABLE IF NOT EXISTS `user_karyawan_v` (
+CREATE TABLE `user_karyawan_v` (
   `id_dd_user` int(11) DEFAULT NULL,
   `username` varchar(50) DEFAULT NULL,
   `nama_pegawai` varchar(50) DEFAULT NULL,
@@ -17066,70 +17408,73 @@ CREATE TABLE IF NOT EXISTS `user_karyawan_v` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_menu`
+-- Struktur dari tabel `user_menu`
 --
 
-CREATE TABLE IF NOT EXISTS `user_menu` (
-`id` int(11) NOT NULL,
-  `menu` varchar(128) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=latin1;
+CREATE TABLE `user_menu` (
+  `id` int(11) NOT NULL,
+  `menu` varchar(128) NOT NULL,
+  `icon_menu` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user_menu`
+-- Dumping data untuk tabel `user_menu`
 --
 
-INSERT INTO `user_menu` (`id`, `menu`) VALUES
-(1, 'Admin'),
-(2, 'Master'),
-(3, 'User'),
-(4, 'Menu'),
-(5, 'Surat'),
-(6, 'Latihan'),
-(7, 'Sekretariat'),
-(8, 'Contact'),
-(9, 'Diklat');
+INSERT INTO `user_menu` (`id`, `menu`, `icon_menu`) VALUES
+(1, 'Admin', 'face'),
+(2, 'Master', 'folder'),
+(3, 'User', 'person'),
+(4, 'Menu', 'apps'),
+(5, 'Surat', 'mail'),
+(6, 'Latihan', ''),
+(7, 'Sekretariat', ''),
+(8, 'Diklat', 'school'),
+(9, 'Contact', 'contacts'),
+(10, 'Arsip', ''),
+(11, 'Covid', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_role`
+-- Struktur dari tabel `user_role`
 --
 
-CREATE TABLE IF NOT EXISTS `user_role` (
-`id` int(11) NOT NULL,
+CREATE TABLE `user_role` (
+  `id` int(11) NOT NULL,
   `role` varchar(128) NOT NULL,
   `n_menu` varchar(200) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user_role`
+-- Dumping data untuk tabel `user_role`
 --
 
 INSERT INTO `user_role` (`id`, `role`, `n_menu`) VALUES
 (1, 'Admin', '1'),
-(2, 'Kepala RSUW', '1'),
+(2, 'Kepala Rumah Sakit', '1'),
 (3, 'Sekretariat', '2'),
 (4, 'Karyawan', '1,2,3,4,5,6'),
 (5, 'Kabag AKU', ''),
-(7, 'Kabag Yanmed', '');
+(6, 'Kabag Pelayanan', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user_sub_menu`
+-- Struktur dari tabel `user_sub_menu`
 --
 
-CREATE TABLE IF NOT EXISTS `user_sub_menu` (
-`id` int(11) NOT NULL,
+CREATE TABLE `user_sub_menu` (
+  `id` int(11) NOT NULL,
   `menu_id` int(11) NOT NULL,
   `title` varchar(128) NOT NULL,
   `url` varchar(250) NOT NULL,
   `icon` varchar(128) NOT NULL,
   `id_active` int(1) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=59 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `user_sub_menu`
+-- Dumping data untuk tabel `user_sub_menu`
 --
 
 INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `id_active`) VALUES
@@ -17140,7 +17485,6 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `id_active
 (5, 4, 'Submenu Management', 'menu/submenu', 'fas fa-fw fa-folder-open', 1),
 (9, 2, 'Master Client', 'master/client', 'fas fa-fw fa-user-tie', 1),
 (12, 3, 'Home', 'user/index', 'fas fa-fw fa-user-tie', 1),
-(40, 10, 'Trans Sidang', 'trans/sidang', 'fas fa-fw fa-user-tie', 1),
 (41, 5, 'Surat Keluar', 'surat/keluar', 'fas fa-fw fa-folder-open', 1),
 (42, 5, 'Surat Masuk', 'surat/masuk', 'fas fa-fw fa-folder-open', 1),
 (43, 6, 'Checkbox', 'latihan/checkbok', 'fas fa-fw fa-user-tie', 1),
@@ -17149,1582 +17493,1799 @@ INSERT INTO `user_sub_menu` (`id`, `menu_id`, `title`, `url`, `icon`, `id_active
 (48, 7, 'Surat Keluar', 'sekretariat/keluar', 'fas fa-fw fa-folder-open', 1),
 (49, 2, 'Master Karyawan', 'master/karyawan', 'fas fa-fw fa-user-tie', 1),
 (50, 2, 'Master Jabatan', 'master/jabatan', 'fas fa-fw fa-user-plus', 1),
-(51, 8, 'Contact', 'contact/index', 'fas fa-fw fa-user-tie', 1),
-(52, 8, 'Chat', 'contact/chat', 'fas fa-fw fa-user-tie', 1),
-(53, 9, 'Diklat Online', 'diklat/index', 'fas fa-fw fa-folder-open', 1),
+(51, 9, 'Contact', 'contact/index', 'fas fa-fw fa-user-tie', 1),
+(52, 9, 'Chat', 'contact/chat', 'fas fa-fw fa-user-tie', 1),
+(53, 8, 'Diklat Online', 'diklat/index', 'fas fa-fw fa-folder-open', 1),
 (54, 3, 'Profile', 'user/profile', 'fas fa-fw fa-user-tie', 1),
 (55, 3, 'Change Password', 'user/changePassword', 'fas fa-fw fa-user-tie', 1),
 (56, 2, 'Master Kota', 'master/kota', 'fas fa-fw fa-user-tie', 1),
 (57, 2, 'Master Propinsi', 'master/propinsi', 'fas fa-fw fa-user-tie', 1),
-(58, 2, 'Master Negara', 'master/negara', '	fas fa-fw fa-user-tie', 1);
+(58, 2, 'Master Negara', 'master/negara', '	fas fa-fw fa-user-tie', 1),
+(59, 10, 'Surat Masuk', 'arsip/masuk', 'fas fa-fw-user-tie', 1),
+(60, 10, 'Surat Keluar', 'arsip/keluar', 'fas fa-fw-user-tie', 1),
+(61, 11, 'Pendaftaran Pasien', 'covid/daftar', 'fas fa-fw fa-folder-open', 1),
+(62, 11, 'Pemeriksaan IGD', 'covid/igd', 'fas fa-fw fa-folder-open', 1),
+(63, 11, 'ODP Rajal', 'covid/odprajal', 'fas fa-fw fa-folder-open', 1),
+(64, 11, 'ODP Ranap', 'covid/odpranap', 'fas fa-fw fa-folder-open', 1),
+(65, 11, 'PDP Rajal', 'covid/pdprajal', 'fas fa-fw fa-folder-open', 1),
+(66, 11, 'PDP Ranap', 'covid/pdpranap', 'fas fa-fw fa-folder-open', 1);
 
 -- --------------------------------------------------------
 
 --
--- Structure for view `admin_hak_user_v`
+-- Struktur untuk view `admin_hak_user_v`
 --
 DROP TABLE IF EXISTS `admin_hak_user_v`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `admin_hak_user_v` AS select `dd_user_group_detail`.`id_dd_user_group_detail` AS `id_dd_user_group_detail`,`dd_user_group_detail`.`hak_akses_menu` AS `hak_akses_menu`,`dd_group`.`nama_group` AS `nama_group`,`dc_sub_menu`.`nama_sub_menu` AS `nama_sub_menu`,`dc_sub_menu`.`url_sub_menu` AS `url_sub_menu`,`dc_sub_menu`.`keterangan` AS `keterangan`,`dc_sub_menu`.`no_urut` AS `no_urut_sub_menu`,`dc_sub_menu`.`id_dc_sub_menu` AS `id_dc_sub_menu`,`dc_menu`.`id_dc_menu` AS `id_dc_menu`,`dc_menu`.`nama_menu` AS `nama_menu`,`dc_menu`.`no_urut` AS `no_urut_menu`,`dc_modul`.`id_dc_modul` AS `id_dc_modul`,`dc_modul`.`nama_modul` AS `nama_modul`,`dc_modul`.`logo` AS `logo`,`dc_modul`.`no_urut` AS `no_urut_modul`,`dd_user`.`id_dd_user` AS `id_dd_user`,`dd_user`.`username` AS `username`,`dd_user`.`password` AS `password`,`dd_user`.`npp` AS `npp`,`dd_user`.`status` AS `status`,`dd_user`.`ko_wil` AS `ko_wil`,`dd_user_group`.`id_dd_user_group` AS `id_dd_user_group`,`dd_user_group`.`nama_group` AS `nama_group_user`,`dc_modul`.`id_dc_modular` AS `id_dc_modular`,`dd_user`.`no_induk` AS `no_induk`,`dc_modular`.`nama_modular` AS `nama_modular`,`dc_modular`.`no_urut_modular` AS `no_urut_modular`,`dc_modul`.`nama_modul_alt` AS `nama_modul_alt`,`dc_sub_menu`.`ket_sub_menu` AS `ket_sub_menu` from (((((`dc_sub_menu` join (`dd_user_group` join `dd_user_group_detail` on((`dd_user_group`.`id_dd_user_group` = `dd_user_group_detail`.`id_dd_user_group`))) on((`dc_sub_menu`.`id_dc_sub_menu` = `dd_user_group_detail`.`id_dc_sub_menu`))) join (`dc_menu` join `dc_modul` on((`dc_menu`.`id_dc_modul` = `dc_modul`.`id_dc_modul`))) on((`dc_sub_menu`.`id_dc_menu` = `dc_menu`.`id_dc_menu`))) join `dd_group` on((`dd_user_group_detail`.`hak_akses_menu` = `dd_group`.`id_dd_group`))) join `dd_user` on((`dd_user_group`.`id_dd_user_group` = `dd_user`.`id_dd_user_group`))) left join `dc_modular` on((`dc_modul`.`id_dc_modular` = `dc_modular`.`id_dc_modular`)));
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `admin_hak_user_v`  AS  select `dd_user_group_detail`.`id_dd_user_group_detail` AS `id_dd_user_group_detail`,`dd_user_group_detail`.`hak_akses_menu` AS `hak_akses_menu`,`dd_group`.`nama_group` AS `nama_group`,`dc_sub_menu`.`nama_sub_menu` AS `nama_sub_menu`,`dc_sub_menu`.`url_sub_menu` AS `url_sub_menu`,`dc_sub_menu`.`keterangan` AS `keterangan`,`dc_sub_menu`.`no_urut` AS `no_urut_sub_menu`,`dc_sub_menu`.`id_dc_sub_menu` AS `id_dc_sub_menu`,`dc_menu`.`id_dc_menu` AS `id_dc_menu`,`dc_menu`.`nama_menu` AS `nama_menu`,`dc_menu`.`no_urut` AS `no_urut_menu`,`dc_modul`.`id_dc_modul` AS `id_dc_modul`,`dc_modul`.`nama_modul` AS `nama_modul`,`dc_modul`.`logo` AS `logo`,`dc_modul`.`no_urut` AS `no_urut_modul`,`dd_user`.`id_dd_user` AS `id_dd_user`,`dd_user`.`username` AS `username`,`dd_user`.`password` AS `password`,`dd_user`.`npp` AS `npp`,`dd_user`.`status` AS `status`,`dd_user`.`ko_wil` AS `ko_wil`,`dd_user_group`.`id_dd_user_group` AS `id_dd_user_group`,`dd_user_group`.`nama_group` AS `nama_group_user`,`dc_modul`.`id_dc_modular` AS `id_dc_modular`,`dd_user`.`no_induk` AS `no_induk`,`dc_modular`.`nama_modular` AS `nama_modular`,`dc_modular`.`no_urut_modular` AS `no_urut_modular`,`dc_modul`.`nama_modul_alt` AS `nama_modul_alt`,`dc_sub_menu`.`ket_sub_menu` AS `ket_sub_menu` from (((((`dc_sub_menu` join (`dd_user_group` join `dd_user_group_detail` on(`dd_user_group`.`id_dd_user_group` = `dd_user_group_detail`.`id_dd_user_group`)) on(`dc_sub_menu`.`id_dc_sub_menu` = `dd_user_group_detail`.`id_dc_sub_menu`)) join (`dc_menu` join `dc_modul` on(`dc_menu`.`id_dc_modul` = `dc_modul`.`id_dc_modul`)) on(`dc_sub_menu`.`id_dc_menu` = `dc_menu`.`id_dc_menu`)) join `dd_group` on(`dd_user_group_detail`.`hak_akses_menu` = `dd_group`.`id_dd_group`)) join `dd_user` on(`dd_user_group`.`id_dd_user_group` = `dd_user`.`id_dd_user_group`)) left join `dc_modular` on(`dc_modul`.`id_dc_modular` = `dc_modular`.`id_dc_modular`)) ;
 
 -- --------------------------------------------------------
 
 --
--- Structure for view `admin_laporan_user_privilleges_v`
+-- Struktur untuk view `admin_laporan_user_privilleges_v`
 --
 DROP TABLE IF EXISTS `admin_laporan_user_privilleges_v`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `admin_laporan_user_privilleges_v` AS select `dd_user_group`.`nama_group` AS `nama_group`,`dd_user_group`.`id_dd_user_group` AS `id_dd_user_group`,`dd_user_group_detail`.`hak_akses_menu` AS `hak_akses_menu`,`dd_group`.`nama_group` AS `hak_akses`,`dc_modul`.`id_dc_modul` AS `id_dc_modul`,`dc_modul`.`nama_modul` AS `nama_modul`,`dc_menu`.`id_dc_menu` AS `id_dc_menu`,`dc_menu`.`nama_menu` AS `nama_menu`,`dc_sub_menu`.`id_dc_sub_menu` AS `id_dc_sub_menu`,`dc_sub_menu`.`nama_sub_menu` AS `nama_sub_menu`,`dc_sub_menu`.`keterangan` AS `keterangan` from ((`dc_menu` join `dc_modul` on((`dc_menu`.`id_dc_modul` = `dc_modul`.`id_dc_modul`))) join (((`dd_user_group` join `dd_user_group_detail` on((`dd_user_group`.`id_dd_user_group` = `dd_user_group_detail`.`id_dd_user_group`))) join `dc_sub_menu` on((`dd_user_group_detail`.`id_dc_sub_menu` = `dc_sub_menu`.`id_dc_sub_menu`))) join `dd_group` on((`dd_user_group_detail`.`hak_akses_menu` = `dd_group`.`id_dd_group`))) on((`dc_menu`.`id_dc_menu` = `dc_sub_menu`.`id_dc_menu`)));
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `admin_laporan_user_privilleges_v`  AS  select `dd_user_group`.`nama_group` AS `nama_group`,`dd_user_group`.`id_dd_user_group` AS `id_dd_user_group`,`dd_user_group_detail`.`hak_akses_menu` AS `hak_akses_menu`,`dd_group`.`nama_group` AS `hak_akses`,`dc_modul`.`id_dc_modul` AS `id_dc_modul`,`dc_modul`.`nama_modul` AS `nama_modul`,`dc_menu`.`id_dc_menu` AS `id_dc_menu`,`dc_menu`.`nama_menu` AS `nama_menu`,`dc_sub_menu`.`id_dc_sub_menu` AS `id_dc_sub_menu`,`dc_sub_menu`.`nama_sub_menu` AS `nama_sub_menu`,`dc_sub_menu`.`keterangan` AS `keterangan` from ((`dc_menu` join `dc_modul` on(`dc_menu`.`id_dc_modul` = `dc_modul`.`id_dc_modul`)) join (((`dd_user_group` join `dd_user_group_detail` on(`dd_user_group`.`id_dd_user_group` = `dd_user_group_detail`.`id_dd_user_group`)) join `dc_sub_menu` on(`dd_user_group_detail`.`id_dc_sub_menu` = `dc_sub_menu`.`id_dc_sub_menu`)) join `dd_group` on(`dd_user_group_detail`.`hak_akses_menu` = `dd_group`.`id_dd_group`)) on(`dc_menu`.`id_dc_menu` = `dc_sub_menu`.`id_dc_menu`)) ;
 
 -- --------------------------------------------------------
 
 --
--- Structure for view `admin_laporan_user_v`
+-- Struktur untuk view `admin_laporan_user_v`
 --
 DROP TABLE IF EXISTS `admin_laporan_user_v`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `admin_laporan_user_v` AS select `dd_user`.`id_dd_user` AS `id_dd_user`,`dd_user`.`username` AS `username`,`dd_user`.`npp` AS `npp`,`dd_user`.`ko_wil` AS `ko_wil`,`dd_user`.`status` AS `status`,`dc_wilayah_kerja`.`nawil_kerja` AS `nawil_kerja`,`dd_user_group`.`nama_group` AS `nama_group` from ((`dd_user` left join `dd_user_group` on((`dd_user`.`id_dd_user_group` = `dd_user_group`.`id_dd_user_group`))) left join `dc_wilayah_kerja` on((`dd_user`.`ko_wil` = `dc_wilayah_kerja`.`ko_wil`)));
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `admin_laporan_user_v`  AS  select `dd_user`.`id_dd_user` AS `id_dd_user`,`dd_user`.`username` AS `username`,`dd_user`.`npp` AS `npp`,`dd_user`.`ko_wil` AS `ko_wil`,`dd_user`.`status` AS `status`,`dc_wilayah_kerja`.`nawil_kerja` AS `nawil_kerja`,`dd_user_group`.`nama_group` AS `nama_group` from ((`dd_user` left join `dd_user_group` on(`dd_user`.`id_dd_user_group` = `dd_user_group`.`id_dd_user_group`)) left join `dc_wilayah_kerja` on(`dd_user`.`ko_wil` = `dc_wilayah_kerja`.`ko_wil`)) ;
 
 -- --------------------------------------------------------
 
 --
--- Structure for view `admin_privilleges_menu_v`
+-- Struktur untuk view `admin_privilleges_menu_v`
 --
 DROP TABLE IF EXISTS `admin_privilleges_menu_v`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `admin_privilleges_menu_v` AS select `dd_user`.`username` AS `username`,`dd_group`.`nama_group` AS `nama_group`,`dc_modul`.`nama_modul` AS `nama_modul`,`dc_menu`.`nama_menu` AS `nama_menu`,`dc_menu`.`id_dc_menu` AS `id_dc_menu`,`dc_modul`.`id_dc_modul` AS `id_dc_modul`,`dd_user`.`id_dd_user` AS `id_dd_user`,`dd_group_menu`.`id_dd_group_menu` AS `id_dd_group_menu`,`dd_group_modul`.`id_dd_group_modul` AS `id_dd_group_modul`,`dd_group`.`id_dd_group` AS `id_dd_group` from (((((`dd_group_menu` join `dd_user` on((`dd_group_menu`.`id_dd_user` = `dd_user`.`id_dd_user`))) join `dd_group_modul` on((`dd_user`.`id_dd_user` = `dd_group_modul`.`id_dd_user`))) join `dc_menu` on((`dd_group_menu`.`id_dc_menu` = `dc_menu`.`id_dc_menu`))) join `dc_modul` on(((`dd_group_modul`.`id_dc_modul` = `dc_modul`.`id_dc_modul`) and (`dc_menu`.`id_dc_modul` = `dc_modul`.`id_dc_modul`)))) join `dd_group` on((`dd_group_menu`.`hak_akses` = `dd_group`.`id_dd_group`))) order by `dd_user`.`username`,`dd_group_modul`.`id_dd_group_modul`,`dd_group_menu`.`id_dd_group_menu`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `admin_privilleges_menu_v`  AS  select `dd_user`.`username` AS `username`,`dd_group`.`nama_group` AS `nama_group`,`dc_modul`.`nama_modul` AS `nama_modul`,`dc_menu`.`nama_menu` AS `nama_menu`,`dc_menu`.`id_dc_menu` AS `id_dc_menu`,`dc_modul`.`id_dc_modul` AS `id_dc_modul`,`dd_user`.`id_dd_user` AS `id_dd_user`,`dd_group_menu`.`id_dd_group_menu` AS `id_dd_group_menu`,`dd_group_modul`.`id_dd_group_modul` AS `id_dd_group_modul`,`dd_group`.`id_dd_group` AS `id_dd_group` from (((((`dd_group_menu` join `dd_user` on(`dd_group_menu`.`id_dd_user` = `dd_user`.`id_dd_user`)) join `dd_group_modul` on(`dd_user`.`id_dd_user` = `dd_group_modul`.`id_dd_user`)) join `dc_menu` on(`dd_group_menu`.`id_dc_menu` = `dc_menu`.`id_dc_menu`)) join `dc_modul` on(`dd_group_modul`.`id_dc_modul` = `dc_modul`.`id_dc_modul` and `dc_menu`.`id_dc_modul` = `dc_modul`.`id_dc_modul`)) join `dd_group` on(`dd_group_menu`.`hak_akses` = `dd_group`.`id_dd_group`)) order by `dd_user`.`username`,`dd_group_modul`.`id_dd_group_modul`,`dd_group_menu`.`id_dd_group_menu` ;
 
 -- --------------------------------------------------------
 
 --
--- Structure for view `admin_privilleges_modul_v`
+-- Struktur untuk view `admin_privilleges_modul_v`
 --
 DROP TABLE IF EXISTS `admin_privilleges_modul_v`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `admin_privilleges_modul_v` AS select `dd_user`.`username` AS `username`,`dd_group`.`nama_group` AS `nama_group`,`dc_modul`.`nama_modul` AS `nama_modul`,`dc_modul`.`id_dc_modul` AS `id_dc_modul`,`dd_user`.`id_dd_user` AS `id_dd_user`,`dd_group_modul`.`id_dd_group_modul` AS `id_dd_group_modul`,`dd_group`.`id_dd_group` AS `id_dd_group` from (((`dd_user` join `dd_group_modul` on((`dd_user`.`id_dd_user` = `dd_group_modul`.`id_dd_user`))) join `dc_modul` on((`dd_group_modul`.`id_dc_modul` = `dc_modul`.`id_dc_modul`))) join `dd_group` on((`dd_group_modul`.`hak_akses` = `dd_group`.`id_dd_group`)));
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `admin_privilleges_modul_v`  AS  select `dd_user`.`username` AS `username`,`dd_group`.`nama_group` AS `nama_group`,`dc_modul`.`nama_modul` AS `nama_modul`,`dc_modul`.`id_dc_modul` AS `id_dc_modul`,`dd_user`.`id_dd_user` AS `id_dd_user`,`dd_group_modul`.`id_dd_group_modul` AS `id_dd_group_modul`,`dd_group`.`id_dd_group` AS `id_dd_group` from (((`dd_user` join `dd_group_modul` on(`dd_user`.`id_dd_user` = `dd_group_modul`.`id_dd_user`)) join `dc_modul` on(`dd_group_modul`.`id_dc_modul` = `dc_modul`.`id_dc_modul`)) join `dd_group` on(`dd_group_modul`.`hak_akses` = `dd_group`.`id_dd_group`)) ;
 
 -- --------------------------------------------------------
 
 --
--- Structure for view `admin_privilleges_user_v`
+-- Struktur untuk view `admin_privilleges_user_v`
 --
 DROP TABLE IF EXISTS `admin_privilleges_user_v`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `admin_privilleges_user_v` AS select `dd_user`.`username` AS `username`,`dd_group`.`nama_group` AS `nama_group`,`dc_modul`.`nama_modul` AS `nama_modul`,`dc_menu`.`nama_menu` AS `nama_menu`,`dc_menu`.`id_dc_menu` AS `id_dc_menu`,`dc_modul`.`id_dc_modul` AS `id_dc_modul`,`dd_user`.`id_dd_user` AS `id_dd_user`,`dc_sub_menu`.`nama_sub_menu` AS `nama_sub_menu`,`dd_group_menu`.`id_dd_group_menu` AS `id_dd_group_menu`,`dd_group_modul`.`id_dd_group_modul` AS `id_dd_group_modul`,`dd_group`.`id_dd_group` AS `id_dd_group` from ((((((`dd_group_menu` join `dd_user` on((`dd_group_menu`.`id_dd_user` = `dd_user`.`id_dd_user`))) join `dd_group_modul` on((`dd_user`.`id_dd_user` = `dd_group_modul`.`id_dd_user`))) join `dc_menu` on((`dd_group_menu`.`id_dc_menu` = `dc_menu`.`id_dc_menu`))) join `dc_modul` on(((`dd_group_modul`.`id_dc_modul` = `dc_modul`.`id_dc_modul`) and (`dc_menu`.`id_dc_modul` = `dc_modul`.`id_dc_modul`)))) join `dc_sub_menu` on((`dc_menu`.`id_dc_menu` = `dc_sub_menu`.`id_dc_menu`))) join `dd_group` on((`dd_group_menu`.`hak_akses` = `dd_group`.`id_dd_group`)));
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `admin_privilleges_user_v`  AS  select `dd_user`.`username` AS `username`,`dd_group`.`nama_group` AS `nama_group`,`dc_modul`.`nama_modul` AS `nama_modul`,`dc_menu`.`nama_menu` AS `nama_menu`,`dc_menu`.`id_dc_menu` AS `id_dc_menu`,`dc_modul`.`id_dc_modul` AS `id_dc_modul`,`dd_user`.`id_dd_user` AS `id_dd_user`,`dc_sub_menu`.`nama_sub_menu` AS `nama_sub_menu`,`dd_group_menu`.`id_dd_group_menu` AS `id_dd_group_menu`,`dd_group_modul`.`id_dd_group_modul` AS `id_dd_group_modul`,`dd_group`.`id_dd_group` AS `id_dd_group` from ((((((`dd_group_menu` join `dd_user` on(`dd_group_menu`.`id_dd_user` = `dd_user`.`id_dd_user`)) join `dd_group_modul` on(`dd_user`.`id_dd_user` = `dd_group_modul`.`id_dd_user`)) join `dc_menu` on(`dd_group_menu`.`id_dc_menu` = `dc_menu`.`id_dc_menu`)) join `dc_modul` on(`dd_group_modul`.`id_dc_modul` = `dc_modul`.`id_dc_modul` and `dc_menu`.`id_dc_modul` = `dc_modul`.`id_dc_modul`)) join `dc_sub_menu` on(`dc_menu`.`id_dc_menu` = `dc_sub_menu`.`id_dc_menu`)) join `dd_group` on(`dd_group_menu`.`hak_akses` = `dd_group`.`id_dd_group`)) ;
 
 -- --------------------------------------------------------
 
 --
--- Structure for view `admin_user_login_detail_v`
+-- Struktur untuk view `admin_user_login_detail_v`
 --
 DROP TABLE IF EXISTS `admin_user_login_detail_v`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `admin_user_login_detail_v` AS select `dd_user`.`username` AS `username`,`log_user_login_detail`.`id_log_user_login_detail` AS `id_log_user_login_detail`,`log_user_login_detail`.`id_log_user` AS `id_log_user`,`log_user_login_detail`.`login_time_detail` AS `login_time_detail`,`log_user_login_detail`.`id_dc_modul` AS `id_dc_modul`,`log_user_login_detail`.`id_dc_menu` AS `id_dc_menu`,`log_user_login_detail`.`id_dc_sub_menu` AS `id_dc_sub_menu`,`log_user_login_detail`.`hak_akses` AS `hak_akses`,`log_user_login_detail`.`status` AS `status`,`dc_menu`.`nama_menu` AS `nama_menu`,`dc_sub_menu`.`nama_sub_menu` AS `nama_sub_menu`,`dc_modul`.`nama_modul` AS `nama_modul` from ((`dc_modul` join ((`dc_menu` join `log_user_login_detail` on((`dc_menu`.`id_dc_menu` = `log_user_login_detail`.`id_dc_menu`))) join `dc_sub_menu` on((`log_user_login_detail`.`id_dc_sub_menu` = `dc_sub_menu`.`id_dc_sub_menu`))) on((`dc_modul`.`id_dc_modul` = `log_user_login_detail`.`id_dc_modul`))) left join (`log_user_login` left join `dd_user` on((`dd_user`.`id_dd_user` = `log_user_login`.`id_dd_user`))) on((`log_user_login_detail`.`id_log_user` = `log_user_login`.`id_log_user`)));
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `admin_user_login_detail_v`  AS  select `dd_user`.`username` AS `username`,`log_user_login_detail`.`id_log_user_login_detail` AS `id_log_user_login_detail`,`log_user_login_detail`.`id_log_user` AS `id_log_user`,`log_user_login_detail`.`login_time_detail` AS `login_time_detail`,`log_user_login_detail`.`id_dc_modul` AS `id_dc_modul`,`log_user_login_detail`.`id_dc_menu` AS `id_dc_menu`,`log_user_login_detail`.`id_dc_sub_menu` AS `id_dc_sub_menu`,`log_user_login_detail`.`hak_akses` AS `hak_akses`,`log_user_login_detail`.`status` AS `status`,`dc_menu`.`nama_menu` AS `nama_menu`,`dc_sub_menu`.`nama_sub_menu` AS `nama_sub_menu`,`dc_modul`.`nama_modul` AS `nama_modul` from ((`dc_modul` join ((`dc_menu` join `log_user_login_detail` on(`dc_menu`.`id_dc_menu` = `log_user_login_detail`.`id_dc_menu`)) join `dc_sub_menu` on(`log_user_login_detail`.`id_dc_sub_menu` = `dc_sub_menu`.`id_dc_sub_menu`)) on(`dc_modul`.`id_dc_modul` = `log_user_login_detail`.`id_dc_modul`)) left join (`log_user_login` left join `dd_user` on(`dd_user`.`id_dd_user` = `log_user_login`.`id_dd_user`)) on(`log_user_login_detail`.`id_log_user` = `log_user_login`.`id_log_user`)) ;
 
 -- --------------------------------------------------------
 
 --
--- Structure for view `admin_user_login_v`
+-- Struktur untuk view `admin_user_login_v`
 --
 DROP TABLE IF EXISTS `admin_user_login_v`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `admin_user_login_v` AS select `log_user_login`.`id_log_user` AS `id_log_user`,`log_user_login`.`id_dd_user` AS `id_dd_user`,`log_user_login`.`session_id` AS `session_id`,`log_user_login`.`login_time` AS `login_time`,`log_user_login`.`ip_address` AS `ip_address`,`dd_user`.`username` AS `username`,`dd_user`.`password` AS `password`,`dd_user`.`npp` AS `npp`,`dd_user`.`ko_wil` AS `ko_wil`,`dc_wilayah_kerja`.`nawil_kerja` AS `nawil_kerja`,`dd_user`.`status` AS `status`,`log_user_login`.`logoff_time` AS `logoff_time`,`dc_wilayah_kerja`.`keterangan` AS `keterangan`,`dc_wilayah_kerja`.`alamat` AS `alamat`,`dc_wilayah_kerja`.`kota` AS `kota`,`dc_wilayah_kerja`.`propinsi` AS `propinsi`,`dc_wilayah_kerja`.`kode_pos` AS `kode_pos`,`dc_wilayah_kerja`.`ket_wil_kerja` AS `ket_wil_kerja`,`dc_wilayah_kerja`.`id_dc_wilayah_kerja` AS `id_dc_wilayah_kerja`,`dd_user_group`.`nama_group` AS `nama_group`,`dd_user`.`id_dd_jenis_user` AS `id_dd_jenis_user` from (`log_user_login` left join ((`dd_user` left join `dc_wilayah_kerja` on((`dc_wilayah_kerja`.`ko_wil` = `dd_user`.`ko_wil`))) left join `dd_user_group` on((`dd_user`.`id_dd_user_group` = `dd_user_group`.`id_dd_user_group`))) on((`dd_user`.`id_dd_user` = `log_user_login`.`id_dd_user`)));
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `admin_user_login_v`  AS  select `log_user_login`.`id_log_user` AS `id_log_user`,`log_user_login`.`id_dd_user` AS `id_dd_user`,`log_user_login`.`session_id` AS `session_id`,`log_user_login`.`login_time` AS `login_time`,`log_user_login`.`ip_address` AS `ip_address`,`dd_user`.`username` AS `username`,`dd_user`.`password` AS `password`,`dd_user`.`npp` AS `npp`,`dd_user`.`ko_wil` AS `ko_wil`,`dc_wilayah_kerja`.`nawil_kerja` AS `nawil_kerja`,`dd_user`.`status` AS `status`,`log_user_login`.`logoff_time` AS `logoff_time`,`dc_wilayah_kerja`.`keterangan` AS `keterangan`,`dc_wilayah_kerja`.`alamat` AS `alamat`,`dc_wilayah_kerja`.`kota` AS `kota`,`dc_wilayah_kerja`.`propinsi` AS `propinsi`,`dc_wilayah_kerja`.`kode_pos` AS `kode_pos`,`dc_wilayah_kerja`.`ket_wil_kerja` AS `ket_wil_kerja`,`dc_wilayah_kerja`.`id_dc_wilayah_kerja` AS `id_dc_wilayah_kerja`,`dd_user_group`.`nama_group` AS `nama_group`,`dd_user`.`id_dd_jenis_user` AS `id_dd_jenis_user` from (`log_user_login` left join ((`dd_user` left join `dc_wilayah_kerja` on(`dc_wilayah_kerja`.`ko_wil` = `dd_user`.`ko_wil`)) left join `dd_user_group` on(`dd_user`.`id_dd_user_group` = `dd_user_group`.`id_dd_user_group`)) on(`dd_user`.`id_dd_user` = `log_user_login`.`id_dd_user`)) ;
 
 -- --------------------------------------------------------
 
 --
--- Structure for view `dc_kecamatan_view`
+-- Struktur untuk view `dc_kecamatan_view`
 --
 DROP TABLE IF EXISTS `dc_kecamatan_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `dc_kecamatan_view` AS select `dc_kota`.`nama_kota` AS `nama_kota`,`dc_kecamatan`.`id_dc_kecamatan` AS `id_dc_kecamatan`,`dc_kecamatan`.`nama_kecamatan` AS `nama_kecamatan`,`dc_kecamatan`.`inisial_kecamatan` AS `inisial_kecamatan` from (`dc_kota` join `dc_kecamatan` on((`dc_kota`.`id_dc_kota` = `dc_kecamatan`.`id_dc_kota`)));
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `dc_kecamatan_view`  AS  select `dc_kota`.`nama_kota` AS `nama_kota`,`dc_kecamatan`.`id_dc_kecamatan` AS `id_dc_kecamatan`,`dc_kecamatan`.`nama_kecamatan` AS `nama_kecamatan`,`dc_kecamatan`.`inisial_kecamatan` AS `inisial_kecamatan` from (`dc_kota` join `dc_kecamatan` on(`dc_kota`.`id_dc_kota` = `dc_kecamatan`.`id_dc_kota`)) ;
 
 -- --------------------------------------------------------
 
 --
--- Structure for view `dc_kelurahan_view`
+-- Struktur untuk view `dc_kelurahan_view`
 --
 DROP TABLE IF EXISTS `dc_kelurahan_view`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `dc_kelurahan_view` AS select `dc_kecamatan`.`nama_kecamatan` AS `nama_kecamatan`,`dc_kelurahan`.`id_dc_kelurahan` AS `id_dc_kelurahan`,`dc_kelurahan`.`nama_kelurahan` AS `nama_kelurahan`,`dc_kelurahan`.`inisial_kelurahan` AS `inisial_kelurahan`,`dc_kelurahan`.`kode_pos` AS `kode_pos` from (`dc_kecamatan` join `dc_kelurahan` on((`dc_kecamatan`.`id_dc_kecamatan` = `dc_kelurahan`.`id_dc_kecamatan`)));
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `dc_kelurahan_view`  AS  select `dc_kecamatan`.`nama_kecamatan` AS `nama_kecamatan`,`dc_kelurahan`.`id_dc_kelurahan` AS `id_dc_kelurahan`,`dc_kelurahan`.`nama_kelurahan` AS `nama_kelurahan`,`dc_kelurahan`.`inisial_kelurahan` AS `inisial_kelurahan`,`dc_kelurahan`.`kode_pos` AS `kode_pos` from (`dc_kecamatan` join `dc_kelurahan` on(`dc_kecamatan`.`id_dc_kecamatan` = `dc_kelurahan`.`id_dc_kecamatan`)) ;
 
 -- --------------------------------------------------------
 
 --
--- Structure for view `dd_biaya_pengurusan_v`
+-- Struktur untuk view `dd_biaya_pengurusan_v`
 --
 DROP TABLE IF EXISTS `dd_biaya_pengurusan_v`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `dd_biaya_pengurusan_v` AS select `mt_jenis_permintaan`.`id_mt_jenis_permintaan` AS `id_mt_jenis_permintaan`,`mt_jenis_permintaan`.`jenis_permintaan` AS `jenis_permintaan`,`mt_jenis_permintaan_detail`.`id_mt_jenis_permintaan_detail` AS `id_mt_jenis_permintaan_detail`,`mt_jenis_permintaan_detail`.`jenis_permintaan_detail` AS `jenis_permintaan_detail`,`mt_jenis_permintaan_detail`.`flag_jenis_badan_hukum` AS `flag_jenis_badan_hukum`,`dd_biaya_pengurusan`.`id_dd_biaya_pengurusan` AS `id_dd_biaya_pengurusan`,`dd_biaya_pengurusan`.`biaya` AS `biaya`,`dd_biaya_pengurusan`.`pengeluaran` AS `pengeluaran` from ((`mt_jenis_permintaan_detail` left join `dd_biaya_pengurusan` on((`mt_jenis_permintaan_detail`.`id_mt_jenis_permintaan_detail` = `dd_biaya_pengurusan`.`id_mt_jenis_permintaan_detail`))) join `mt_jenis_permintaan` on((`mt_jenis_permintaan`.`id_mt_jenis_permintaan` = `mt_jenis_permintaan_detail`.`id_mt_jenis_permintaan`)));
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `dd_biaya_pengurusan_v`  AS  select `mt_jenis_permintaan`.`id_mt_jenis_permintaan` AS `id_mt_jenis_permintaan`,`mt_jenis_permintaan`.`jenis_permintaan` AS `jenis_permintaan`,`mt_jenis_permintaan_detail`.`id_mt_jenis_permintaan_detail` AS `id_mt_jenis_permintaan_detail`,`mt_jenis_permintaan_detail`.`jenis_permintaan_detail` AS `jenis_permintaan_detail`,`mt_jenis_permintaan_detail`.`flag_jenis_badan_hukum` AS `flag_jenis_badan_hukum`,`dd_biaya_pengurusan`.`id_dd_biaya_pengurusan` AS `id_dd_biaya_pengurusan`,`dd_biaya_pengurusan`.`biaya` AS `biaya`,`dd_biaya_pengurusan`.`pengeluaran` AS `pengeluaran` from ((`mt_jenis_permintaan_detail` left join `dd_biaya_pengurusan` on(`mt_jenis_permintaan_detail`.`id_mt_jenis_permintaan_detail` = `dd_biaya_pengurusan`.`id_mt_jenis_permintaan_detail`)) join `mt_jenis_permintaan` on(`mt_jenis_permintaan`.`id_mt_jenis_permintaan` = `mt_jenis_permintaan_detail`.`id_mt_jenis_permintaan`)) ;
 
 -- --------------------------------------------------------
 
 --
--- Structure for view `dd_group_user_detail_new_v`
+-- Struktur untuk view `dd_group_user_detail_new_v`
 --
 DROP TABLE IF EXISTS `dd_group_user_detail_new_v`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `dd_group_user_detail_new_v` AS select `dd_user_group`.`nama_group` AS `nama_group`,`dc_sub_menu`.`id_dc_sub_menu` AS `id_dc_sub_menu`,`dc_sub_menu`.`nama_sub_menu` AS `nama_sub_menu`,`dc_menu`.`id_dc_menu` AS `id_dc_menu`,`dc_menu`.`nama_menu` AS `nama_menu`,`dc_modul`.`id_dc_modul` AS `id_dc_modul`,`dc_modul`.`nama_modul` AS `nama_modul`,`dd_group`.`nama_group` AS `nama_hak`,`dc_menu`.`no_urut` AS `no_menu`,`dc_sub_menu`.`no_urut` AS `no_submenu`,`dc_modul`.`no_urut` AS `no_modul`,`dd_user_group_detail`.`hak_akses_menu` AS `hak_akses_menu`,`dd_user_group_detail`.`id_dd_user_group` AS `id_dd_user_group`,`dd_user_group_detail`.`id_dd_user_group_detail` AS `id_dd_user_group_detail` from (`dc_modul` left join (`dc_menu` left join (`dc_sub_menu` left join ((`dd_user_group_detail` join `dd_user_group` on((`dd_user_group_detail`.`id_dd_user_group` = `dd_user_group`.`id_dd_user_group`))) join `dd_group` on((`dd_user_group_detail`.`hak_akses_menu` = `dd_group`.`id_dd_group`))) on((`dd_user_group_detail`.`id_dc_sub_menu` = `dc_sub_menu`.`id_dc_sub_menu`))) on((`dc_menu`.`id_dc_menu` = `dc_sub_menu`.`id_dc_menu`))) on((`dc_modul`.`id_dc_modul` = `dc_menu`.`id_dc_modul`)));
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `dd_group_user_detail_new_v`  AS  select `dd_user_group`.`nama_group` AS `nama_group`,`dc_sub_menu`.`id_dc_sub_menu` AS `id_dc_sub_menu`,`dc_sub_menu`.`nama_sub_menu` AS `nama_sub_menu`,`dc_menu`.`id_dc_menu` AS `id_dc_menu`,`dc_menu`.`nama_menu` AS `nama_menu`,`dc_modul`.`id_dc_modul` AS `id_dc_modul`,`dc_modul`.`nama_modul` AS `nama_modul`,`dd_group`.`nama_group` AS `nama_hak`,`dc_menu`.`no_urut` AS `no_menu`,`dc_sub_menu`.`no_urut` AS `no_submenu`,`dc_modul`.`no_urut` AS `no_modul`,`dd_user_group_detail`.`hak_akses_menu` AS `hak_akses_menu`,`dd_user_group_detail`.`id_dd_user_group` AS `id_dd_user_group`,`dd_user_group_detail`.`id_dd_user_group_detail` AS `id_dd_user_group_detail` from (`dc_modul` left join (`dc_menu` left join (`dc_sub_menu` left join ((`dd_user_group_detail` join `dd_user_group` on(`dd_user_group_detail`.`id_dd_user_group` = `dd_user_group`.`id_dd_user_group`)) join `dd_group` on(`dd_user_group_detail`.`hak_akses_menu` = `dd_group`.`id_dd_group`)) on(`dd_user_group_detail`.`id_dc_sub_menu` = `dc_sub_menu`.`id_dc_sub_menu`)) on(`dc_menu`.`id_dc_menu` = `dc_sub_menu`.`id_dc_menu`)) on(`dc_modul`.`id_dc_modul` = `dc_menu`.`id_dc_modul`)) ;
 
 -- --------------------------------------------------------
 
 --
--- Structure for view `dd_syarat_pt_v`
+-- Struktur untuk view `dd_syarat_pt_v`
 --
 DROP TABLE IF EXISTS `dd_syarat_pt_v`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `dd_syarat_pt_v` AS select `mt_jenis_permintaan`.`jenis_permintaan` AS `jenis_permintaan`,`mt_jenis_permintaan_detail`.`jenis_permintaan_detail` AS `jenis_permintaan_detail`,`dd_syarat_pt`.`nama_syarat` AS `nama_syarat`,`mt_jenis_permintaan_detail`.`flag_jenis_badan_hukum` AS `flag_jenis_badan_hukum`,`dd_syarat_pt`.`id_jenis_pengurusan` AS `id_jenis_pengurusan`,`dd_syarat_pt`.`id_syarat` AS `id_syarat`,`mt_jenis_permintaan`.`id_mt_jenis_permintaan` AS `id_mt_jenis_permintaan`,`mt_jenis_permintaan_detail`.`id_mt_jenis_permintaan_detail` AS `id_mt_jenis_permintaan_detail` from ((`mt_jenis_permintaan` join `mt_jenis_permintaan_detail` on((`mt_jenis_permintaan`.`id_mt_jenis_permintaan` = `mt_jenis_permintaan_detail`.`id_mt_jenis_permintaan`))) left join `dd_syarat_pt` on((`mt_jenis_permintaan_detail`.`id_jenis_pengurusan` = `dd_syarat_pt`.`id_jenis_pengurusan`)));
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `dd_syarat_pt_v`  AS  select `mt_jenis_permintaan`.`jenis_permintaan` AS `jenis_permintaan`,`mt_jenis_permintaan_detail`.`jenis_permintaan_detail` AS `jenis_permintaan_detail`,`dd_syarat_pt`.`nama_syarat` AS `nama_syarat`,`mt_jenis_permintaan_detail`.`flag_jenis_badan_hukum` AS `flag_jenis_badan_hukum`,`dd_syarat_pt`.`id_jenis_pengurusan` AS `id_jenis_pengurusan`,`dd_syarat_pt`.`id_syarat` AS `id_syarat`,`mt_jenis_permintaan`.`id_mt_jenis_permintaan` AS `id_mt_jenis_permintaan`,`mt_jenis_permintaan_detail`.`id_mt_jenis_permintaan_detail` AS `id_mt_jenis_permintaan_detail` from ((`mt_jenis_permintaan` join `mt_jenis_permintaan_detail` on(`mt_jenis_permintaan`.`id_mt_jenis_permintaan` = `mt_jenis_permintaan_detail`.`id_mt_jenis_permintaan`)) left join `dd_syarat_pt` on(`mt_jenis_permintaan_detail`.`id_jenis_pengurusan` = `dd_syarat_pt`.`id_jenis_pengurusan`)) ;
 
 -- --------------------------------------------------------
 
 --
--- Structure for view `dev_progress_v`
+-- Struktur untuk view `dev_progress_v`
 --
 DROP TABLE IF EXISTS `dev_progress_v`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER VIEW `dev_progress_v` AS select `dc_modular`.`id_dc_modular` AS `id_dc_modular`,`dc_modular`.`nama_modular` AS `nama_modular`,`dc_modul`.`id_dc_modul` AS `id_dc_modul`,`dc_modul`.`nama_modul` AS `nama_modul`,`dc_modul`.`no_urut` AS `no_urut_modul`,`dc_menu`.`id_dc_menu` AS `id_dc_menu`,`dc_menu`.`nama_menu` AS `nama_menu`,`dc_menu`.`no_urut` AS `no_urut_menu`,`dc_sub_menu`.`id_dc_sub_menu` AS `id_dc_sub_menu`,`dc_sub_menu`.`nama_sub_menu` AS `nama_sub_menu`,`dc_sub_menu`.`url_sub_menu` AS `url_sub_menu`,`dc_sub_menu`.`no_urut` AS `no_urut_sub_menu`,`dc_sub_menu`.`ket_sub_menu` AS `ket_sub_menu` from (((`dc_modul` join `dc_menu` on((`dc_modul`.`id_dc_modul` = `dc_menu`.`id_dc_modul`))) join `dc_sub_menu` on((`dc_menu`.`id_dc_menu` = `dc_sub_menu`.`id_dc_menu`))) join `dc_modular` on((`dc_modular`.`id_dc_modular` = `dc_modul`.`id_dc_modular`)));
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER VIEW `dev_progress_v`  AS  select `dc_modular`.`id_dc_modular` AS `id_dc_modular`,`dc_modular`.`nama_modular` AS `nama_modular`,`dc_modul`.`id_dc_modul` AS `id_dc_modul`,`dc_modul`.`nama_modul` AS `nama_modul`,`dc_modul`.`no_urut` AS `no_urut_modul`,`dc_menu`.`id_dc_menu` AS `id_dc_menu`,`dc_menu`.`nama_menu` AS `nama_menu`,`dc_menu`.`no_urut` AS `no_urut_menu`,`dc_sub_menu`.`id_dc_sub_menu` AS `id_dc_sub_menu`,`dc_sub_menu`.`nama_sub_menu` AS `nama_sub_menu`,`dc_sub_menu`.`url_sub_menu` AS `url_sub_menu`,`dc_sub_menu`.`no_urut` AS `no_urut_sub_menu`,`dc_sub_menu`.`ket_sub_menu` AS `ket_sub_menu` from (((`dc_modul` join `dc_menu` on(`dc_modul`.`id_dc_modul` = `dc_menu`.`id_dc_modul`)) join `dc_sub_menu` on(`dc_menu`.`id_dc_menu` = `dc_sub_menu`.`id_dc_menu`)) join `dc_modular` on(`dc_modular`.`id_dc_modular` = `dc_modul`.`id_dc_modular`)) ;
 
 -- --------------------------------------------------------
 
 --
--- Structure for view `karyawan_v`
+-- Struktur untuk view `e_office2`
+--
+DROP TABLE IF EXISTS `e_office2`;
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `e_office2`  AS  select `tc_surat_masuk`.`id_tc_surat_masuk` AS `id_tc_surat_masuk`,`tc_surat_masuk`.`id_mt_client` AS `id_mt_client`,`mt_client`.`nm_persero` AS `nm_persero` from (`tc_surat_masuk` join `mt_client`) where `tc_surat_masuk`.`id_mt_client` = `mt_client`.`id_mt_client` ;
+
+-- --------------------------------------------------------
+
+--
+-- Struktur untuk view `karyawan_v`
 --
 DROP TABLE IF EXISTS `karyawan_v`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `karyawan_v` AS select `dd_user`.`username` AS `username`,`mt_karyawan`.`nama_pegawai` AS `nama_pegawai`,`mt_bagian`.`nama_bagian` AS `nama_bagian`,`mt_karyawan`.`no_induk` AS `no_induk`,`dd_user`.`ko_wil` AS `ko_wil`,`mt_karyawan`.`kode_dokter` AS `kode_dokter`,`mt_karyawan`.`status` AS `Expr1`,`mt_karyawan`.`no_mr` AS `no_mr`,`mt_jabatan`.`nama_jabatan` AS `nama_jabatan`,`dd_user_group`.`nama_group` AS `nama_group`,`mt_karyawan`.`kd_notaris` AS `kd_notaris`,`dd_user`.`id_dd_user` AS `id_dd_user` from (((`mt_karyawan` left join `mt_bagian` on((`mt_bagian`.`kode_bagian` = `mt_karyawan`.`kode_bagian`))) left join (`dd_user_group` join `dd_user` on((`dd_user_group`.`id_dd_user_group` = `dd_user`.`id_dd_user_group`))) on((`dd_user`.`no_induk` = `mt_karyawan`.`no_induk`))) left join `mt_jabatan` on((`mt_karyawan`.`kode_jabatan` = `mt_jabatan`.`kode_jabatan`))) where isnull(`mt_karyawan`.`kode_dokter`);
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `karyawan_v`  AS  select `dd_user`.`username` AS `username`,`mt_karyawan`.`nama_pegawai` AS `nama_pegawai`,`mt_bagian`.`nama_bagian` AS `nama_bagian`,`mt_karyawan`.`no_induk` AS `no_induk`,`dd_user`.`ko_wil` AS `ko_wil`,`mt_karyawan`.`kode_dokter` AS `kode_dokter`,`mt_karyawan`.`status` AS `Expr1`,`mt_karyawan`.`no_mr` AS `no_mr`,`mt_jabatan`.`nama_jabatan` AS `nama_jabatan`,`dd_user_group`.`nama_group` AS `nama_group`,`mt_karyawan`.`kd_notaris` AS `kd_notaris`,`dd_user`.`id_dd_user` AS `id_dd_user` from (((`mt_karyawan` left join `mt_bagian` on(`mt_bagian`.`kode_bagian` = `mt_karyawan`.`kode_bagian`)) left join (`dd_user_group` join `dd_user` on(`dd_user_group`.`id_dd_user_group` = `dd_user`.`id_dd_user_group`)) on(`dd_user`.`no_induk` = `mt_karyawan`.`no_induk`)) left join `mt_jabatan` on(`mt_karyawan`.`kode_jabatan` = `mt_jabatan`.`kode_jabatan`)) where `mt_karyawan`.`kode_dokter` is null ;
 
 -- --------------------------------------------------------
 
 --
--- Structure for view `modul_submodul_v`
+-- Struktur untuk view `modul_submodul_v`
 --
 DROP TABLE IF EXISTS `modul_submodul_v`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER VIEW `modul_submodul_v` AS select `dc_modular`.`id_dc_modular` AS `id_dc_modular`,`dc_modular`.`nama_modular` AS `nama_modular`,`dc_modul`.`id_dc_modul` AS `id_dc_modul`,`dc_modul`.`nama_modul` AS `nama_modul`,`dc_modul`.`no_urut` AS `no_urut_modul`,`dc_menu`.`id_dc_menu` AS `id_dc_menu`,`dc_menu`.`nama_menu` AS `nama_menu`,`dc_menu`.`no_urut` AS `no_urut_menu`,`dc_sub_menu`.`id_dc_sub_menu` AS `id_dc_sub_menu`,`dc_sub_menu`.`nama_sub_menu` AS `nama_sub_menu`,`dc_sub_menu`.`url_sub_menu` AS `url_sub_menu`,`dc_sub_menu`.`no_urut` AS `no_urut_sub_menu`,`dc_sub_menu`.`ket_sub_menu` AS `ket_sub_menu` from (((`dc_modul` join `dc_menu` on((`dc_modul`.`id_dc_modul` = `dc_menu`.`id_dc_modul`))) join `dc_sub_menu` on((`dc_menu`.`id_dc_menu` = `dc_sub_menu`.`id_dc_menu`))) join `dc_modular` on((`dc_modular`.`id_dc_modular` = `dc_modul`.`id_dc_modular`)));
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER VIEW `modul_submodul_v`  AS  select `dc_modular`.`id_dc_modular` AS `id_dc_modular`,`dc_modular`.`nama_modular` AS `nama_modular`,`dc_modul`.`id_dc_modul` AS `id_dc_modul`,`dc_modul`.`nama_modul` AS `nama_modul`,`dc_modul`.`no_urut` AS `no_urut_modul`,`dc_menu`.`id_dc_menu` AS `id_dc_menu`,`dc_menu`.`nama_menu` AS `nama_menu`,`dc_menu`.`no_urut` AS `no_urut_menu`,`dc_sub_menu`.`id_dc_sub_menu` AS `id_dc_sub_menu`,`dc_sub_menu`.`nama_sub_menu` AS `nama_sub_menu`,`dc_sub_menu`.`url_sub_menu` AS `url_sub_menu`,`dc_sub_menu`.`no_urut` AS `no_urut_sub_menu`,`dc_sub_menu`.`ket_sub_menu` AS `ket_sub_menu` from (((`dc_modul` join `dc_menu` on(`dc_modul`.`id_dc_modul` = `dc_menu`.`id_dc_modul`)) join `dc_sub_menu` on(`dc_menu`.`id_dc_menu` = `dc_sub_menu`.`id_dc_menu`)) join `dc_modular` on(`dc_modular`.`id_dc_modular` = `dc_modul`.`id_dc_modular`)) ;
 
 -- --------------------------------------------------------
 
 --
--- Structure for view `mt_client_akta_cover_note_v`
+-- Struktur untuk view `mt_client_akta_cover_note_v`
 --
 DROP TABLE IF EXISTS `mt_client_akta_cover_note_v`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `mt_client_akta_cover_note_v` AS select `mt_client_akta_cover_note`.`id_mt_client_akta` AS `id_mt_client_akta`,`mt_client_akta_cover_note`.`id_mt_client_akta_cover_note` AS `id_mt_client_akta_cover_note`,`mt_client_akta_cover_note`.`tgl_cetak_cover_note` AS `tgl_cetak_cover_note`,`mt_client_akta_cover_note`.`isi_cover_note` AS `isi_cover_note`,`mt_client_akta_cover_note`.`id_user_input` AS `id_user_input`,`mt_client_akta_cover_note`.`tgl_user_input` AS `tgl_user_input`,`mt_client_akta_cover_note`.`kd_notaris` AS `kd_notaris`,`mt_client_akta_cover_note`.`keterangan` AS `keterangan`,`tc_pesan`.`id_tc_pesan` AS `id_tc_pesan`,`tc_pesan`.`id_mt_jenis_permintaan` AS `id_mt_jenis_permintaan`,`tc_pesan`.`id_mt_jenis_permintaan_detail` AS `id_mt_jenis_permintaan_detail`,`tc_pesan`.`tgl_pesan` AS `tgl_pesan`,`tc_pesan`.`nm_persero` AS `nm_persero`,`mt_client_akta_cover_note`.`url` AS `url` from ((`mt_client_akta` join `mt_client_akta_cover_note` on((`mt_client_akta`.`id_mt_client_akta` = `mt_client_akta_cover_note`.`id_mt_client_akta`))) join `tc_pesan` on((`mt_client_akta`.`id_tc_pesan` = `tc_pesan`.`id_tc_pesan`)));
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `mt_client_akta_cover_note_v`  AS  select `mt_client_akta_cover_note`.`id_mt_client_akta` AS `id_mt_client_akta`,`mt_client_akta_cover_note`.`id_mt_client_akta_cover_note` AS `id_mt_client_akta_cover_note`,`mt_client_akta_cover_note`.`tgl_cetak_cover_note` AS `tgl_cetak_cover_note`,`mt_client_akta_cover_note`.`isi_cover_note` AS `isi_cover_note`,`mt_client_akta_cover_note`.`id_user_input` AS `id_user_input`,`mt_client_akta_cover_note`.`tgl_user_input` AS `tgl_user_input`,`mt_client_akta_cover_note`.`kd_notaris` AS `kd_notaris`,`mt_client_akta_cover_note`.`keterangan` AS `keterangan`,`tc_pesan`.`id_tc_pesan` AS `id_tc_pesan`,`tc_pesan`.`id_mt_jenis_permintaan` AS `id_mt_jenis_permintaan`,`tc_pesan`.`id_mt_jenis_permintaan_detail` AS `id_mt_jenis_permintaan_detail`,`tc_pesan`.`tgl_pesan` AS `tgl_pesan`,`tc_pesan`.`nm_persero` AS `nm_persero`,`mt_client_akta_cover_note`.`url` AS `url` from ((`mt_client_akta` join `mt_client_akta_cover_note` on(`mt_client_akta`.`id_mt_client_akta` = `mt_client_akta_cover_note`.`id_mt_client_akta`)) join `tc_pesan` on(`mt_client_akta`.`id_tc_pesan` = `tc_pesan`.`id_tc_pesan`)) ;
 
 -- --------------------------------------------------------
 
 --
--- Structure for view `mt_client_tagih_v`
+-- Struktur untuk view `mt_client_tagih_v`
 --
 DROP TABLE IF EXISTS `mt_client_tagih_v`;
 
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `mt_client_tagih_v` AS select `c`.`nm_persero` AS `nm_persero`,`b`.`nilai_tagihan` AS `nilai_tagihan`,sum(`d`.`nilai_bayar`) AS `jml_bayar`,`b`.`flag_stat_bayar` AS `flag_stat_bayar`,`a`.`id_mt_client_akta` AS `id_mt_client_akta` from ((`mt_client` `c` left join (`mt_client_tagih` `b` left join `mt_client_akta` `a` on((`a`.`id_mt_client_akta` = `b`.`id_mt_client_akta`))) on((`a`.`id_mt_client` = `c`.`id_mt_client`))) left join `mt_client_bayar` `d` on((`b`.`id_mt_client_tagih` = `d`.`id_mt_client_tagih`))) group by `c`.`nm_persero`,`b`.`nilai_tagihan`,`b`.`flag_stat_bayar`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `mt_client_tagih_v`  AS  select `c`.`nm_persero` AS `nm_persero`,`b`.`nilai_tagihan` AS `nilai_tagihan`,sum(`d`.`nilai_bayar`) AS `jml_bayar`,`b`.`flag_stat_bayar` AS `flag_stat_bayar`,`a`.`id_mt_client_akta` AS `id_mt_client_akta` from ((`mt_client` `c` left join (`mt_client_tagih` `b` left join `mt_client_akta` `a` on(`a`.`id_mt_client_akta` = `b`.`id_mt_client_akta`)) on(`a`.`id_mt_client` = `c`.`id_mt_client`)) left join `mt_client_bayar` `d` on(`b`.`id_mt_client_tagih` = `d`.`id_mt_client_tagih`)) group by `c`.`nm_persero`,`b`.`nilai_tagihan`,`b`.`flag_stat_bayar` ;
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `bd_mt_saldo_awal`
+-- Indeks untuk tabel `bd_mt_saldo_awal`
 --
 ALTER TABLE `bd_mt_saldo_awal`
- ADD PRIMARY KEY (`id_bd_mt_saldo_awal`), ADD UNIQUE KEY `IX_bd_mt_saldo_awal` (`id_dd_bank`);
+  ADD PRIMARY KEY (`id_bd_mt_saldo_awal`),
+  ADD UNIQUE KEY `IX_bd_mt_saldo_awal` (`id_dd_bank`);
 
 --
--- Indexes for table `ci_sessions`
+-- Indeks untuk tabel `ci_sessions`
 --
 ALTER TABLE `ci_sessions`
- ADD PRIMARY KEY (`session_id`), ADD KEY `last_activity_idx` (`last_activity`);
+  ADD PRIMARY KEY (`session_id`),
+  ADD KEY `last_activity_idx` (`last_activity`);
 
 --
--- Indexes for table `dc_agama`
+-- Indeks untuk tabel `dc_agama`
 --
 ALTER TABLE `dc_agama`
- ADD PRIMARY KEY (`id_dc_agama`);
+  ADD PRIMARY KEY (`id_dc_agama`);
 
 --
--- Indexes for table `dc_client_group`
+-- Indeks untuk tabel `dc_client_group`
 --
 ALTER TABLE `dc_client_group`
- ADD PRIMARY KEY (`id_dc_client_group`);
+  ADD PRIMARY KEY (`id_dc_client_group`);
 
 --
--- Indexes for table `dc_client_group_detail`
+-- Indeks untuk tabel `dc_client_group_detail`
 --
 ALTER TABLE `dc_client_group_detail`
- ADD PRIMARY KEY (`id_dc_client_group_detail`);
+  ADD PRIMARY KEY (`id_dc_client_group_detail`);
 
 --
--- Indexes for table `dc_customer_group`
+-- Indeks untuk tabel `dc_customer_group`
 --
 ALTER TABLE `dc_customer_group`
- ADD PRIMARY KEY (`id_dc_customer_group`);
+  ADD PRIMARY KEY (`id_dc_customer_group`);
 
 --
--- Indexes for table `dc_darah`
+-- Indeks untuk tabel `dc_darah`
 --
 ALTER TABLE `dc_darah`
- ADD PRIMARY KEY (`id_dc_darah`);
+  ADD PRIMARY KEY (`id_dc_darah`);
 
 --
--- Indexes for table `dc_kawin`
+-- Indeks untuk tabel `dc_kawin`
 --
 ALTER TABLE `dc_kawin`
- ADD PRIMARY KEY (`id_dc_kawin`);
+  ADD PRIMARY KEY (`id_dc_kawin`);
 
 --
--- Indexes for table `dc_kecamatan`
+-- Indeks untuk tabel `dc_kecamatan`
 --
 ALTER TABLE `dc_kecamatan`
- ADD PRIMARY KEY (`id_dc_kecamatan`);
+  ADD PRIMARY KEY (`id_dc_kecamatan`);
 
 --
--- Indexes for table `dc_kelurahan`
+-- Indeks untuk tabel `dc_kelurahan`
 --
 ALTER TABLE `dc_kelurahan`
- ADD PRIMARY KEY (`id_dc_kelurahan`);
+  ADD PRIMARY KEY (`id_dc_kelurahan`);
 
 --
--- Indexes for table `dc_kota`
+-- Indeks untuk tabel `dc_kota`
 --
 ALTER TABLE `dc_kota`
- ADD PRIMARY KEY (`id_dc_kota`);
+  ADD PRIMARY KEY (`id_dc_kota`);
 
 --
--- Indexes for table `dc_level_struktur_org`
+-- Indeks untuk tabel `dc_level_struktur_org`
 --
 ALTER TABLE `dc_level_struktur_org`
- ADD UNIQUE KEY `id_level_struktur_org` (`id_level_struktur_org`);
+  ADD UNIQUE KEY `id_level_struktur_org` (`id_level_struktur_org`);
 
 --
--- Indexes for table `dc_menu`
+-- Indeks untuk tabel `dc_menu`
 --
 ALTER TABLE `dc_menu`
- ADD PRIMARY KEY (`id_dc_menu`);
+  ADD PRIMARY KEY (`id_dc_menu`);
 
 --
--- Indexes for table `dc_modul`
+-- Indeks untuk tabel `dc_modul`
 --
 ALTER TABLE `dc_modul`
- ADD PRIMARY KEY (`id_dc_modul`);
+  ADD PRIMARY KEY (`id_dc_modul`);
 
 --
--- Indexes for table `dc_modular`
+-- Indeks untuk tabel `dc_modular`
 --
 ALTER TABLE `dc_modular`
- ADD PRIMARY KEY (`id_dc_modular`);
+  ADD PRIMARY KEY (`id_dc_modular`);
 
 --
--- Indexes for table `dc_negara`
+-- Indeks untuk tabel `dc_negara`
 --
 ALTER TABLE `dc_negara`
- ADD PRIMARY KEY (`id_dc_negara`);
+  ADD PRIMARY KEY (`id_dc_negara`);
 
 --
--- Indexes for table `dc_pekerjaan`
+-- Indeks untuk tabel `dc_pekerjaan`
 --
 ALTER TABLE `dc_pekerjaan`
- ADD PRIMARY KEY (`id_dc_pekerjaan`);
+  ADD PRIMARY KEY (`id_dc_pekerjaan`);
 
 --
--- Indexes for table `dc_pendidikan`
+-- Indeks untuk tabel `dc_pendidikan`
 --
 ALTER TABLE `dc_pendidikan`
- ADD PRIMARY KEY (`id_dc_pendidikan`), ADD KEY `FK_dc_pendidikan_dc_tingkat_pnddkanIdx` (`id_dc_tingkat_pnddkan`);
+  ADD PRIMARY KEY (`id_dc_pendidikan`),
+  ADD KEY `FK_dc_pendidikan_dc_tingkat_pnddkanIdx` (`id_dc_tingkat_pnddkan`);
 
 --
--- Indexes for table `dc_propinsi`
+-- Indeks untuk tabel `dc_propinsi`
 --
 ALTER TABLE `dc_propinsi`
- ADD PRIMARY KEY (`id_dc_propinsi`);
+  ADD PRIMARY KEY (`id_dc_propinsi`);
 
 --
--- Indexes for table `dc_sex`
+-- Indeks untuk tabel `dc_sex`
 --
 ALTER TABLE `dc_sex`
- ADD PRIMARY KEY (`id_dc_sex`);
+  ADD PRIMARY KEY (`id_dc_sex`);
 
 --
--- Indexes for table `dc_struktur_organisasi`
+-- Indeks untuk tabel `dc_struktur_organisasi`
 --
 ALTER TABLE `dc_struktur_organisasi`
- ADD PRIMARY KEY (`id_dc_struktur_organisasi`);
+  ADD PRIMARY KEY (`id_dc_struktur_organisasi`);
 
 --
--- Indexes for table `dc_sub_menu`
+-- Indeks untuk tabel `dc_sub_menu`
 --
 ALTER TABLE `dc_sub_menu`
- ADD PRIMARY KEY (`id_dc_sub_menu`);
+  ADD PRIMARY KEY (`id_dc_sub_menu`);
 
 --
--- Indexes for table `dc_sub_menu_old`
+-- Indeks untuk tabel `dc_sub_menu_old`
 --
 ALTER TABLE `dc_sub_menu_old`
- ADD PRIMARY KEY (`id_dc_sub_menu`);
+  ADD PRIMARY KEY (`id_dc_sub_menu`);
 
 --
--- Indexes for table `dc_suku`
+-- Indeks untuk tabel `dc_suku`
 --
 ALTER TABLE `dc_suku`
- ADD PRIMARY KEY (`id_dc_suku`);
+  ADD PRIMARY KEY (`id_dc_suku`);
 
 --
--- Indexes for table `dc_tab`
+-- Indeks untuk tabel `dc_tab`
 --
 ALTER TABLE `dc_tab`
- ADD PRIMARY KEY (`id_dc_tab`), ADD KEY `FK_dc_tab_dc_sub_menuIdx` (`id_dc_sub_menu`);
+  ADD PRIMARY KEY (`id_dc_tab`),
+  ADD KEY `FK_dc_tab_dc_sub_menuIdx` (`id_dc_sub_menu`);
 
 --
--- Indexes for table `dc_tingkat_pnddkan`
+-- Indeks untuk tabel `dc_tingkat_pnddkan`
 --
 ALTER TABLE `dc_tingkat_pnddkan`
- ADD PRIMARY KEY (`id_dc_tingkat_pnddkan`);
+  ADD PRIMARY KEY (`id_dc_tingkat_pnddkan`);
 
 --
--- Indexes for table `dc_wilayah_kerja`
+-- Indeks untuk tabel `dc_wilayah_kerja`
 --
 ALTER TABLE `dc_wilayah_kerja`
- ADD PRIMARY KEY (`id_dc_wilayah_kerja`), ADD UNIQUE KEY `IX_dc_wilayah_kerja` (`ko_wil`);
+  ADD PRIMARY KEY (`id_dc_wilayah_kerja`),
+  ADD UNIQUE KEY `IX_dc_wilayah_kerja` (`ko_wil`);
 
 --
--- Indexes for table `dd_akta_background_ppat`
+-- Indeks untuk tabel `dd_akta_background_ppat`
 --
 ALTER TABLE `dd_akta_background_ppat`
- ADD PRIMARY KEY (`id_dd_akta_background_ppat`);
+  ADD PRIMARY KEY (`id_dd_akta_background_ppat`);
 
 --
--- Indexes for table `dd_akta_background_ppat_pdf`
+-- Indeks untuk tabel `dd_akta_background_ppat_pdf`
 --
 ALTER TABLE `dd_akta_background_ppat_pdf`
- ADD PRIMARY KEY (`id_dd_akta_background_ppat_pdf`);
+  ADD PRIMARY KEY (`id_dd_akta_background_ppat_pdf`);
 
 --
--- Indexes for table `dd_akta_ppat`
+-- Indeks untuk tabel `dd_akta_ppat`
 --
 ALTER TABLE `dd_akta_ppat`
- ADD PRIMARY KEY (`id_dd_akta_ppat`);
+  ADD PRIMARY KEY (`id_dd_akta_ppat`);
 
 --
--- Indexes for table `dd_akta_ppat_old`
+-- Indeks untuk tabel `dd_akta_ppat_old`
 --
 ALTER TABLE `dd_akta_ppat_old`
- ADD PRIMARY KEY (`id_dd_akta_ppat`);
+  ADD PRIMARY KEY (`id_dd_akta_ppat`);
 
 --
--- Indexes for table `dd_akta_ppat_pdf`
+-- Indeks untuk tabel `dd_akta_ppat_pdf`
 --
 ALTER TABLE `dd_akta_ppat_pdf`
- ADD PRIMARY KEY (`id_dd_akta_ppat_pdf`);
+  ADD PRIMARY KEY (`id_dd_akta_ppat_pdf`);
 
 --
--- Indexes for table `dd_bank`
+-- Indeks untuk tabel `dd_bank`
 --
 ALTER TABLE `dd_bank`
- ADD PRIMARY KEY (`id_dd_bank`);
+  ADD PRIMARY KEY (`id_dd_bank`);
 
 --
--- Indexes for table `dd_biaya_pengurusan`
+-- Indeks untuk tabel `dd_biaya_pengurusan`
 --
 ALTER TABLE `dd_biaya_pengurusan`
- ADD PRIMARY KEY (`id_dd_biaya_pengurusan`);
+  ADD PRIMARY KEY (`id_dd_biaya_pengurusan`);
 
 --
--- Indexes for table `dd_cnt_akta`
+-- Indeks untuk tabel `dd_cnt_akta`
 --
 ALTER TABLE `dd_cnt_akta`
- ADD PRIMARY KEY (`id_akta`);
+  ADD PRIMARY KEY (`id_akta`);
 
 --
--- Indexes for table `dd_dokumen_client`
+-- Indeks untuk tabel `dd_dokumen_client`
 --
 ALTER TABLE `dd_dokumen_client`
- ADD PRIMARY KEY (`id_dd_dokumen_client`);
+  ADD PRIMARY KEY (`id_dd_dokumen_client`);
 
 --
--- Indexes for table `dd_group`
+-- Indeks untuk tabel `dd_group`
 --
 ALTER TABLE `dd_group`
- ADD PRIMARY KEY (`id_dd_group`);
+  ADD PRIMARY KEY (`id_dd_group`);
 
 --
--- Indexes for table `dd_group_menu`
+-- Indeks untuk tabel `dd_group_menu`
 --
 ALTER TABLE `dd_group_menu`
- ADD PRIMARY KEY (`id_dd_group_menu`);
+  ADD PRIMARY KEY (`id_dd_group_menu`);
 
 --
--- Indexes for table `dd_group_modul`
+-- Indeks untuk tabel `dd_group_modul`
 --
 ALTER TABLE `dd_group_modul`
- ADD PRIMARY KEY (`id_dd_group_modul`);
+  ADD PRIMARY KEY (`id_dd_group_modul`);
 
 --
--- Indexes for table `dd_jabatan_pt`
+-- Indeks untuk tabel `dd_jabatan_pt`
 --
 ALTER TABLE `dd_jabatan_pt`
- ADD PRIMARY KEY (`id_jabatan_pt`);
+  ADD PRIMARY KEY (`id_jabatan_pt`);
 
 --
--- Indexes for table `dd_jenis_akta`
+-- Indeks untuk tabel `dd_jenis_akta`
 --
 ALTER TABLE `dd_jenis_akta`
- ADD PRIMARY KEY (`id_dd_jenis_akta`);
+  ADD PRIMARY KEY (`id_dd_jenis_akta`);
 
 --
--- Indexes for table `dd_jenis_pengurusan`
+-- Indeks untuk tabel `dd_jenis_pengurusan`
 --
 ALTER TABLE `dd_jenis_pengurusan`
- ADD PRIMARY KEY (`id_jenis_pengurusan`);
+  ADD PRIMARY KEY (`id_jenis_pengurusan`);
 
 --
--- Indexes for table `dd_jenis_user`
+-- Indeks untuk tabel `dd_jenis_user`
 --
 ALTER TABLE `dd_jenis_user`
- ADD PRIMARY KEY (`id_dd_jenis_user`);
+  ADD PRIMARY KEY (`id_dd_jenis_user`);
 
 --
--- Indexes for table `dd_kamus_data_variabel`
+-- Indeks untuk tabel `dd_kamus_data_variabel`
 --
 ALTER TABLE `dd_kamus_data_variabel`
- ADD PRIMARY KEY (`id_dd_kamus_data_variabel`);
+  ADD PRIMARY KEY (`id_dd_kamus_data_variabel`);
 
 --
--- Indexes for table `dd_konfigurasi`
+-- Indeks untuk tabel `dd_konfigurasi`
 --
 ALTER TABLE `dd_konfigurasi`
- ADD PRIMARY KEY (`id_dd_konfigurasi`);
+  ADD PRIMARY KEY (`id_dd_konfigurasi`);
 
 --
--- Indexes for table `dd_lokasi`
+-- Indeks untuk tabel `dd_lokasi`
 --
 ALTER TABLE `dd_lokasi`
- ADD PRIMARY KEY (`id_dd_lokasi`);
+  ADD PRIMARY KEY (`id_dd_lokasi`);
 
 --
--- Indexes for table `dd_notaris_kerjasama`
+-- Indeks untuk tabel `dd_notaris_kerjasama`
 --
 ALTER TABLE `dd_notaris_kerjasama`
- ADD PRIMARY KEY (`id_dd_notaris_kerjasama`);
+  ADD PRIMARY KEY (`id_dd_notaris_kerjasama`);
 
 --
--- Indexes for table `dd_syarat_pengurusan`
+-- Indeks untuk tabel `dd_syarat_pengurusan`
 --
 ALTER TABLE `dd_syarat_pengurusan`
- ADD PRIMARY KEY (`id_dd_syarat_pengurusan`);
+  ADD PRIMARY KEY (`id_dd_syarat_pengurusan`);
 
 --
--- Indexes for table `dd_template_akta`
+-- Indeks untuk tabel `dd_template_akta`
 --
 ALTER TABLE `dd_template_akta`
- ADD PRIMARY KEY (`id_dd_template_akta`);
+  ADD PRIMARY KEY (`id_dd_template_akta`);
 
 --
--- Indexes for table `dd_template_akta_old`
+-- Indeks untuk tabel `dd_template_akta_old`
 --
 ALTER TABLE `dd_template_akta_old`
- ADD PRIMARY KEY (`id_dd_template_akta`);
+  ADD PRIMARY KEY (`id_dd_template_akta`);
 
 --
--- Indexes for table `dd_template_akta_ppat`
+-- Indeks untuk tabel `dd_template_akta_ppat`
 --
 ALTER TABLE `dd_template_akta_ppat`
- ADD PRIMARY KEY (`id_dd_template_akta`);
+  ADD PRIMARY KEY (`id_dd_template_akta`);
 
 --
--- Indexes for table `dd_user`
+-- Indeks untuk tabel `dd_user`
 --
 ALTER TABLE `dd_user`
- ADD PRIMARY KEY (`id_dd_user`);
+  ADD PRIMARY KEY (`id_dd_user`);
 
 --
--- Indexes for table `dd_user_group`
+-- Indeks untuk tabel `dd_user_group`
 --
 ALTER TABLE `dd_user_group`
- ADD PRIMARY KEY (`id_dd_user_group`);
+  ADD PRIMARY KEY (`id_dd_user_group`);
 
 --
--- Indexes for table `dd_user_group_detail`
+-- Indeks untuk tabel `dd_user_group_detail`
 --
 ALTER TABLE `dd_user_group_detail`
- ADD PRIMARY KEY (`id_dd_user_group_detail`);
+  ADD PRIMARY KEY (`id_dd_user_group_detail`);
 
 --
--- Indexes for table `dd_user_old`
+-- Indeks untuk tabel `dd_user_old`
 --
 ALTER TABLE `dd_user_old`
- ADD PRIMARY KEY (`id_dd_user`);
+  ADD PRIMARY KEY (`id_dd_user`);
 
 --
--- Indexes for table `dev_bugs_report`
+-- Indeks untuk tabel `dev_bugs_report`
 --
 ALTER TABLE `dev_bugs_report`
- ADD PRIMARY KEY (`id_dev_bugs_report`);
+  ADD PRIMARY KEY (`id_dev_bugs_report`);
 
 --
--- Indexes for table `dev_progress`
+-- Indeks untuk tabel `dev_progress`
 --
 ALTER TABLE `dev_progress`
- ADD PRIMARY KEY (`id_dev_progress`);
+  ADD PRIMARY KEY (`id_dev_progress`);
 
 --
--- Indexes for table `disposisi`
+-- Indeks untuk tabel `disposisi`
 --
 ALTER TABLE `disposisi`
- ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `inbox`
+-- Indeks untuk tabel `inbox`
 --
 ALTER TABLE `inbox`
- ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `log_cek_kp`
+-- Indeks untuk tabel `log_cek_kp`
 --
 ALTER TABLE `log_cek_kp`
- ADD PRIMARY KEY (`id_log_cek_kp`);
+  ADD PRIMARY KEY (`id_log_cek_kp`);
 
 --
--- Indexes for table `log_user_login`
+-- Indeks untuk tabel `log_user_login`
 --
 ALTER TABLE `log_user_login`
- ADD PRIMARY KEY (`id_log_user`);
+  ADD PRIMARY KEY (`id_log_user`);
 
 --
--- Indexes for table `log_user_login_detail`
+-- Indeks untuk tabel `log_user_login_detail`
 --
 ALTER TABLE `log_user_login_detail`
- ADD PRIMARY KEY (`id_log_user_login_detail`);
+  ADD PRIMARY KEY (`id_log_user_login_detail`);
 
 --
--- Indexes for table `mt_arsip`
+-- Indeks untuk tabel `mt_arsip`
 --
 ALTER TABLE `mt_arsip`
- ADD PRIMARY KEY (`id_arsip`);
+  ADD PRIMARY KEY (`id_arsip`);
 
 --
--- Indexes for table `mt_arus_kas`
+-- Indeks untuk tabel `mt_arus_kas`
 --
 ALTER TABLE `mt_arus_kas`
- ADD PRIMARY KEY (`id_mt_arus_kas`);
+  ADD PRIMARY KEY (`id_mt_arus_kas`);
 
 --
--- Indexes for table `mt_bagian`
+-- Indeks untuk tabel `mt_bagian`
 --
 ALTER TABLE `mt_bagian`
- ADD PRIMARY KEY (`id_mt_bagian`), ADD UNIQUE KEY `id_mt_bagian` (`id_mt_bagian`), ADD UNIQUE KEY `idx_kode_bagian` (`kode_bagian`), ADD KEY `idx_nama_bagian` (`nama_bagian`);
+  ADD PRIMARY KEY (`id_mt_bagian`),
+  ADD UNIQUE KEY `id_mt_bagian` (`id_mt_bagian`),
+  ADD UNIQUE KEY `idx_kode_bagian` (`kode_bagian`),
+  ADD KEY `idx_nama_bagian` (`nama_bagian`);
 
 --
--- Indexes for table `mt_banner`
+-- Indeks untuk tabel `mt_banner`
 --
 ALTER TABLE `mt_banner`
- ADD PRIMARY KEY (`id_mt_banner`);
+  ADD PRIMARY KEY (`id_mt_banner`);
 
 --
--- Indexes for table `mt_chat`
+-- Indeks untuk tabel `mt_chat`
 --
 ALTER TABLE `mt_chat`
- ADD PRIMARY KEY (`id_mt_chat`);
+  ADD PRIMARY KEY (`id_mt_chat`);
 
 --
--- Indexes for table `mt_client`
+-- Indeks untuk tabel `mt_client`
 --
 ALTER TABLE `mt_client`
- ADD PRIMARY KEY (`id_mt_client`), ADD KEY `nm_persero_idx` (`nm_persero`);
+  ADD PRIMARY KEY (`id_mt_client`),
+  ADD KEY `nm_persero_idx` (`nm_persero`);
 
 --
--- Indexes for table `mt_client_akta`
+-- Indeks untuk tabel `mt_client_akta`
 --
 ALTER TABLE `mt_client_akta`
- ADD PRIMARY KEY (`id_mt_client_akta`);
+  ADD PRIMARY KEY (`id_mt_client_akta`);
 
 --
--- Indexes for table `mt_client_akta_cetak`
+-- Indeks untuk tabel `mt_client_akta_cetak`
 --
 ALTER TABLE `mt_client_akta_cetak`
- ADD PRIMARY KEY (`id_mt_client_akta_cetak`);
+  ADD PRIMARY KEY (`id_mt_client_akta_cetak`);
 
 --
--- Indexes for table `mt_client_akta_cover_note`
+-- Indeks untuk tabel `mt_client_akta_cover_note`
 --
 ALTER TABLE `mt_client_akta_cover_note`
- ADD PRIMARY KEY (`id_mt_client_akta_cover_note`);
+  ADD PRIMARY KEY (`id_mt_client_akta_cover_note`);
 
 --
--- Indexes for table `mt_client_akta_notaris`
+-- Indeks untuk tabel `mt_client_akta_notaris`
 --
 ALTER TABLE `mt_client_akta_notaris`
- ADD PRIMARY KEY (`id_mt_client_akta_notaris`);
+  ADD PRIMARY KEY (`id_mt_client_akta_notaris`);
 
 --
--- Indexes for table `mt_client_akta_penghadap`
+-- Indeks untuk tabel `mt_client_akta_penghadap`
 --
 ALTER TABLE `mt_client_akta_penghadap`
- ADD PRIMARY KEY (`id_mt_client_akta_penghadap`);
+  ADD PRIMARY KEY (`id_mt_client_akta_penghadap`);
 
 --
--- Indexes for table `mt_client_akta_ppat`
+-- Indeks untuk tabel `mt_client_akta_ppat`
 --
 ALTER TABLE `mt_client_akta_ppat`
- ADD PRIMARY KEY (`id_mt_client_akta_ppat`);
+  ADD PRIMARY KEY (`id_mt_client_akta_ppat`);
 
 --
--- Indexes for table `mt_client_bayar`
+-- Indeks untuk tabel `mt_client_bayar`
 --
 ALTER TABLE `mt_client_bayar`
- ADD PRIMARY KEY (`id_mt_client_bayar`);
+  ADD PRIMARY KEY (`id_mt_client_bayar`);
 
 --
--- Indexes for table `mt_client_cetak_akta`
+-- Indeks untuk tabel `mt_client_cetak_akta`
 --
 ALTER TABLE `mt_client_cetak_akta`
- ADD PRIMARY KEY (`id_mt_client_cetak_akta`);
+  ADD PRIMARY KEY (`id_mt_client_cetak_akta`);
 
 --
--- Indexes for table `mt_client_detail`
+-- Indeks untuk tabel `mt_client_detail`
 --
 ALTER TABLE `mt_client_detail`
- ADD PRIMARY KEY (`id_mt_client_detail`);
+  ADD PRIMARY KEY (`id_mt_client_detail`);
 
 --
--- Indexes for table `mt_client_emp`
+-- Indeks untuk tabel `mt_client_emp`
 --
 ALTER TABLE `mt_client_emp`
- ADD PRIMARY KEY (`id_mt_client_emp`);
+  ADD PRIMARY KEY (`id_mt_client_emp`);
 
 --
--- Indexes for table `mt_client_group`
+-- Indeks untuk tabel `mt_client_group`
 --
 ALTER TABLE `mt_client_group`
- ADD PRIMARY KEY (`id_mt_client_group`);
+  ADD PRIMARY KEY (`id_mt_client_group`);
 
 --
--- Indexes for table `mt_client_kadaluarsa`
+-- Indeks untuk tabel `mt_client_kadaluarsa`
 --
 ALTER TABLE `mt_client_kadaluarsa`
- ADD PRIMARY KEY (`id_mt_client_kadaluarsa`);
+  ADD PRIMARY KEY (`id_mt_client_kadaluarsa`);
 
 --
--- Indexes for table `mt_client_kegiatan`
+-- Indeks untuk tabel `mt_client_kegiatan`
 --
 ALTER TABLE `mt_client_kegiatan`
- ADD PRIMARY KEY (`id_mt_client_kegiatan`);
+  ADD PRIMARY KEY (`id_mt_client_kegiatan`);
 
 --
--- Indexes for table `mt_client_kekayaan`
+-- Indeks untuk tabel `mt_client_kekayaan`
 --
 ALTER TABLE `mt_client_kekayaan`
- ADD PRIMARY KEY (`id_mt_client_kekayaan`);
+  ADD PRIMARY KEY (`id_mt_client_kekayaan`);
 
 --
--- Indexes for table `mt_client_modal`
+-- Indeks untuk tabel `mt_client_modal`
 --
 ALTER TABLE `mt_client_modal`
- ADD PRIMARY KEY (`id_mt_client_modal`);
+  ADD PRIMARY KEY (`id_mt_client_modal`);
 
 --
--- Indexes for table `mt_client_pasal`
+-- Indeks untuk tabel `mt_client_pasal`
 --
 ALTER TABLE `mt_client_pasal`
- ADD PRIMARY KEY (`id_mt_client_pasal`);
+  ADD PRIMARY KEY (`id_mt_client_pasal`);
 
 --
--- Indexes for table `mt_client_pemilik_modal`
+-- Indeks untuk tabel `mt_client_pemilik_modal`
 --
 ALTER TABLE `mt_client_pemilik_modal`
- ADD PRIMARY KEY (`id_mt_client_pemilik_modal`);
+  ADD PRIMARY KEY (`id_mt_client_pemilik_modal`);
 
 --
--- Indexes for table `mt_client_pengurus`
+-- Indeks untuk tabel `mt_client_pengurus`
 --
 ALTER TABLE `mt_client_pengurus`
- ADD PRIMARY KEY (`ID_PENGURUS`);
+  ADD PRIMARY KEY (`ID_PENGURUS`);
 
 --
--- Indexes for table `mt_client_pengurus_pt`
+-- Indeks untuk tabel `mt_client_pengurus_pt`
 --
 ALTER TABLE `mt_client_pengurus_pt`
- ADD PRIMARY KEY (`id_pengurus_pt`);
+  ADD PRIMARY KEY (`id_pengurus_pt`);
 
 --
--- Indexes for table `mt_client_ppat`
+-- Indeks untuk tabel `mt_client_ppat`
 --
 ALTER TABLE `mt_client_ppat`
- ADD PRIMARY KEY (`id_mt_client_ppat`);
+  ADD PRIMARY KEY (`id_mt_client_ppat`);
 
 --
--- Indexes for table `mt_client_proses_pengurusan`
+-- Indeks untuk tabel `mt_client_proses_pengurusan`
 --
 ALTER TABLE `mt_client_proses_pengurusan`
- ADD PRIMARY KEY (`id_mt_client_proses_pengurusan`);
+  ADD PRIMARY KEY (`id_mt_client_proses_pengurusan`);
 
 --
--- Indexes for table `mt_client_quorum`
+-- Indeks untuk tabel `mt_client_quorum`
 --
 ALTER TABLE `mt_client_quorum`
- ADD PRIMARY KEY (`id_mt_quorum`);
+  ADD PRIMARY KEY (`id_mt_quorum`);
 
 --
--- Indexes for table `mt_client_rups`
+-- Indeks untuk tabel `mt_client_rups`
 --
 ALTER TABLE `mt_client_rups`
- ADD PRIMARY KEY (`id_mt_client_rups`);
+  ADD PRIMARY KEY (`id_mt_client_rups`);
 
 --
--- Indexes for table `mt_client_rups_proses`
+-- Indeks untuk tabel `mt_client_rups_proses`
 --
 ALTER TABLE `mt_client_rups_proses`
- ADD PRIMARY KEY (`id_mt_client_rups_proses`);
+  ADD PRIMARY KEY (`id_mt_client_rups_proses`);
 
 --
--- Indexes for table `mt_client_saham`
+-- Indeks untuk tabel `mt_client_saham`
 --
 ALTER TABLE `mt_client_saham`
- ADD PRIMARY KEY (`id_mt_client_saham`);
+  ADD PRIMARY KEY (`id_mt_client_saham`);
 
 --
--- Indexes for table `mt_client_saham_jenis`
+-- Indeks untuk tabel `mt_client_saham_jenis`
 --
 ALTER TABLE `mt_client_saham_jenis`
- ADD PRIMARY KEY (`id_mt_client_saham_jenis`);
+  ADD PRIMARY KEY (`id_mt_client_saham_jenis`);
 
 --
--- Indexes for table `mt_client_saham_jenis_old`
+-- Indeks untuk tabel `mt_client_saham_jenis_old`
 --
 ALTER TABLE `mt_client_saham_jenis_old`
- ADD PRIMARY KEY (`id_mt_client_saham_jenis`);
+  ADD PRIMARY KEY (`id_mt_client_saham_jenis`);
 
 --
--- Indexes for table `mt_client_saham_old`
+-- Indeks untuk tabel `mt_client_saham_old`
 --
 ALTER TABLE `mt_client_saham_old`
- ADD PRIMARY KEY (`id_mt_client_saham`);
+  ADD PRIMARY KEY (`id_mt_client_saham`);
 
 --
--- Indexes for table `mt_client_saham_person`
+-- Indeks untuk tabel `mt_client_saham_person`
 --
 ALTER TABLE `mt_client_saham_person`
- ADD PRIMARY KEY (`id_mt_client_saham_person`);
+  ADD PRIMARY KEY (`id_mt_client_saham_person`);
 
 --
--- Indexes for table `mt_client_saham_person_old`
+-- Indeks untuk tabel `mt_client_saham_person_old`
 --
 ALTER TABLE `mt_client_saham_person_old`
- ADD PRIMARY KEY (`ID_MT_PERUSAHAAN_SAHAM_PERSON`);
+  ADD PRIMARY KEY (`ID_MT_PERUSAHAAN_SAHAM_PERSON`);
 
 --
--- Indexes for table `mt_client_tagih`
+-- Indeks untuk tabel `mt_client_tagih`
 --
 ALTER TABLE `mt_client_tagih`
- ADD PRIMARY KEY (`id_mt_client_tagih`);
+  ADD PRIMARY KEY (`id_mt_client_tagih`);
 
 --
--- Indexes for table `mt_client_usaha`
+-- Indeks untuk tabel `mt_client_usaha`
 --
 ALTER TABLE `mt_client_usaha`
- ADD PRIMARY KEY (`id_mt_client_usaha`);
+  ADD PRIMARY KEY (`id_mt_client_usaha`);
 
 --
--- Indexes for table `mt_customer`
+-- Indeks untuk tabel `mt_customer`
 --
 ALTER TABLE `mt_customer`
- ADD PRIMARY KEY (`id_mt_customer`);
+  ADD PRIMARY KEY (`id_mt_customer`);
 
 --
--- Indexes for table `mt_dokumen`
+-- Indeks untuk tabel `mt_dokumen`
 --
 ALTER TABLE `mt_dokumen`
- ADD PRIMARY KEY (`id_dokumen`);
+  ADD PRIMARY KEY (`id_dokumen`);
 
 --
--- Indexes for table `mt_dokumen_akta`
+-- Indeks untuk tabel `mt_dokumen_akta`
 --
 ALTER TABLE `mt_dokumen_akta`
- ADD PRIMARY KEY (`id_mt_dokumen_akta`);
+  ADD PRIMARY KEY (`id_mt_dokumen_akta`);
 
 --
--- Indexes for table `mt_dokumen_client`
+-- Indeks untuk tabel `mt_dokumen_client`
 --
 ALTER TABLE `mt_dokumen_client`
- ADD PRIMARY KEY (`id_mt_dokumen_client`);
+  ADD PRIMARY KEY (`id_mt_dokumen_client`);
 
 --
--- Indexes for table `mt_email`
+-- Indeks untuk tabel `mt_email`
 --
 ALTER TABLE `mt_email`
- ADD PRIMARY KEY (`id_mt_email`);
+  ADD PRIMARY KEY (`id_mt_email`);
 
 --
--- Indexes for table `mt_faq`
+-- Indeks untuk tabel `mt_faq`
 --
 ALTER TABLE `mt_faq`
- ADD PRIMARY KEY (`id_mt_faq`);
+  ADD PRIMARY KEY (`id_mt_faq`);
 
 --
--- Indexes for table `mt_faq_kategori`
+-- Indeks untuk tabel `mt_faq_kategori`
 --
 ALTER TABLE `mt_faq_kategori`
- ADD PRIMARY KEY (`id_mt_faq_kategori`);
+  ADD PRIMARY KEY (`id_mt_faq_kategori`);
 
 --
--- Indexes for table `mt_forum`
+-- Indeks untuk tabel `mt_forum`
 --
 ALTER TABLE `mt_forum`
- ADD PRIMARY KEY (`id_mt_forum`);
+  ADD PRIMARY KEY (`id_mt_forum`);
 
 --
--- Indexes for table `mt_forum_kategori`
+-- Indeks untuk tabel `mt_forum_kategori`
 --
 ALTER TABLE `mt_forum_kategori`
- ADD PRIMARY KEY (`id_mt_forum_kategori`);
+  ADD PRIMARY KEY (`id_mt_forum_kategori`);
 
 --
--- Indexes for table `mt_jabatan`
+-- Indeks untuk tabel `mt_jabatan`
 --
 ALTER TABLE `mt_jabatan`
- ADD PRIMARY KEY (`kode_jabatan`);
+  ADD PRIMARY KEY (`kode_jabatan`);
 
 --
--- Indexes for table `mt_jenis_fax`
+-- Indeks untuk tabel `mt_jenis_fax`
 --
 ALTER TABLE `mt_jenis_fax`
- ADD PRIMARY KEY (`id_jenis_fax`);
+  ADD PRIMARY KEY (`id_jenis_fax`);
 
 --
--- Indexes for table `mt_jenis_permintaan`
+-- Indeks untuk tabel `mt_jenis_permintaan`
 --
 ALTER TABLE `mt_jenis_permintaan`
- ADD PRIMARY KEY (`id_mt_jenis_permintaan`);
+  ADD PRIMARY KEY (`id_mt_jenis_permintaan`);
 
 --
--- Indexes for table `mt_jenis_permintaan_detail`
+-- Indeks untuk tabel `mt_jenis_permintaan_detail`
 --
 ALTER TABLE `mt_jenis_permintaan_detail`
- ADD PRIMARY KEY (`id_mt_jenis_permintaan_detail`);
+  ADD PRIMARY KEY (`id_mt_jenis_permintaan_detail`);
 
 --
--- Indexes for table `mt_jenis_surat`
+-- Indeks untuk tabel `mt_jenis_surat`
 --
 ALTER TABLE `mt_jenis_surat`
- ADD PRIMARY KEY (`id_jenis_surat`);
+  ADD PRIMARY KEY (`id_jenis_surat`);
 
 --
--- Indexes for table `mt_notaris`
+-- Indeks untuk tabel `mt_kecamatan`
+--
+ALTER TABLE `mt_kecamatan`
+  ADD PRIMARY KEY (`id_mt_kecamatan`);
+
+--
+-- Indeks untuk tabel `mt_notaris`
 --
 ALTER TABLE `mt_notaris`
- ADD PRIMARY KEY (`kd_notaris`);
+  ADD PRIMARY KEY (`kd_notaris`);
 
 --
--- Indexes for table `mt_peminjaman_arsip`
+-- Indeks untuk tabel `mt_pasien_covid`
+--
+ALTER TABLE `mt_pasien_covid`
+  ADD PRIMARY KEY (`id_pasien`);
+
+--
+-- Indeks untuk tabel `mt_peminjaman_arsip`
 --
 ALTER TABLE `mt_peminjaman_arsip`
- ADD PRIMARY KEY (`id_peminjaman_arsip`);
+  ADD PRIMARY KEY (`id_peminjaman_arsip`);
 
 --
--- Indexes for table `mt_peraturan`
+-- Indeks untuk tabel `mt_peraturan`
 --
 ALTER TABLE `mt_peraturan`
- ADD PRIMARY KEY (`id_mt_peraturan`);
+  ADD PRIMARY KEY (`id_mt_peraturan`);
 
 --
--- Indexes for table `mt_peraturan_kategori`
+-- Indeks untuk tabel `mt_peraturan_kategori`
 --
 ALTER TABLE `mt_peraturan_kategori`
- ADD PRIMARY KEY (`id_mt_peraturan_kategori`);
+  ADD PRIMARY KEY (`id_mt_peraturan_kategori`);
 
 --
--- Indexes for table `mt_peraturan_tema`
+-- Indeks untuk tabel `mt_peraturan_tema`
 --
 ALTER TABLE `mt_peraturan_tema`
- ADD PRIMARY KEY (`id_mt_peraturan_tema`);
+  ADD PRIMARY KEY (`id_mt_peraturan_tema`);
 
 --
--- Indexes for table `mt_peraturan_tema_kelompok`
+-- Indeks untuk tabel `mt_peraturan_tema_kelompok`
 --
 ALTER TABLE `mt_peraturan_tema_kelompok`
- ADD PRIMARY KEY (`id_mt_peraturan_tema_kelompok`);
+  ADD PRIMARY KEY (`id_mt_peraturan_tema_kelompok`);
 
 --
--- Indexes for table `mt_permohonan_pinjam_arsip`
+-- Indeks untuk tabel `mt_permohonan_pinjam_arsip`
 --
 ALTER TABLE `mt_permohonan_pinjam_arsip`
- ADD PRIMARY KEY (`id_permohonan_pinjam_arsip`);
+  ADD PRIMARY KEY (`id_permohonan_pinjam_arsip`);
 
 --
--- Indexes for table `mt_polling`
+-- Indeks untuk tabel `mt_polling`
 --
 ALTER TABLE `mt_polling`
- ADD PRIMARY KEY (`ID_MT_POLLING`);
+  ADD PRIMARY KEY (`ID_MT_POLLING`);
 
 --
--- Indexes for table `mt_rubrik_surat`
+-- Indeks untuk tabel `mt_probolinggo`
+--
+ALTER TABLE `mt_probolinggo`
+  ADD PRIMARY KEY (`id_prob`);
+
+--
+-- Indeks untuk tabel `mt_rubrik_surat`
 --
 ALTER TABLE `mt_rubrik_surat`
- ADD PRIMARY KEY (`id_rubrik_surat`);
+  ADD PRIMARY KEY (`id_rubrik_surat`);
 
 --
--- Indexes for table `mt_saldo_awal_arus_kas`
+-- Indeks untuk tabel `mt_saldo_awal_arus_kas`
 --
 ALTER TABLE `mt_saldo_awal_arus_kas`
- ADD PRIMARY KEY (`id_mt_saldo_awal_arus_kas`);
+  ADD PRIMARY KEY (`id_mt_saldo_awal_arus_kas`);
 
 --
--- Indexes for table `mt_surat_intern`
+-- Indeks untuk tabel `mt_surat_intern`
 --
 ALTER TABLE `mt_surat_intern`
- ADD PRIMARY KEY (`id_mt_surat_intern`);
+  ADD PRIMARY KEY (`id_mt_surat_intern`);
 
 --
--- Indexes for table `mt_surat_ptnsm`
+-- Indeks untuk tabel `mt_surat_ptnsm`
 --
 ALTER TABLE `mt_surat_ptnsm`
- ADD PRIMARY KEY (`id_mt_surat_ptnsm`);
+  ADD PRIMARY KEY (`id_mt_surat_ptnsm`);
 
 --
--- Indexes for table `m_tc_berita`
+-- Indeks untuk tabel `m_tc_berita`
 --
 ALTER TABLE `m_tc_berita`
- ADD PRIMARY KEY (`ID_TC_BERITA`);
+  ADD PRIMARY KEY (`ID_TC_BERITA`);
 
 --
--- Indexes for table `outbox`
+-- Indeks untuk tabel `outbox`
 --
 ALTER TABLE `outbox`
- ADD PRIMARY KEY (`ID`), ADD KEY `outbox_date` (`SendingDateTime`,`SendingTimeOut`), ADD KEY `outbox_sender` (`SenderID`);
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `outbox_date` (`SendingDateTime`,`SendingTimeOut`),
+  ADD KEY `outbox_sender` (`SenderID`);
 
 --
--- Indexes for table `outbox_multipart`
+-- Indeks untuk tabel `outbox_multipart`
 --
 ALTER TABLE `outbox_multipart`
- ADD PRIMARY KEY (`ID`,`SequencePosition`);
+  ADD PRIMARY KEY (`ID`,`SequencePosition`);
 
 --
--- Indexes for table `pbk`
+-- Indeks untuk tabel `pbk`
 --
 ALTER TABLE `pbk`
- ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `pbk_groups`
+-- Indeks untuk tabel `pbk_groups`
 --
 ALTER TABLE `pbk_groups`
- ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`);
 
 --
--- Indexes for table `phones`
+-- Indeks untuk tabel `phones`
 --
 ALTER TABLE `phones`
- ADD PRIMARY KEY (`IMEI`);
+  ADD PRIMARY KEY (`IMEI`);
 
 --
--- Indexes for table `sentitems`
+-- Indeks untuk tabel `sentitems`
 --
 ALTER TABLE `sentitems`
- ADD PRIMARY KEY (`ID`,`SequencePosition`), ADD KEY `sentitems_date` (`DeliveryDateTime`), ADD KEY `sentitems_tpmr` (`TPMR`), ADD KEY `sentitems_dest` (`DestinationNumber`), ADD KEY `sentitems_sender` (`SenderID`);
+  ADD PRIMARY KEY (`ID`,`SequencePosition`),
+  ADD KEY `sentitems_date` (`DeliveryDateTime`),
+  ADD KEY `sentitems_tpmr` (`TPMR`),
+  ADD KEY `sentitems_dest` (`DestinationNumber`),
+  ADD KEY `sentitems_sender` (`SenderID`);
 
 --
--- Indexes for table `tc_arsip_surat_keluar`
+-- Indeks untuk tabel `tc_arsip_surat_keluar`
 --
 ALTER TABLE `tc_arsip_surat_keluar`
- ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tc_cc`
+-- Indeks untuk tabel `tc_cc`
 --
 ALTER TABLE `tc_cc`
- ADD PRIMARY KEY (`id_tc_cc`);
+  ADD PRIMARY KEY (`id_tc_cc`);
 
 --
--- Indexes for table `tc_forum`
+-- Indeks untuk tabel `tc_daftar_pasien`
+--
+ALTER TABLE `tc_daftar_pasien`
+  ADD PRIMARY KEY (`id_daftar_pasien`);
+
+--
+-- Indeks untuk tabel `tc_diklat`
+--
+ALTER TABLE `tc_diklat`
+  ADD PRIMARY KEY (`id_diklat`);
+
+--
+-- Indeks untuk tabel `tc_forum`
 --
 ALTER TABLE `tc_forum`
- ADD PRIMARY KEY (`id_tc_forum`);
+  ADD PRIMARY KEY (`id_tc_forum`);
 
 --
--- Indexes for table `tc_meet`
+-- Indeks untuk tabel `tc_meet`
 --
 ALTER TABLE `tc_meet`
- ADD PRIMARY KEY (`meet_id`);
+  ADD PRIMARY KEY (`meet_id`);
 
 --
--- Indexes for table `tc_meet_status`
+-- Indeks untuk tabel `tc_meet_status`
 --
 ALTER TABLE `tc_meet_status`
- ADD PRIMARY KEY (`tc_meet_status_id`);
+  ADD PRIMARY KEY (`tc_meet_status_id`);
 
 --
--- Indexes for table `tc_pesan`
+-- Indeks untuk tabel `tc_pesan`
 --
 ALTER TABLE `tc_pesan`
- ADD PRIMARY KEY (`id_tc_pesan`);
+  ADD PRIMARY KEY (`id_tc_pesan`);
 
 --
--- Indexes for table `tc_peserta_meet`
+-- Indeks untuk tabel `tc_peserta_meet`
 --
 ALTER TABLE `tc_peserta_meet`
- ADD PRIMARY KEY (`peserta_meet_id`);
+  ADD PRIMARY KEY (`peserta_meet_id`);
 
 --
--- Indexes for table `tc_polling`
+-- Indeks untuk tabel `tc_polling`
 --
 ALTER TABLE `tc_polling`
- ADD PRIMARY KEY (`ID_TC_POLLING`);
+  ADD PRIMARY KEY (`ID_TC_POLLING`);
 
 --
--- Indexes for table `tc_surat_keluar`
+-- Indeks untuk tabel `tc_surat_keluar`
 --
 ALTER TABLE `tc_surat_keluar`
- ADD PRIMARY KEY (`id_tc_surat_keluar`);
+  ADD PRIMARY KEY (`id_tc_surat_keluar`);
 
 --
--- Indexes for table `tc_surat_masuk`
+-- Indeks untuk tabel `tc_surat_masuk`
 --
 ALTER TABLE `tc_surat_masuk`
- ADD PRIMARY KEY (`id_tc_surat_masuk`);
+  ADD PRIMARY KEY (`id_tc_surat_masuk`);
 
 --
--- Indexes for table `user`
+-- Indeks untuk tabel `tc_sur_keluar`
+--
+ALTER TABLE `tc_sur_keluar`
+  ADD PRIMARY KEY (`id_sur_keluar`);
+
+--
+-- Indeks untuk tabel `tc_sur_masuk`
+--
+ALTER TABLE `tc_sur_masuk`
+  ADD PRIMARY KEY (`id_sur_masuk`);
+
+--
+-- Indeks untuk tabel `user`
 --
 ALTER TABLE `user`
- ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user_access_menu`
+-- Indeks untuk tabel `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
- ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user_menu`
+-- Indeks untuk tabel `user_menu`
 --
 ALTER TABLE `user_menu`
- ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user_role`
+-- Indeks untuk tabel `user_role`
 --
 ALTER TABLE `user_role`
- ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user_sub_menu`
+-- Indeks untuk tabel `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
- ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `bd_mt_saldo_awal`
+-- AUTO_INCREMENT untuk tabel `bd_mt_saldo_awal`
 --
 ALTER TABLE `bd_mt_saldo_awal`
-MODIFY `id_bd_mt_saldo_awal` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+  MODIFY `id_bd_mt_saldo_awal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
 --
--- AUTO_INCREMENT for table `dc_agama`
+-- AUTO_INCREMENT untuk tabel `dc_agama`
 --
 ALTER TABLE `dc_agama`
-MODIFY `id_dc_agama` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `id_dc_agama` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
--- AUTO_INCREMENT for table `dc_client_group`
+-- AUTO_INCREMENT untuk tabel `dc_client_group`
 --
 ALTER TABLE `dc_client_group`
-MODIFY `id_dc_client_group` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+  MODIFY `id_dc_client_group` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
 --
--- AUTO_INCREMENT for table `dc_customer_group`
+-- AUTO_INCREMENT untuk tabel `dc_customer_group`
 --
 ALTER TABLE `dc_customer_group`
-MODIFY `id_dc_customer_group` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
+  MODIFY `id_dc_customer_group` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
 --
--- AUTO_INCREMENT for table `dc_darah`
+-- AUTO_INCREMENT untuk tabel `dc_darah`
 --
 ALTER TABLE `dc_darah`
-MODIFY `id_dc_darah` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `id_dc_darah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
--- AUTO_INCREMENT for table `dc_kawin`
+-- AUTO_INCREMENT untuk tabel `dc_kawin`
 --
 ALTER TABLE `dc_kawin`
-MODIFY `id_dc_kawin` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `id_dc_kawin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
--- AUTO_INCREMENT for table `dc_kota`
+-- AUTO_INCREMENT untuk tabel `dc_kota`
 --
 ALTER TABLE `dc_kota`
-MODIFY `id_dc_kota` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=444;
+  MODIFY `id_dc_kota` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=444;
+
 --
--- AUTO_INCREMENT for table `dc_level_struktur_org`
+-- AUTO_INCREMENT untuk tabel `dc_level_struktur_org`
 --
 ALTER TABLE `dc_level_struktur_org`
-MODIFY `id_level_struktur_org` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `id_level_struktur_org` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
--- AUTO_INCREMENT for table `dc_menu`
+-- AUTO_INCREMENT untuk tabel `dc_menu`
 --
 ALTER TABLE `dc_menu`
-MODIFY `id_dc_menu` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=322;
+  MODIFY `id_dc_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=322;
+
 --
--- AUTO_INCREMENT for table `dc_modul`
+-- AUTO_INCREMENT untuk tabel `dc_modul`
 --
 ALTER TABLE `dc_modul`
-MODIFY `id_dc_modul` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=39;
+  MODIFY `id_dc_modul` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+
 --
--- AUTO_INCREMENT for table `dc_negara`
+-- AUTO_INCREMENT untuk tabel `dc_negara`
 --
 ALTER TABLE `dc_negara`
-MODIFY `id_dc_negara` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=121;
+  MODIFY `id_dc_negara` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=121;
+
 --
--- AUTO_INCREMENT for table `dc_pekerjaan`
+-- AUTO_INCREMENT untuk tabel `dc_pekerjaan`
 --
 ALTER TABLE `dc_pekerjaan`
-MODIFY `id_dc_pekerjaan` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `id_dc_pekerjaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
--- AUTO_INCREMENT for table `dc_pendidikan`
+-- AUTO_INCREMENT untuk tabel `dc_pendidikan`
 --
 ALTER TABLE `dc_pendidikan`
-MODIFY `id_dc_pendidikan` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=31;
+  MODIFY `id_dc_pendidikan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+
 --
--- AUTO_INCREMENT for table `dc_propinsi`
+-- AUTO_INCREMENT untuk tabel `dc_propinsi`
 --
 ALTER TABLE `dc_propinsi`
-MODIFY `id_dc_propinsi` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=38;
+  MODIFY `id_dc_propinsi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+
 --
--- AUTO_INCREMENT for table `dc_sex`
+-- AUTO_INCREMENT untuk tabel `dc_sex`
 --
 ALTER TABLE `dc_sex`
-MODIFY `id_dc_sex` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id_dc_sex` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
--- AUTO_INCREMENT for table `dc_struktur_organisasi`
+-- AUTO_INCREMENT untuk tabel `dc_struktur_organisasi`
 --
 ALTER TABLE `dc_struktur_organisasi`
-MODIFY `id_dc_struktur_organisasi` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=69;
+  MODIFY `id_dc_struktur_organisasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+
 --
--- AUTO_INCREMENT for table `dc_sub_menu`
+-- AUTO_INCREMENT untuk tabel `dc_sub_menu`
 --
 ALTER TABLE `dc_sub_menu`
-MODIFY `id_dc_sub_menu` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=824;
+  MODIFY `id_dc_sub_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=824;
+
 --
--- AUTO_INCREMENT for table `dc_sub_menu_old`
+-- AUTO_INCREMENT untuk tabel `dc_sub_menu_old`
 --
 ALTER TABLE `dc_sub_menu_old`
-MODIFY `id_dc_sub_menu` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=585;
+  MODIFY `id_dc_sub_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=585;
+
 --
--- AUTO_INCREMENT for table `dc_suku`
+-- AUTO_INCREMENT untuk tabel `dc_suku`
 --
 ALTER TABLE `dc_suku`
-MODIFY `id_dc_suku` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=23;
+  MODIFY `id_dc_suku` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+
 --
--- AUTO_INCREMENT for table `dc_tab`
+-- AUTO_INCREMENT untuk tabel `dc_tab`
 --
 ALTER TABLE `dc_tab`
-MODIFY `id_dc_tab` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=58;
+  MODIFY `id_dc_tab` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+
 --
--- AUTO_INCREMENT for table `dc_tingkat_pnddkan`
+-- AUTO_INCREMENT untuk tabel `dc_tingkat_pnddkan`
 --
 ALTER TABLE `dc_tingkat_pnddkan`
-MODIFY `id_dc_tingkat_pnddkan` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+  MODIFY `id_dc_tingkat_pnddkan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
--- AUTO_INCREMENT for table `dc_wilayah_kerja`
+-- AUTO_INCREMENT untuk tabel `dc_wilayah_kerja`
 --
 ALTER TABLE `dc_wilayah_kerja`
-MODIFY `id_dc_wilayah_kerja` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+  MODIFY `id_dc_wilayah_kerja` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
 --
--- AUTO_INCREMENT for table `dd_bank`
+-- AUTO_INCREMENT untuk tabel `dd_bank`
 --
 ALTER TABLE `dd_bank`
-MODIFY `id_dd_bank` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_dd_bank` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `dd_cnt_akta`
+-- AUTO_INCREMENT untuk tabel `dd_cnt_akta`
 --
 ALTER TABLE `dd_cnt_akta`
-MODIFY `id_akta` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_akta` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `dd_dokumen_client`
+-- AUTO_INCREMENT untuk tabel `dd_dokumen_client`
 --
 ALTER TABLE `dd_dokumen_client`
-MODIFY `id_dd_dokumen_client` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_dd_dokumen_client` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `dd_group`
+-- AUTO_INCREMENT untuk tabel `dd_group`
 --
 ALTER TABLE `dd_group`
-MODIFY `id_dd_group` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=13;
+  MODIFY `id_dd_group` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
 --
--- AUTO_INCREMENT for table `dd_group_menu`
+-- AUTO_INCREMENT untuk tabel `dd_group_menu`
 --
 ALTER TABLE `dd_group_menu`
-MODIFY `id_dd_group_menu` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=352;
+  MODIFY `id_dd_group_menu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=352;
+
 --
--- AUTO_INCREMENT for table `dd_group_modul`
+-- AUTO_INCREMENT untuk tabel `dd_group_modul`
 --
 ALTER TABLE `dd_group_modul`
-MODIFY `id_dd_group_modul` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=43;
+  MODIFY `id_dd_group_modul` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+
 --
--- AUTO_INCREMENT for table `dd_jenis_pengurusan`
+-- AUTO_INCREMENT untuk tabel `dd_jenis_pengurusan`
 --
 ALTER TABLE `dd_jenis_pengurusan`
-MODIFY `id_jenis_pengurusan` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1072;
+  MODIFY `id_jenis_pengurusan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1072;
+
 --
--- AUTO_INCREMENT for table `dd_jenis_user`
+-- AUTO_INCREMENT untuk tabel `dd_jenis_user`
 --
 ALTER TABLE `dd_jenis_user`
-MODIFY `id_dd_jenis_user` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `id_dd_jenis_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
--- AUTO_INCREMENT for table `dd_kamus_data_variabel`
+-- AUTO_INCREMENT untuk tabel `dd_kamus_data_variabel`
 --
 ALTER TABLE `dd_kamus_data_variabel`
-MODIFY `id_dd_kamus_data_variabel` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=28;
+  MODIFY `id_dd_kamus_data_variabel` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+
 --
--- AUTO_INCREMENT for table `dd_konfigurasi`
+-- AUTO_INCREMENT untuk tabel `dd_konfigurasi`
 --
 ALTER TABLE `dd_konfigurasi`
-MODIFY `id_dd_konfigurasi` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id_dd_konfigurasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
--- AUTO_INCREMENT for table `dd_lokasi`
+-- AUTO_INCREMENT untuk tabel `dd_lokasi`
 --
 ALTER TABLE `dd_lokasi`
-MODIFY `id_dd_lokasi` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=14;
+  MODIFY `id_dd_lokasi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
 --
--- AUTO_INCREMENT for table `dd_notaris_kerjasama`
+-- AUTO_INCREMENT untuk tabel `dd_notaris_kerjasama`
 --
 ALTER TABLE `dd_notaris_kerjasama`
-MODIFY `id_dd_notaris_kerjasama` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id_dd_notaris_kerjasama` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
--- AUTO_INCREMENT for table `dd_template_akta`
+-- AUTO_INCREMENT untuk tabel `dd_template_akta`
 --
 ALTER TABLE `dd_template_akta`
-MODIFY `id_dd_template_akta` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=206;
+  MODIFY `id_dd_template_akta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=206;
+
 --
--- AUTO_INCREMENT for table `dd_template_akta_old`
+-- AUTO_INCREMENT untuk tabel `dd_template_akta_old`
 --
 ALTER TABLE `dd_template_akta_old`
-MODIFY `id_dd_template_akta` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=290;
+  MODIFY `id_dd_template_akta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=290;
+
 --
--- AUTO_INCREMENT for table `dd_template_akta_ppat`
+-- AUTO_INCREMENT untuk tabel `dd_template_akta_ppat`
 --
 ALTER TABLE `dd_template_akta_ppat`
-MODIFY `id_dd_template_akta` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=290;
+  MODIFY `id_dd_template_akta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=290;
+
 --
--- AUTO_INCREMENT for table `dd_user`
+-- AUTO_INCREMENT untuk tabel `dd_user`
 --
 ALTER TABLE `dd_user`
-MODIFY `id_dd_user` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=25;
+  MODIFY `id_dd_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
 --
--- AUTO_INCREMENT for table `dd_user_group`
+-- AUTO_INCREMENT untuk tabel `dd_user_group`
 --
 ALTER TABLE `dd_user_group`
-MODIFY `id_dd_user_group` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=97;
+  MODIFY `id_dd_user_group` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
+
 --
--- AUTO_INCREMENT for table `dd_user_group_detail`
+-- AUTO_INCREMENT untuk tabel `dd_user_group_detail`
 --
 ALTER TABLE `dd_user_group_detail`
-MODIFY `id_dd_user_group_detail` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3192;
+  MODIFY `id_dd_user_group_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3192;
+
 --
--- AUTO_INCREMENT for table `dd_user_old`
+-- AUTO_INCREMENT untuk tabel `dd_user_old`
 --
 ALTER TABLE `dd_user_old`
-MODIFY `id_dd_user` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_dd_user` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `dev_bugs_report`
+-- AUTO_INCREMENT untuk tabel `dev_bugs_report`
 --
 ALTER TABLE `dev_bugs_report`
-MODIFY `id_dev_bugs_report` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id_dev_bugs_report` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
--- AUTO_INCREMENT for table `dev_progress`
+-- AUTO_INCREMENT untuk tabel `dev_progress`
 --
 ALTER TABLE `dev_progress`
-MODIFY `id_dev_progress` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=254;
+  MODIFY `id_dev_progress` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=254;
+
 --
--- AUTO_INCREMENT for table `disposisi`
+-- AUTO_INCREMENT untuk tabel `disposisi`
 --
 ALTER TABLE `disposisi`
-MODIFY `id` int(128) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `id` int(128) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
 --
--- AUTO_INCREMENT for table `inbox`
+-- AUTO_INCREMENT untuk tabel `inbox`
 --
 ALTER TABLE `inbox`
-MODIFY `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
 --
--- AUTO_INCREMENT for table `log_cek_kp`
+-- AUTO_INCREMENT untuk tabel `log_cek_kp`
 --
 ALTER TABLE `log_cek_kp`
-MODIFY `id_log_cek_kp` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id_log_cek_kp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
--- AUTO_INCREMENT for table `log_user_login`
+-- AUTO_INCREMENT untuk tabel `log_user_login`
 --
 ALTER TABLE `log_user_login`
-MODIFY `id_log_user` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8120;
+  MODIFY `id_log_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8120;
+
 --
--- AUTO_INCREMENT for table `log_user_login_detail`
+-- AUTO_INCREMENT untuk tabel `log_user_login_detail`
 --
 ALTER TABLE `log_user_login_detail`
-MODIFY `id_log_user_login_detail` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_log_user_login_detail` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `mt_arsip`
+-- AUTO_INCREMENT untuk tabel `mt_arsip`
 --
 ALTER TABLE `mt_arsip`
-MODIFY `id_arsip` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_arsip` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `mt_bagian`
+-- AUTO_INCREMENT untuk tabel `mt_bagian`
 --
 ALTER TABLE `mt_bagian`
-MODIFY `id_mt_bagian` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `id_mt_bagian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
--- AUTO_INCREMENT for table `mt_chat`
+-- AUTO_INCREMENT untuk tabel `mt_chat`
 --
 ALTER TABLE `mt_chat`
-MODIFY `id_mt_chat` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_mt_chat` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `mt_client`
+-- AUTO_INCREMENT untuk tabel `mt_client`
 --
 ALTER TABLE `mt_client`
-MODIFY `id_mt_client` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `id_mt_client` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
--- AUTO_INCREMENT for table `mt_client_akta_penghadap`
+-- AUTO_INCREMENT untuk tabel `mt_client_akta_penghadap`
 --
 ALTER TABLE `mt_client_akta_penghadap`
-MODIFY `id_mt_client_akta_penghadap` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_mt_client_akta_penghadap` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `mt_client_bayar`
+-- AUTO_INCREMENT untuk tabel `mt_client_bayar`
 --
 ALTER TABLE `mt_client_bayar`
-MODIFY `id_mt_client_bayar` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_mt_client_bayar` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `mt_client_cetak_akta`
+-- AUTO_INCREMENT untuk tabel `mt_client_cetak_akta`
 --
 ALTER TABLE `mt_client_cetak_akta`
-MODIFY `id_mt_client_cetak_akta` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_mt_client_cetak_akta` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `mt_client_detail`
+-- AUTO_INCREMENT untuk tabel `mt_client_detail`
 --
 ALTER TABLE `mt_client_detail`
-MODIFY `id_mt_client_detail` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_mt_client_detail` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `mt_client_emp`
+-- AUTO_INCREMENT untuk tabel `mt_client_emp`
 --
 ALTER TABLE `mt_client_emp`
-MODIFY `id_mt_client_emp` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_mt_client_emp` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `mt_client_group`
+-- AUTO_INCREMENT untuk tabel `mt_client_group`
 --
 ALTER TABLE `mt_client_group`
-MODIFY `id_mt_client_group` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `id_mt_client_group` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
 --
--- AUTO_INCREMENT for table `mt_client_kekayaan`
+-- AUTO_INCREMENT untuk tabel `mt_client_kekayaan`
 --
 ALTER TABLE `mt_client_kekayaan`
-MODIFY `id_mt_client_kekayaan` int(65) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_mt_client_kekayaan` int(65) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `mt_client_modal`
+-- AUTO_INCREMENT untuk tabel `mt_client_modal`
 --
 ALTER TABLE `mt_client_modal`
-MODIFY `id_mt_client_modal` int(65) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_mt_client_modal` int(65) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `mt_client_pemilik_modal`
+-- AUTO_INCREMENT untuk tabel `mt_client_pemilik_modal`
 --
 ALTER TABLE `mt_client_pemilik_modal`
-MODIFY `id_mt_client_pemilik_modal` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_mt_client_pemilik_modal` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `mt_client_ppat`
+-- AUTO_INCREMENT untuk tabel `mt_client_ppat`
 --
 ALTER TABLE `mt_client_ppat`
-MODIFY `id_mt_client_ppat` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_mt_client_ppat` int(10) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `mt_client_proses_pengurusan`
+-- AUTO_INCREMENT untuk tabel `mt_client_proses_pengurusan`
 --
 ALTER TABLE `mt_client_proses_pengurusan`
-MODIFY `id_mt_client_proses_pengurusan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_mt_client_proses_pengurusan` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `mt_client_saham`
+-- AUTO_INCREMENT untuk tabel `mt_client_saham`
 --
 ALTER TABLE `mt_client_saham`
-MODIFY `id_mt_client_saham` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_mt_client_saham` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `mt_client_saham_jenis`
+-- AUTO_INCREMENT untuk tabel `mt_client_saham_jenis`
 --
 ALTER TABLE `mt_client_saham_jenis`
-MODIFY `id_mt_client_saham_jenis` int(5) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_mt_client_saham_jenis` int(5) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `mt_client_saham_person`
+-- AUTO_INCREMENT untuk tabel `mt_client_saham_person`
 --
 ALTER TABLE `mt_client_saham_person`
-MODIFY `id_mt_client_saham_person` int(38) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_mt_client_saham_person` int(38) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `mt_client_tagih`
+-- AUTO_INCREMENT untuk tabel `mt_client_tagih`
 --
 ALTER TABLE `mt_client_tagih`
-MODIFY `id_mt_client_tagih` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_mt_client_tagih` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `mt_client_usaha`
+-- AUTO_INCREMENT untuk tabel `mt_client_usaha`
 --
 ALTER TABLE `mt_client_usaha`
-MODIFY `id_mt_client_usaha` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_mt_client_usaha` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `mt_customer`
+-- AUTO_INCREMENT untuk tabel `mt_customer`
 --
 ALTER TABLE `mt_customer`
-MODIFY `id_mt_customer` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_mt_customer` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `mt_dokumen`
+-- AUTO_INCREMENT untuk tabel `mt_dokumen`
 --
 ALTER TABLE `mt_dokumen`
-MODIFY `id_dokumen` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_dokumen` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `mt_dokumen_akta`
+-- AUTO_INCREMENT untuk tabel `mt_dokumen_akta`
 --
 ALTER TABLE `mt_dokumen_akta`
-MODIFY `id_mt_dokumen_akta` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+  MODIFY `id_mt_dokumen_akta` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
--- AUTO_INCREMENT for table `mt_dokumen_client`
+-- AUTO_INCREMENT untuk tabel `mt_dokumen_client`
 --
 ALTER TABLE `mt_dokumen_client`
-MODIFY `id_mt_dokumen_client` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_mt_dokumen_client` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `mt_email`
+-- AUTO_INCREMENT untuk tabel `mt_email`
 --
 ALTER TABLE `mt_email`
-MODIFY `id_mt_email` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=5;
+  MODIFY `id_mt_email` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
 --
--- AUTO_INCREMENT for table `mt_jenis_fax`
+-- AUTO_INCREMENT untuk tabel `mt_jenis_fax`
 --
 ALTER TABLE `mt_jenis_fax`
-MODIFY `id_jenis_fax` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+  MODIFY `id_jenis_fax` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
 --
--- AUTO_INCREMENT for table `mt_jenis_permintaan`
+-- AUTO_INCREMENT untuk tabel `mt_jenis_permintaan`
 --
 ALTER TABLE `mt_jenis_permintaan`
-MODIFY `id_mt_jenis_permintaan` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `id_mt_jenis_permintaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
--- AUTO_INCREMENT for table `mt_jenis_permintaan_detail`
+-- AUTO_INCREMENT untuk tabel `mt_jenis_permintaan_detail`
 --
 ALTER TABLE `mt_jenis_permintaan_detail`
-MODIFY `id_mt_jenis_permintaan_detail` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=110;
+  MODIFY `id_mt_jenis_permintaan_detail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
+
 --
--- AUTO_INCREMENT for table `mt_jenis_surat`
+-- AUTO_INCREMENT untuk tabel `mt_jenis_surat`
 --
 ALTER TABLE `mt_jenis_surat`
-MODIFY `id_jenis_surat` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=46;
+  MODIFY `id_jenis_surat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+
 --
--- AUTO_INCREMENT for table `mt_peminjaman_arsip`
+-- AUTO_INCREMENT untuk tabel `mt_kecamatan`
+--
+ALTER TABLE `mt_kecamatan`
+  MODIFY `id_mt_kecamatan` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
+-- AUTO_INCREMENT untuk tabel `mt_pasien_covid`
+--
+ALTER TABLE `mt_pasien_covid`
+  MODIFY `id_pasien` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT untuk tabel `mt_peminjaman_arsip`
 --
 ALTER TABLE `mt_peminjaman_arsip`
-MODIFY `id_peminjaman_arsip` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_peminjaman_arsip` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `mt_permohonan_pinjam_arsip`
+-- AUTO_INCREMENT untuk tabel `mt_permohonan_pinjam_arsip`
 --
 ALTER TABLE `mt_permohonan_pinjam_arsip`
-MODIFY `id_permohonan_pinjam_arsip` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_permohonan_pinjam_arsip` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `mt_rubrik_surat`
+-- AUTO_INCREMENT untuk tabel `mt_probolinggo`
+--
+ALTER TABLE `mt_probolinggo`
+  MODIFY `id_prob` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT untuk tabel `mt_rubrik_surat`
 --
 ALTER TABLE `mt_rubrik_surat`
-MODIFY `id_rubrik_surat` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_rubrik_surat` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `mt_saldo_awal_arus_kas`
+-- AUTO_INCREMENT untuk tabel `mt_saldo_awal_arus_kas`
 --
 ALTER TABLE `mt_saldo_awal_arus_kas`
-MODIFY `id_mt_saldo_awal_arus_kas` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_mt_saldo_awal_arus_kas` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `mt_surat_intern`
+-- AUTO_INCREMENT untuk tabel `mt_surat_intern`
 --
 ALTER TABLE `mt_surat_intern`
-MODIFY `id_mt_surat_intern` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=17;
+  MODIFY `id_mt_surat_intern` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
 --
--- AUTO_INCREMENT for table `mt_surat_ptnsm`
+-- AUTO_INCREMENT untuk tabel `mt_surat_ptnsm`
 --
 ALTER TABLE `mt_surat_ptnsm`
-MODIFY `id_mt_surat_ptnsm` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `id_mt_surat_ptnsm` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
--- AUTO_INCREMENT for table `m_tc_berita`
+-- AUTO_INCREMENT untuk tabel `m_tc_berita`
 --
 ALTER TABLE `m_tc_berita`
-MODIFY `ID_TC_BERITA` bigint(20) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID_TC_BERITA` bigint(20) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `outbox`
+-- AUTO_INCREMENT untuk tabel `outbox`
 --
 ALTER TABLE `outbox`
-MODIFY `ID` int(10) unsigned NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `pbk`
+-- AUTO_INCREMENT untuk tabel `pbk`
 --
 ALTER TABLE `pbk`
-MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `pbk_groups`
+-- AUTO_INCREMENT untuk tabel `pbk_groups`
 --
 ALTER TABLE `pbk_groups`
-MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `tc_arsip_surat_keluar`
+-- AUTO_INCREMENT untuk tabel `tc_arsip_surat_keluar`
 --
 ALTER TABLE `tc_arsip_surat_keluar`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `tc_cc`
+-- AUTO_INCREMENT untuk tabel `tc_cc`
 --
 ALTER TABLE `tc_cc`
-MODIFY `id_tc_cc` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_tc_cc` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `tc_meet`
+-- AUTO_INCREMENT untuk tabel `tc_daftar_pasien`
+--
+ALTER TABLE `tc_daftar_pasien`
+  MODIFY `id_daftar_pasien` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT untuk tabel `tc_diklat`
+--
+ALTER TABLE `tc_diklat`
+  MODIFY `id_diklat` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT untuk tabel `tc_meet`
 --
 ALTER TABLE `tc_meet`
-MODIFY `meet_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `meet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
--- AUTO_INCREMENT for table `tc_meet_status`
+-- AUTO_INCREMENT untuk tabel `tc_meet_status`
 --
 ALTER TABLE `tc_meet_status`
-MODIFY `tc_meet_status_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
+  MODIFY `tc_meet_status_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
--- AUTO_INCREMENT for table `tc_pesan`
+-- AUTO_INCREMENT untuk tabel `tc_pesan`
 --
 ALTER TABLE `tc_pesan`
-MODIFY `id_tc_pesan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_tc_pesan` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `tc_peserta_meet`
+-- AUTO_INCREMENT untuk tabel `tc_peserta_meet`
 --
 ALTER TABLE `tc_peserta_meet`
-MODIFY `peserta_meet_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `peserta_meet_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
--- AUTO_INCREMENT for table `tc_surat_keluar`
+-- AUTO_INCREMENT untuk tabel `tc_surat_keluar`
 --
 ALTER TABLE `tc_surat_keluar`
-MODIFY `id_tc_surat_keluar` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=30;
+  MODIFY `id_tc_surat_keluar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
 --
--- AUTO_INCREMENT for table `tc_surat_masuk`
+-- AUTO_INCREMENT untuk tabel `tc_surat_masuk`
 --
 ALTER TABLE `tc_surat_masuk`
-MODIFY `id_tc_surat_masuk` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=68;
+  MODIFY `id_tc_surat_masuk` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
+
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT untuk tabel `tc_sur_keluar`
+--
+ALTER TABLE `tc_sur_keluar`
+  MODIFY `id_sur_keluar` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT untuk tabel `tc_sur_masuk`
+--
+ALTER TABLE `tc_sur_masuk`
+  MODIFY `id_sur_masuk` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
 --
--- AUTO_INCREMENT for table `user_access_menu`
+-- AUTO_INCREMENT untuk tabel `user_access_menu`
 --
 ALTER TABLE `user_access_menu`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=80;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
+
 --
--- AUTO_INCREMENT for table `user_menu`
+-- AUTO_INCREMENT untuk tabel `user_menu`
 --
 ALTER TABLE `user_menu`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
 --
--- AUTO_INCREMENT for table `user_role`
+-- AUTO_INCREMENT untuk tabel `user_role`
 --
 ALTER TABLE `user_role`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
 --
--- AUTO_INCREMENT for table `user_sub_menu`
+-- AUTO_INCREMENT untuk tabel `user_sub_menu`
 --
 ALTER TABLE `user_sub_menu`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=59;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=67;
+
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `dc_pendidikan`
+-- Ketidakleluasaan untuk tabel `dc_pendidikan`
 --
 ALTER TABLE `dc_pendidikan`
-ADD CONSTRAINT `dc_pendidikan_ibfk_1` FOREIGN KEY (`id_dc_tingkat_pnddkan`) REFERENCES `dc_tingkat_pnddkan` (`id_dc_tingkat_pnddkan`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `dc_pendidikan_ibfk_1` FOREIGN KEY (`id_dc_tingkat_pnddkan`) REFERENCES `dc_tingkat_pnddkan` (`id_dc_tingkat_pnddkan`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
