@@ -113,7 +113,7 @@
 									<select name="kab_kota" id="kab_kota" class="form-control">
                                     <option value="">--Select Kab / Kota--</option>
 										<?php foreach($kota as $cl) : ?>
-										<option value="<?= $cl['dom_prob'] ?>"> <?= $cl['dom_prob'] ?></option>
+										<option idprob="<?= $cl['id_prob'];?>" value="<?= $cl['dom_prob'] ?>"> <?= $cl['dom_prob'] ?></option>
 										<?php endforeach ?>
 									</select>
 								</div>

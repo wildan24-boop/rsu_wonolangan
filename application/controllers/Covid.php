@@ -37,9 +37,20 @@ $data = array(
     'title' => 'DAFTAR PASIEN'
 );
     $this->konten['main_view'] = $this->load->view('covid/daftar', $data, TRUE);
+    $this->konten['filejs'] = "covid/daftarjs";
     $this->load->view('templates/dashboard', $this->konten);	
 }
 
+
+public function get_kecamatan($idprob){
+    
+    $this->db->join("mt_probolinggo", "mt_probolinggo.id_prob = mt_kecamatan.id_prob");
+    echo json_encode($this->db->get_where("mt_kecamatan", array("mt_probolinggo.dom_prob" =>urldecode($idprob)))->result());
+}
+
+public function get_pasien($no_rm){
+    echo json_encode($this->db->get_where("mt_pasien_covid", array("no_rm" =>urldecode($no_rm)))->row());
+}
 public function ajax_list_daftar()
 {
     $list = $this->daftar->get_datatables();
@@ -154,6 +165,7 @@ if ($this->form_validation->run() == FALSE){
             'no_bpjs' => $this->input->post('no_bpjs'),
             'alamat_lengkap' => $this->input->post('alamat_lengkap'),
             'kecamatan' => $this->input->post('kecamatan'),
+            // 'umur' => date("Y") - date("Y", strtotime($this->input->post('tgl_lahir'))),
             'kab_kota' => $this->input->post('kab_kota'),
             'kota_lain' => $this->input->post('kota_lain'),
         );
@@ -247,6 +259,7 @@ $data = array(
     'title' => 'PEMERIKSAAN IGD'
 );
     $this->konten['main_view'] = $this->load->view('covid/igd', $data, TRUE);
+    $this->konten['filejs'] = "covid/igdjs";
     $this->load->view('templates/dashboard', $this->konten);	
 }
 
@@ -624,6 +637,7 @@ $data = array(
     'title' => 'DAFTAR ODP RAJAL'
 );
     $this->konten['main_view'] = $this->load->view('covid/odpranap', $data, TRUE);
+    $this->konten['filejs'] = "covid/odpranapjs";
     $this->load->view('templates/dashboard', $this->konten);	
 }
 

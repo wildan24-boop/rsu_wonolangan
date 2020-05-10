@@ -143,11 +143,11 @@
 							</div>
 
 							<div class="form-row mt-2">
-								<div class="col">
+								<div class="col" id="form_rjp">
 									<label class="control-label col-md">Tanggal RJP ?</label>
                                     <input type="date" class="form-control" id="odpnap_tgl_rjp" name="odpnap_tgl_rjp">
 								</div>
-								<div class="col">
+								<div class="col" id="form_rujuk">
                                     <label class="control-label col-md">Rujuk ?</label>
 										<select name="odpnap_rujuk_rs" id="odpnap_rujuk_rs" class="form-control">
 										<option value="">--Select --</option>
@@ -160,11 +160,11 @@
 							</div>	
 
 							<div class="form-row mt-2">
-								<div class="col">
+								<div class="col" id="form_meninggal">
 									<label class="control-label col-md">Meninggal ?</label>
-                                    <input type="date" class="form-control" id="odpnap_meninggal_waktu" name="odpnap_meninggal_waktu">
+                                    <input type="datetime-local" class="form-control" id="odpnap_meninggal_waktu" name="odpnap_meninggal_waktu">
 								</div>
-								<div class="col">
+								<div class="col"  id="form_isolasidiri">
 									<label>Isolasi Mandiri ?</label>
 									<div class="input-group">
 										<div class="input-group-prepend">

@@ -62,7 +62,29 @@
    <link rel="stylesheet" href="<?= base_url(); ?>assets/datatables/Scroller-2.0.1/css/scroller.bootstrap4.min.css">
    <!-- Select 2 -->
    <link rel="stylesheet" href="<?= base_url(); ?>assets/css/bootstrap-select.css">
+    <script>
+         //Date range picker
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
 
+    today = mm + '/' + dd + '/' + yyyy;
+    var someDate = new Date();
+   
+    function addDays(theDate, days) {
+    return new Date(theDate.getTime() + days*24*60*60*1000);
+}
+
+var someDate = addDays(new Date(), 14);
+    var dd = String(someDate.getDate()).padStart(2, '0');
+    var mm = String(someDate.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = someDate.getFullYear();
+
+
+var someFormattedDate = mm + '/' + dd + '/' + yyyy;
+
+    </script>
    <!-- <link href="<?= base_url(); ?>assets/css/bootstrap-datepicker3.min.css')?>" rel="stylesheet"> -->
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -145,10 +167,13 @@ $user['dd_user']=$this->db->get_where('dd_user', ['username' => $this->session->
 <!-- DataTables -->
 <!-- <script src="<?= base_url(); ?>assets/plugins/datatables/jquery.dataTables.js"></script> -->
 <!-- <script src="<?= base_url(); ?>assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script> -->
+<?php if (isset($filejs)){$this->load->view($filejs);} ?>
 
 <script>
+
   $(function () {
     //Initialize Select2 Elements
+   
     $('.select2').select2()
 
     //Initialize Select2 Elements
@@ -163,8 +188,9 @@ $user['dd_user']=$this->db->get_where('dd_user', ['username' => $this->session->
     //Money Euro
     $('[data-mask]').inputmask()
 
-    //Date range picker
-    $('#reservation').daterangepicker()
+   
+    $('#reservation').daterangepicker({ startDate: today, endDate: someFormattedDate });
+  
     //Date range picker with time picker
     $('#reservationtime').daterangepicker({
       timePicker: true,
