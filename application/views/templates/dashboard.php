@@ -3773,6 +3773,8 @@ $(document).ready(function() {
             $('[name="nama_pasien"]').val(data.nama_pasien);
             $('[name="tgl_lahir"]').val(data.tgl_lahir);
             $('[name="jenkel"]').val(data.jenkel);
+            $('[name="jaminan"]').val(data.jaminan);
+            $('[name="no_bpjs"]').val(data.no_bpjs);
             $('[name="alamat_lengkap"]').val(data.alamat_lengkap);
             $('[name="kecamatan"]').val(data.kecamatan);
             $('[name="kab_kota"]').val(data.kab_kota);
@@ -3953,6 +3955,7 @@ $(document).ready(function() {
         $('.help-block').empty(); // clear error string
 
         $('[name="no_rm"]').removeAttr('readonly', 'readonly');
+  
            
         $('#modal_igd').modal('show'); // show bootstrap modal
         $('.modal-title').text('Add Daftar Pasien'); // Set Title to Bootstrap modal title
@@ -3998,9 +4001,10 @@ $(document).ready(function() {
             $('[name="rujuk_rs"]').val(data.rujuk_rs);
             $('[name="meninggal_waktu"]').val(data.meninggal_waktu);
             $('[name="rawat_inap_ruang"]').val(data.rawat_inap_ruang);
-            $('[name="control"]').val(data.control);
+            $('[name="tgl_rjp"]').val(data.tgl_rjp);
             
             $('[name="no_rm"]').attr('readonly', 'readonly');
+         
             
                 $('#modal_igd').modal('show'); // show bootstrap modal when complete loaded
                 $('.modal-title').text('Edit Daftar Pasien'); // Set title to Bootstrap modal title

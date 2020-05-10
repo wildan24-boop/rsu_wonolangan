@@ -107,6 +107,16 @@ class Daftar_model extends CI_Model
             $this->db->delete($this->table);
         }
     
+        Public function kota()
+        {
+            return $this->db->get('mt_probolinggo')->result_array();
+        }
+
+        Public function kecamatan()
+        {
+            return $this->db->get('mt_kecamatan')->result_array();
+        }
+
         Public function daftarCovid()
         {
             return $this->db->get('mt_pasien_covid')->result_array();

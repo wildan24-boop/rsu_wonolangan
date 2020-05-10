@@ -68,24 +68,24 @@
 								</div>
 								<div class="col">
                                     <label class="control-label col-md">Nama Pasien</label>
-									<input type="date" class="form-control" id="nama_pasien" name="nama_pasien">
+									<input type="text" class="form-control" id="nama_pasien" name="nama_pasien" readonly>
 								</div>
 							</div>
 							<div class="form-row mt-2">
 								<div class="col">
                                     <label class="control-label col-md">Tanggal Lahir</label>
-									<input type="date" class="form-control" id="nama_pasien" name="nama_pasien">
+									<input type="text" class="form-control" id="tgl_lahir" name="tgl_lahir" readonly>
 								</div>
 								<div class="col">
                                     <label class="control-label col-md">Jenkel</label>
-									<input type="date" class="form-control" id="jenkel" name="jenkel">
+									<input type="text" class="form-control" id="jenkel" name="jenkel" readonly>
 								</div>
 							</div>
 
 							<div class="form-row mt-2">
 								<div class="col">
                                     <label class="control-label col-md">Umur</label>
-									<input type="date" class="form-control" id="umur" name="umur">
+									<input type="text" class="form-control" id="umur" name="umur" readonly>
 								</div>
 								<div class="col">
                                     <label class="control-label col-md">Tanggal Pemeriksaan</label>
@@ -127,17 +127,21 @@
                                     <label class="control-label col-md">Totalaksana</label>
 									<select  onchange="ganti()" name="totalaksana" id="totalaksana" class="form-control">
 										<option value="">--Select --</option>
-										<option value="1"> Rawat Jalan Pulang</option>
-										<option value="2"> Rujuk </option>										
-										<option value="3"> Meninggal </option>										
-										<option value="4"> Rawat Inap </option>											
+										<option value="Rawat Jalan Pulang"> Rawat Jalan Pulang</option>
+										<option value="Rujuk"> Rujuk </option>										
+										<option value="Meninggal"> Meninggal </option>										
+										<option value="Rawat Inap"> Rawat Inap </option>											
 									</select>
 								</div>
 							</div>
-							<div id="form_rujuk">
+							
 							<div class="form-row mt-2">	
-								<div class="col">
-                                    <label class="control-label col-md">Rujuk RS</label>
+							<div class="col" id="form_rjp">
+                                    <label class="control-label col-md">Rawat Jalan Pulang</label>
+									<input type="date" class="form-control" id="tgl_rjp" name="tgl_rjp">								
+								</div>
+								<div class="col" id="form_rujuk">
+                                    <label class="control-label">Rujuk RS</label>
 									<select name="rujuk_rs"  id="rujuk_rs" class="form-control">
 										<option value="">--Select --</option>
 										<option value="Rumah Sakit 1"> Rumah Sakit 1</option>
@@ -146,14 +150,11 @@
 										<option value="Rumah Sakit 4"> Rumah Sakit 4</option>											
 									</select>
 								</div>
-								</div>
-								<div id="form_meninggal">
-								<div class="col">
+								<div class="col" id="form_meninggal">
                                     <label class="control-label col-md">Waktu Meninggal</label>
 									<input type="time" class="form-control" id="meninggal_waktu" name="meninggal_waktu">								
 								</div>
-								<div id="form_RI">
-								<div class="col">
+								<div class="col" id="form_RI">
                                     <label class="control-label col-md">Ruang Inap</label>
 									<select name="rawat_inap_ruang" id="rawat_inap_ruang" class="form-control">
 										<option value="">--Select --</option>
@@ -163,8 +164,6 @@
 										<option value="Ruang 4"> Ruang 4</option>											
 									</select>
 								</div>
-								</div>
-							</div>
 							</div>
 							<div class="form-row mt-2">	
 								<div class="col">
@@ -174,25 +173,6 @@
 								<div class="col">
 								<label class="control-label col-md"></label>
 									<input type="hidden" class="form-control" id="" name="">
-								</div>
-								
-
-								<div class="col">
-                                    <label class="control-label col-md">Status Saat Ini</label>
-									<select name="control" id="control" class="form-control">
-										<option value="">--Select Status--</option>
-										<option value="1"> ODR / OTG</option>
-										<option value="2"> ODP Rajal </option>										
-										<option value="3"> ODP Ranap </option>										
-										<option value="4"> PDP Rajal </option>										
-										<option value="5"> PDP Ranap </option>										
-										<option value="6"> konfirmasi </option>										
-										<option value="7"> Non Covid </option>										
-										<option value="8"> Rujuk </option>											
-										<option value="9"> Meninggal </option>											
-										<option value="10"> Isolasi Mandiri </option>											
-										<option value="11"> Instalasi Gawat Darurat </option>											
-									</select>
 								</div>
 								
 							</div>
@@ -219,20 +199,10 @@ function ganti() {
 
 	  if (total_laksana==1) {
 		$("#form_rujuk").hide();
-	    $("#form_meninggal").hide();
-    	$("#form_RI" ).hide();
-	  } else if {
-		(total_laksana==2) 
-		$("#form_rujuk").show();
-	    $("#form_meninggal").hide();
-    	$("#form_RI").hide();
-	  }
+		$("#form_rujuk").hide();
+	  } 
 	  }
 	  
-
-
-
-
-	}
+	
 
 </script>

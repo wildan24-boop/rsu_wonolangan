@@ -32,9 +32,10 @@
 							<th scope="col">Tanggal Lahir</th>
 							<th scope="col">Umur</th>
 							<th scope="col">Jenkel</th>
-							<th scope="col">kecamatan</th>
-							<th scope="col">kab_kota</th>
-							<th scope="col">kota_lain</th>
+							<th scope="col">Jaminan</th>
+							<th scope="col">Kecamatan</th>
+							<th scope="col">Kab / Kota Probolinggo</th>
+							<th scope="col">Kota lain</th>
 
 						</tr>
 					</thead>
@@ -54,10 +55,10 @@
 							<input type="hidden" id="id_pasien" name="id_pasien" />
 							<!-- <input type="hidden" id="kd_unik" name="kd_unik" /> -->
 
-							<div class="form-row">
+							<div class="form-row mt-3">
 								<div class="col">
 									<label class="control-label col-md">Nomor RM</label>
-									<input type="text" class="form-control" id="no_rm" name="no_rm">
+									<input type="number" class="form-control" id="no_rm" name="no_rm">
 								</div>
 								<div class="col">
 									<label class="control-label">Nama Pasien</label>
@@ -65,7 +66,7 @@
 								</div>
 							</div>
 
-							<div class="form-row">
+							<div class="form-row mt-3">
 								<div class="col">
 									<label class="control-label col-md">Tanggal Lahir</label>
 									<input type="date" class="form-control" id="tgl_lahir" name="tgl_lahir">
@@ -80,7 +81,24 @@
 								</div>
 							</div>
 
-							<div class="form-row">
+							<div class="form-row mt-3">
+								<div class="col-md-6">
+								<label class="control-label">Jaminan</label>
+									<select onchange="bpjs()" name="jaminan" id="jaminan" class="form-control">
+										<option value="">--Select Jaminan--</option>
+										<option value="BPJS"> BPJS</option>
+										<option value="SWASTA"> SWASTA </option>										
+									</select>
+								</div>
+							
+								<div class="col" id="form_bpjs">
+									<label class="control-label ">No BPJS</label>
+									<input type="number" class="form-control" id="no_bpjs" name="no_bpjs">
+								</div>
+								
+							</div>
+
+							<div class="form-row mt-3">
                                 <label class="control-label col-md-6">Alamat Lengkap</label>
 								<div class="col-md-12">
 									<textarea type="text" class="form-control" id="alamat_lengkap"
@@ -89,14 +107,24 @@
 								</div>
 							</div>
 
-                            <div class="form-row">
-								<div class="col">
-									<label class="control-label col-md">Kecamatan</label>
-									<input type="text" class="form-control" id="kecamatan" name="kecamatan">
-								</div>
+                            <div class="form-row mt-3">
 								<div class="col">
 									<label class="control-label col-md">kab / kota Probolinggo</label>
-									<input type="text" class="form-control" id="kab_kota" name="kab_kota">
+									<select name="kab_kota" id="kab_kota" class="form-control">
+                                    <option value="">--Select Kab / Kota--</option>
+										<?php foreach($kota as $cl) : ?>
+										<option value="<?= $cl['dom_prob'] ?>"> <?= $cl['dom_prob'] ?></option>
+										<?php endforeach ?>
+									</select>
+								</div>
+								<div class="col">
+									<label class="control-label col-md">Kecamatan</label>
+									<select name="kecamatan" id="kecamatan" class="form-control">
+                                    <option value="">--Select Kecamatan--</option>
+										<?php foreach($kecamatan as $cl) : ?>
+										<option value="<?= $cl['nama_kecamatan'] ?>"> <?= $cl['nama_kecamatan'] ?></option>
+										<?php endforeach ?>
+									</select>
 								</div>
 								<div class="col">
 									<label class="control-label">Kota Lain</label>
@@ -122,3 +150,19 @@
 <!-- <script>
         alert("Selamat datang di tutorial Javascript");
     </script> -->
+
+<script>
+
+function bpjs() {
+
+	var ja_minan=$("#jaminan" ).val();
+
+	  if (ja_minan=="BPJS") {
+		$("#form_bpjs").show();
+	  } else {
+		$("#form_bpjs").hide();
+	  }
+	  
+	}
+
+</script>

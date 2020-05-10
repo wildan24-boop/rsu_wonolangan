@@ -29,6 +29,8 @@ public function daftar()
 {
 $data = array(
     'daftar' =>  $this->daftar->daftarCovid(),
+    'kecamatan' =>  $this->daftar->kecamatan(),
+    'kota' =>  $this->daftar->kota(),
     // 'kota' =>  $this->daftar->get_kota(),
     // 'kecamatan' =>  $this->daftar->get_subkecamatan($id),
     // $data=$this->m_kategori->get_subkategori($id);	
@@ -62,6 +64,7 @@ public function ajax_list_daftar()
         $row[] = ($us->tgl_lahir);
         $row[] = ($us->umur);
         $row[] = ($us->jenkel);
+        $row[] = ($us->jaminan);
         $row[] = ($us->kecamatan);
         $row[] = ($us->kab_kota);
         $row[] = ($us->kota_lain);
@@ -100,6 +103,11 @@ public function ajax_add_daftar()
         array(
             'field' => 'tgl_lahir',
             'label' => 'Tanggal Lahir',
+            'rules' => 'required'
+        ),
+        array(
+            'field' => 'jaminan',
+            'label' => 'Jaminan',
             'rules' => 'required'
         ),
         array(
@@ -142,6 +150,8 @@ if ($this->form_validation->run() == FALSE){
             'nama_pasien' => $this->input->post('nama_pasien'),
             'tgl_lahir' => $this->input->post('tgl_lahir'),
             'jenkel' => $this->input->post('jenkel'),
+            'jaminan' => $this->input->post('jaminan'),
+            'no_bpjs' => $this->input->post('no_bpjs'),
             'alamat_lengkap' => $this->input->post('alamat_lengkap'),
             'kecamatan' => $this->input->post('kecamatan'),
             'kab_kota' => $this->input->post('kab_kota'),
@@ -205,6 +215,8 @@ if ($this->form_validation->run() == FALSE){
         'nama_pasien' => $this->input->post('nama_pasien'),
         'tgl_lahir' => $this->input->post('tgl_lahir'),
         'jenkel' => $this->input->post('jenkel'),
+        'jaminan' => $this->input->post('jaminan'),
+        'no_bpjs' => $this->input->post('no_bpjs'),
         'alamat_lengkap' => $this->input->post('alamat_lengkap'),
         'kecamatan' => $this->input->post('kecamatan'),
         'kab_kota' => $this->input->post('kab_kota'),
@@ -318,11 +330,6 @@ public function ajax_add_igd()
             'field' => 'totalaksana',
             'label' => 'Totalaksana',
             'rules' => 'required'
-        ),
-        array(
-            'field' => 'control',
-            'label' => 'Status Saat Ini',
-            'rules' => 'required'
         )
     );
 
@@ -345,10 +352,10 @@ if ($this->form_validation->run() == FALSE){
             'komorbid' => $this->input->post('komorbid'),
             'status_covid_awal' => $this->input->post('status_covid_awal'),
             'totalaksana' => $this->input->post('totalaksana'),
+            'tgl_rjp' => $this->input->post('tgl_rjp'),
             'rujuk_rs' => $this->input->post('rujuk_rs'),
             'meninggal_waktu' => $this->input->post('meninggal_waktu'),
-            'rawat_inap_ruang' => $this->input->post('rawat_inap_ruang'),
-            'control' => $this->input->post('control'),
+            'rawat_inap_ruang' => $this->input->post('rawat_inap_ruang')
         );
         
     $insert = $this->igd->save_igd($data);
@@ -385,11 +392,6 @@ public function ajax_update_igd()
             'field' => 'totalaksana',
             'label' => 'Totalaksana',
             'rules' => 'required'
-        ),
-        array(
-            'field' => 'control',
-            'label' => 'Status Saat Ini',
-            'rules' => 'required'
         )
     );
 
@@ -410,10 +412,10 @@ if ($this->form_validation->run() == FALSE){
             'komorbid' => $this->input->post('komorbid'),
             'status_covid_awal' => $this->input->post('status_covid_awal'),
             'totalaksana' => $this->input->post('totalaksana'),
+            'tgl_rjp' => $this->input->post('tgl_rjp'),
             'rujuk_rs' => $this->input->post('rujuk_rs'),
             'meninggal_waktu' => $this->input->post('meninggal_waktu'),
             'rawat_inap_ruang' => $this->input->post('rawat_inap_ruang'),
-            'control' => $this->input->post('control'),
         );
     $this->igd->update(array('id_daftar_pasien' => $this->input->post('id_daftar_pasien')), $data);
     $data['kliru'] = 'Sudah Tersimpan';

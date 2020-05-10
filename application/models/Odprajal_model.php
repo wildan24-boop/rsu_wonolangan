@@ -21,7 +21,8 @@ class Odprajal_model extends CI_Model
             $this->db->select('tc_daftar_pasien.*, mt_pasien_covid.nama_pasien, mt_pasien_covid.tgl_lahir, mt_pasien_covid.jenkel');
             $this->db->from($this->table);
             $this->db->join('mt_pasien_covid','tc_daftar_pasien.no_rm=mt_pasien_covid.no_rm');
-		    $this->db->where('tc_daftar_pasien.control=2');
+		    $this->db->where("tc_daftar_pasien.status_covid_awal='ODP'");
+		    $this->db->where("tc_daftar_pasien.totalaksana='Rawat Jalan Pulang'");
             // $this->db->from($this->table);
             $i = 0;
         
