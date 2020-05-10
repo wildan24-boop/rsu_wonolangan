@@ -168,7 +168,33 @@
 									<label class="control-label col-md"></label>
 									<input type="hidden" class="form-control" id="" name="">
 								</div>
+<<<<<<< HEAD
 
+=======
+							</div>
+							<div class="form-row mt-2">
+								<div class="col">
+									<label class="control-label col-md"></label>
+									<input type="hidden" class="form-control" id="" name="">
+								</div>
+								<div class="col">
+									<label class="control-label col-md">Status</label>
+									<select name="control" id="control" class="form-control">
+										<option value="">--Select Status--</option>
+										<option value="1"> ODR / OTG</option>
+										<option value="2"> ODP Rajal </option>
+										<option value="3"> ODP Ranap </option>
+										<option value="4"> PDP Rajal </option>
+										<option value="5"> PDP Ranap </option>
+										<option value="6"> konfirmasi </option>
+										<option value="7"> Non Covid </option>
+										<option value="8"> Rujuk </option>
+										<option value="9"> Meninggal </option>
+										<option value="10"> Isolasi Mandiri </option>
+										<option value="11"> Instalasi Gawat Darurat </option>
+									</select>
+								</div>
+>>>>>>> 085f1918e701157c8b7c3f67eec3358a02046e72
 							</div>
 					</form>
 				</div>
